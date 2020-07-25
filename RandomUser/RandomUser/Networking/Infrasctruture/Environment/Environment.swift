@@ -8,12 +8,14 @@ extension Environment {
   private static func value(named name: Constant) -> String {
     return value(named: name.rawValue)
   }
+  
   private static func value(named name: String) -> String {
     let key = name
     let value = valueFromPlist(named: key)
     guard !value.isEmpty else { fatalError() }
     return value
   }
+  
   private static func valueFromPlist(named: String) -> String {
     guard let url = Bundle.main.path(forResource: "Environment",
                                      ofType: "plist") else { fatalError() }

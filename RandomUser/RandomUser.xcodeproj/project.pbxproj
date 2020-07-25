@@ -22,6 +22,11 @@
 		D9F853A324CC4ACE00722C0B /* AutoMockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F853A224CC4ACE00722C0B /* AutoMockable.swift */; };
 		D9F853B124CC4C6A00722C0B /* AutoMockable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F853B024CC4C6A00722C0B /* AutoMockable.generated.swift */; };
 		D9F853B524CC6A1400722C0B /* list.users.ok.json in Resources */ = {isa = PBXBuildFile; fileRef = D9F853B424CC6A1400722C0B /* list.users.ok.json */; };
+		D9F853BA24CC6B5200722C0B /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F853B924CC6B5200722C0B /* UserService.swift */; };
+		D9F853BD24CC6DB000722C0B /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F853BC24CC6DB000722C0B /* Service.swift */; };
+		D9F853C024CC6E9500722C0B /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F853BF24CC6E9500722C0B /* Endpoint.swift */; };
+		D9F853C624CC6F7500722C0B /* ListUsersEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F853C524CC6F7500722C0B /* ListUsersEndpoint.swift */; };
+		D9F853CD24CC710700722C0B /* ListUsersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F853CC24CC710700722C0B /* ListUsersRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +74,11 @@
 		D9F853A224CC4ACE00722C0B /* AutoMockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoMockable.swift; sourceTree = "<group>"; };
 		D9F853B024CC4C6A00722C0B /* AutoMockable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoMockable.generated.swift; sourceTree = "<group>"; };
 		D9F853B424CC6A1400722C0B /* list.users.ok.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = list.users.ok.json; sourceTree = "<group>"; };
+		D9F853B924CC6B5200722C0B /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		D9F853BC24CC6DB000722C0B /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		D9F853BF24CC6E9500722C0B /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		D9F853C524CC6F7500722C0B /* ListUsersEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersEndpoint.swift; sourceTree = "<group>"; };
+		D9F853CC24CC710700722C0B /* ListUsersRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,7 +233,9 @@
 		D9F8539C24CC3B1F00722C0B /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				D9F8539B24CC3AFE00722C0B /* Environment */,
+				D9F853C724CC708E00722C0B /* Domain */,
+				D9F853B624CC6AE000722C0B /* Data */,
+				D9F853BB24CC6D9700722C0B /* Infrasctruture */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -266,6 +278,81 @@
 				D9F853B424CC6A1400722C0B /* list.users.ok.json */,
 			);
 			path = Fixture;
+			sourceTree = "<group>";
+		};
+		D9F853B624CC6AE000722C0B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D9F853B724CC6B0100722C0B /* User */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D9F853B724CC6B0100722C0B /* User */ = {
+			isa = PBXGroup;
+			children = (
+				D9F853B824CC6B1900722C0B /* Service */,
+				D9F853C424CC6F5700722C0B /* Endpoint */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		D9F853B824CC6B1900722C0B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				D9F853B924CC6B5200722C0B /* UserService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		D9F853BB24CC6D9700722C0B /* Infrasctruture */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8539B24CC3AFE00722C0B /* Environment */,
+				D9F853BC24CC6DB000722C0B /* Service.swift */,
+				D9F853BF24CC6E9500722C0B /* Endpoint.swift */,
+			);
+			path = Infrasctruture;
+			sourceTree = "<group>";
+		};
+		D9F853C424CC6F5700722C0B /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				D9F853C524CC6F7500722C0B /* ListUsersEndpoint.swift */,
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		D9F853C724CC708E00722C0B /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				D9F853C824CC70BE00722C0B /* Model */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		D9F853C824CC70BE00722C0B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D9F853C924CC70DC00722C0B /* User */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D9F853C924CC70DC00722C0B /* User */ = {
+			isa = PBXGroup;
+			children = (
+				D9F853CB24CC70FC00722C0B /* Request */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		D9F853CB24CC70FC00722C0B /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				D9F853CC24CC710700722C0B /* ListUsersRequest.swift */,
+			);
+			path = Request;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -553,7 +640,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ -f ${SRCROOT}/.env.sh ] || [ -f ${SRCROOT}/.env.stg.sh] || [ -f ${SRCROOT}/.env.prod.sh ] ; then\n  git checkout ${SRCROOT}/RandomUser/Networking/Environment/Environment.plist\nelse\n  echo \"Environment file does not exist\"\nfi\n\n";
+			shellScript = "if [ -f ${SRCROOT}/.env.sh ] || [ -f ${SRCROOT}/.env.stg.sh] || [ -f ${SRCROOT}/.env.prod.sh ] ; then\n  git checkout ${SRCROOT}/RandomUser/Networking/Infrasctruture/Environment/Environment.plist\nelse\n  echo \"Environment file does not exist\"\nfi\n\n";
 		};
 		D9F8539F24CC469300722C0B /* Sourcery */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -603,9 +690,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9F8535924CC20BB00722C0B /* AppDelegate.swift in Sources */,
+				D9F853BD24CC6DB000722C0B /* Service.swift in Sources */,
+				D9F853C024CC6E9500722C0B /* Endpoint.swift in Sources */,
 				D9F8539E24CC3B3800722C0B /* Environment.swift in Sources */,
+				D9F853CD24CC710700722C0B /* ListUsersRequest.swift in Sources */,
 				D9F8538E24CC272C00722C0B /* FakeViewController.swift in Sources */,
 				D9F853A324CC4ACE00722C0B /* AutoMockable.swift in Sources */,
+				D9F853BA24CC6B5200722C0B /* UserService.swift in Sources */,
+				D9F853C624CC6F7500722C0B /* ListUsersEndpoint.swift in Sources */,
 				D9F8539324CC2AC900722C0B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

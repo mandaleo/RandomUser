@@ -25,19 +25,3 @@ import AppKit
 
 
 
-class FakeTestMock: NSObject, FakeTest {
-
-    //MARK: - testShit
-
-    private(set) var testShitCallsCount = 0
-    var testShitCalled: Bool {
-        return testShitCallsCount > 0
-    }
-    var testShitClosure: (() -> Void)?
-
-    func testShit() {
-        testShitCallsCount += 1
-        testShitClosure?()
-    }
-
-}
