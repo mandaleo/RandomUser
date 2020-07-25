@@ -14,6 +14,8 @@
 		D9F8538E24CC272C00722C0B /* FakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8538D24CC272C00722C0B /* FakeViewController.swift */; };
 		D9F8539124CC2A4B00722C0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9F8536324CC20C100722C0B /* LaunchScreen.storyboard */; };
 		D9F8539324CC2AC900722C0B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8539224CC2AC800722C0B /* SceneDelegate.swift */; };
+		D9F8539824CC37E600722C0B /* Environment.plist in Resources */ = {isa = PBXBuildFile; fileRef = D9F8539724CC37E600722C0B /* Environment.plist */; };
+		D9F8539E24CC3B3800722C0B /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8539D24CC3B3800722C0B /* Environment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		D9F8537C24CC20C100722C0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9F8538D24CC272C00722C0B /* FakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeViewController.swift; sourceTree = "<group>"; };
 		D9F8539224CC2AC800722C0B /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		D9F8539724CC37E600722C0B /* Environment.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Environment.plist; sourceTree = "<group>"; };
+		D9F8539D24CC3B3800722C0B /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,7 @@
 			children = (
 				D9F8538A24CC267D00722C0B /* App */,
 				D9F8538B24CC268A00722C0B /* Features */,
+				D9F8539C24CC3B1F00722C0B /* Networking */,
 				D9F8538924CC266B00722C0B /* Resources */,
 			);
 			path = RandomUser;
@@ -157,6 +162,23 @@
 			path = Fake;
 			sourceTree = "<group>";
 		};
+		D9F8539B24CC3AFE00722C0B /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8539724CC37E600722C0B /* Environment.plist */,
+				D9F8539D24CC3B3800722C0B /* Environment.swift */,
+			);
+			path = Environment;
+			sourceTree = "<group>";
+		};
+		D9F8539C24CC3B1F00722C0B /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8539B24CC3AFE00722C0B /* Environment */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -167,6 +189,9 @@
 				D9F8535124CC20BB00722C0B /* Sources */,
 				D9F8535224CC20BB00722C0B /* Frameworks */,
 				D9F8535324CC20BB00722C0B /* Resources */,
+				D9F8539424CC312E00722C0B /* Swiftlint */,
+				D9F8539924CC37F300722C0B /* Environment variables */,
+				D9F8539A24CC382E00722C0B /* Reset Environment variables */,
 			);
 			buildRules = (
 			);
@@ -262,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9F8539124CC2A4B00722C0B /* LaunchScreen.storyboard in Resources */,
+				D9F8539824CC37E600722C0B /* Environment.plist in Resources */,
 				D9F8536224CC20C100722C0B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,12 +308,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D9F8539424CC312E00722C0B /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		D9F8539924CC37F300722C0B /* Environment variables */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Environment variables";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "FILE=${SRCROOT}/.env.sh\n#FILE=${SRCROOT}/.env.prod.sh\n\nif [ -f $FILE ]; then\n  $FILE\nelse\n  echo \"Environment file does not exist\"\nfi\n";
+		};
+		D9F8539A24CC382E00722C0B /* Reset Environment variables */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Reset Environment variables";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ -f ${SRCROOT}/.env.sh ] || [ -f ${SRCROOT}/.env.stg.sh] || [ -f ${SRCROOT}/.env.prod.sh ] ; then\n  git checkout ${SRCROOT}/RandomUser/Networking/Environment/Environment.plist\nelse\n  echo \"Environment file does not exist\"\nfi\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D9F8535124CC20BB00722C0B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D9F8535924CC20BB00722C0B /* AppDelegate.swift in Sources */,
+				D9F8539E24CC3B3800722C0B /* Environment.swift in Sources */,
 				D9F8538E24CC272C00722C0B /* FakeViewController.swift in Sources */,
 				D9F8539324CC2AC900722C0B /* SceneDelegate.swift in Sources */,
 			);
