@@ -8,13 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		D9F8535924CC20BB00722C0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8535824CC20BB00722C0B /* AppDelegate.swift */; };
-		D9F8535B24CC20BB00722C0B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8535A24CC20BB00722C0B /* SceneDelegate.swift */; };
-		D9F8535D24CC20BB00722C0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8535C24CC20BB00722C0B /* ViewController.swift */; };
-		D9F8536024CC20BB00722C0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9F8535E24CC20BB00722C0B /* Main.storyboard */; };
 		D9F8536224CC20C100722C0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9F8536124CC20C100722C0B /* Assets.xcassets */; };
-		D9F8536524CC20C100722C0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9F8536324CC20C100722C0B /* LaunchScreen.storyboard */; };
 		D9F8537024CC20C100722C0B /* RandomUserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8536F24CC20C100722C0B /* RandomUserTests.swift */; };
 		D9F8537B24CC20C100722C0B /* RandomUserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8537A24CC20C100722C0B /* RandomUserUITests.swift */; };
+		D9F8538E24CC272C00722C0B /* FakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8538D24CC272C00722C0B /* FakeViewController.swift */; };
+		D9F8539124CC2A4B00722C0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9F8536324CC20C100722C0B /* LaunchScreen.storyboard */; };
+		D9F8539324CC2AC900722C0B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8539224CC2AC800722C0B /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,9 +36,6 @@
 /* Begin PBXFileReference section */
 		D9F8535524CC20BB00722C0B /* RandomUser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomUser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F8535824CC20BB00722C0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D9F8535A24CC20BB00722C0B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D9F8535C24CC20BB00722C0B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D9F8535F24CC20BB00722C0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D9F8536124CC20C100722C0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9F8536424CC20C100722C0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D9F8536624CC20C100722C0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +45,8 @@
 		D9F8537624CC20C100722C0B /* RandomUserUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RandomUserUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F8537A24CC20C100722C0B /* RandomUserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserUITests.swift; sourceTree = "<group>"; };
 		D9F8537C24CC20C100722C0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9F8538D24CC272C00722C0B /* FakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeViewController.swift; sourceTree = "<group>"; };
+		D9F8539224CC2AC800722C0B /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +97,9 @@
 		D9F8535724CC20BB00722C0B /* RandomUser */ = {
 			isa = PBXGroup;
 			children = (
-				D9F8535824CC20BB00722C0B /* AppDelegate.swift */,
-				D9F8535A24CC20BB00722C0B /* SceneDelegate.swift */,
-				D9F8535C24CC20BB00722C0B /* ViewController.swift */,
-				D9F8535E24CC20BB00722C0B /* Main.storyboard */,
-				D9F8536124CC20C100722C0B /* Assets.xcassets */,
-				D9F8536324CC20C100722C0B /* LaunchScreen.storyboard */,
-				D9F8536624CC20C100722C0B /* Info.plist */,
+				D9F8538A24CC267D00722C0B /* App */,
+				D9F8538B24CC268A00722C0B /* Features */,
+				D9F8538924CC266B00722C0B /* Resources */,
 			);
 			path = RandomUser;
 			sourceTree = "<group>";
@@ -126,6 +120,41 @@
 				D9F8537C24CC20C100722C0B /* Info.plist */,
 			);
 			path = RandomUserUITests;
+			sourceTree = "<group>";
+		};
+		D9F8538924CC266B00722C0B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8536124CC20C100722C0B /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D9F8538A24CC267D00722C0B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8535824CC20BB00722C0B /* AppDelegate.swift */,
+				D9F8539224CC2AC800722C0B /* SceneDelegate.swift */,
+				D9F8536324CC20C100722C0B /* LaunchScreen.storyboard */,
+				D9F8536624CC20C100722C0B /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		D9F8538B24CC268A00722C0B /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8538C24CC272300722C0B /* Fake */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		D9F8538C24CC272300722C0B /* Fake */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8538D24CC272C00722C0B /* FakeViewController.swift */,
+			);
+			path = Fake;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,9 +261,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9F8536524CC20C100722C0B /* LaunchScreen.storyboard in Resources */,
+				D9F8539124CC2A4B00722C0B /* LaunchScreen.storyboard in Resources */,
 				D9F8536224CC20C100722C0B /* Assets.xcassets in Resources */,
-				D9F8536024CC20BB00722C0B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,9 +287,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9F8535D24CC20BB00722C0B /* ViewController.swift in Sources */,
 				D9F8535924CC20BB00722C0B /* AppDelegate.swift in Sources */,
-				D9F8535B24CC20BB00722C0B /* SceneDelegate.swift in Sources */,
+				D9F8538E24CC272C00722C0B /* FakeViewController.swift in Sources */,
+				D9F8539324CC2AC900722C0B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +325,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D9F8535E24CC20BB00722C0B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D9F8535F24CC20BB00722C0B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D9F8536324CC20C100722C0B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -436,7 +456,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BUS8BGZ883;
-				INFOPLIST_FILE = RandomUser/Info.plist;
+				INFOPLIST_FILE = RandomUser/App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -444,7 +464,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mandaleo.RandomUser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -454,7 +474,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BUS8BGZ883;
-				INFOPLIST_FILE = RandomUser/Info.plist;
+				INFOPLIST_FILE = RandomUser/App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -462,7 +482,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mandaleo.RandomUser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
