@@ -21,6 +21,7 @@
 		D9F8539E24CC3B3800722C0B /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8539D24CC3B3800722C0B /* Environment.swift */; };
 		D9F853A324CC4ACE00722C0B /* AutoMockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F853A224CC4ACE00722C0B /* AutoMockable.swift */; };
 		D9F853B124CC4C6A00722C0B /* AutoMockable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F853B024CC4C6A00722C0B /* AutoMockable.generated.swift */; };
+		D9F853B524CC6A1400722C0B /* list.users.ok.json in Resources */ = {isa = PBXBuildFile; fileRef = D9F853B424CC6A1400722C0B /* list.users.ok.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		D9F8539D24CC3B3800722C0B /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		D9F853A224CC4ACE00722C0B /* AutoMockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoMockable.swift; sourceTree = "<group>"; };
 		D9F853B024CC4C6A00722C0B /* AutoMockable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoMockable.generated.swift; sourceTree = "<group>"; };
+		D9F853B424CC6A1400722C0B /* list.users.ok.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = list.users.ok.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 		D9F8536E24CC20C100722C0B /* RandomUserTests */ = {
 			isa = PBXGroup;
 			children = (
+				D9F853B224CC69FB00722C0B /* List */,
 				D9F853AF24CC4C6A00722C0B /* AutoMockable */,
 				D9F8536F24CC20C100722C0B /* RandomUserTests.swift */,
 				D9F8537124CC20C100722C0B /* Info.plist */,
@@ -247,6 +250,22 @@
 				D9F853B024CC4C6A00722C0B /* AutoMockable.generated.swift */,
 			);
 			path = AutoMockable;
+			sourceTree = "<group>";
+		};
+		D9F853B224CC69FB00722C0B /* List */ = {
+			isa = PBXGroup;
+			children = (
+				D9F853B324CC6A0100722C0B /* Fixture */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		D9F853B324CC6A0100722C0B /* Fixture */ = {
+			isa = PBXGroup;
+			children = (
+				D9F853B424CC6A1400722C0B /* list.users.ok.json */,
+			);
+			path = Fixture;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,6 +392,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9F853B524CC6A1400722C0B /* list.users.ok.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
