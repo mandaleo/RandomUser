@@ -12,7 +12,6 @@
 		9960EFD7A172171D3DA24C20 /* Pods_RandomUserTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7601B7B71763A462F2F64950 /* Pods_RandomUserTests.framework */; };
 		D9F8535924CC20BB00722C0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8535824CC20BB00722C0B /* AppDelegate.swift */; };
 		D9F8536224CC20C100722C0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9F8536124CC20C100722C0B /* Assets.xcassets */; };
-		D9F8537024CC20C100722C0B /* RandomUserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8536F24CC20C100722C0B /* RandomUserTests.swift */; };
 		D9F8537B24CC20C100722C0B /* RandomUserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8537A24CC20C100722C0B /* RandomUserUITests.swift */; };
 		D9F8538E24CC272C00722C0B /* FakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8538D24CC272C00722C0B /* FakeViewController.swift */; };
 		D9F8539124CC2A4B00722C0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9F8536324CC20C100722C0B /* LaunchScreen.storyboard */; };
@@ -40,6 +39,16 @@
 		D9F853E924CC7DBB00722C0B /* StreetApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F853E824CC7DBB00722C0B /* StreetApiResponse.swift */; };
 		D9F853EB24CC7E9C00722C0B /* RegisteredApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F853EA24CC7E9C00722C0B /* RegisteredApiResponse.swift */; };
 		D9F853ED24CC7F3900722C0B /* PictureApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F853EC24CC7F3900722C0B /* PictureApiResponse.swift */; };
+		D9F853F024CC859000722C0B /* CLLocationCoordinate2D+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F853EF24CC859000722C0B /* CLLocationCoordinate2D+Optional.swift */; };
+		D9F853F224CC867C00722C0B /* String+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F853F124CC867C00722C0B /* String+Date.swift */; };
+		D9F853F524CC890B00722C0B /* ListUserApiToDomainMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F853F424CC890B00722C0B /* ListUserApiToDomainMapper.swift */; };
+		D9F853F724CC8BC600722C0B /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F853F624CC8BC600722C0B /* Mappable.swift */; };
+		D9F853F924CC8D3900722C0B /* ListUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F853F824CC8D3900722C0B /* ListUsers.swift */; };
+		D9F853FF24CC906600722C0B /* UserRepositorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F853FE24CC906600722C0B /* UserRepositorySpec.swift */; };
+		D9F8540324CC910100722C0B /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8540224CC910100722C0B /* Networking.swift */; };
+		D9F8540624CC933300722C0B /* Moya+Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8540524CC933300722C0B /* Moya+Networking.swift */; };
+		D9F8540A24CC94A000722C0B /* Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8540924CC94A000722C0B /* Fixture.swift */; };
+		D9F8540F24CC96C900722C0B /* TestSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8540E24CC96C800722C0B /* TestSetup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,7 +84,6 @@
 		D9F8536424CC20C100722C0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D9F8536624CC20C100722C0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9F8536B24CC20C100722C0B /* RandomUserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RandomUserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D9F8536F24CC20C100722C0B /* RandomUserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserTests.swift; sourceTree = "<group>"; };
 		D9F8537124CC20C100722C0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9F8537624CC20C100722C0B /* RandomUserUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RandomUserUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F8537A24CC20C100722C0B /* RandomUserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserUITests.swift; sourceTree = "<group>"; };
@@ -105,6 +113,16 @@
 		D9F853E824CC7DBB00722C0B /* StreetApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetApiResponse.swift; sourceTree = "<group>"; };
 		D9F853EA24CC7E9C00722C0B /* RegisteredApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteredApiResponse.swift; sourceTree = "<group>"; };
 		D9F853EC24CC7F3900722C0B /* PictureApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureApiResponse.swift; sourceTree = "<group>"; };
+		D9F853EF24CC859000722C0B /* CLLocationCoordinate2D+Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Optional.swift"; sourceTree = "<group>"; };
+		D9F853F124CC867C00722C0B /* String+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Date.swift"; sourceTree = "<group>"; };
+		D9F853F424CC890B00722C0B /* ListUserApiToDomainMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserApiToDomainMapper.swift; sourceTree = "<group>"; };
+		D9F853F624CC8BC600722C0B /* Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mappable.swift; sourceTree = "<group>"; };
+		D9F853F824CC8D3900722C0B /* ListUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsers.swift; sourceTree = "<group>"; };
+		D9F853FE24CC906600722C0B /* UserRepositorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositorySpec.swift; sourceTree = "<group>"; };
+		D9F8540224CC910100722C0B /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		D9F8540524CC933300722C0B /* Moya+Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Moya+Networking.swift"; sourceTree = "<group>"; };
+		D9F8540924CC94A000722C0B /* Fixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fixture.swift; sourceTree = "<group>"; };
+		D9F8540E24CC96C800722C0B /* TestSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSetup.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,9 +212,8 @@
 		D9F8536E24CC20C100722C0B /* RandomUserTests */ = {
 			isa = PBXGroup;
 			children = (
-				D9F853B224CC69FB00722C0B /* List */,
+				D9F853FD24CC902C00722C0B /* NetworkLayer */,
 				D9F853AF24CC4C6A00722C0B /* AutoMockable */,
-				D9F8536F24CC20C100722C0B /* RandomUserTests.swift */,
 				D9F8537124CC20C100722C0B /* Info.plist */,
 			);
 			path = RandomUserTests;
@@ -259,6 +276,7 @@
 		D9F8539C24CC3B1F00722C0B /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				D9F8540424CC917900722C0B /* Application */,
 				D9F853C724CC708E00722C0B /* Domain */,
 				D9F853B624CC6AE000722C0B /* Data */,
 				D9F853BB24CC6D9700722C0B /* Infrasctruture */,
@@ -269,6 +287,7 @@
 		D9F853A024CC4AB300722C0B /* Infrastucture */ = {
 			isa = PBXGroup;
 			children = (
+				D9F853EE24CC857300722C0B /* Extension */,
 				D9F853A124CC4AC200722C0B /* AutoMockable */,
 			);
 			path = Infrastucture;
@@ -290,12 +309,13 @@
 			path = AutoMockable;
 			sourceTree = "<group>";
 		};
-		D9F853B224CC69FB00722C0B /* List */ = {
+		D9F853B224CC69FB00722C0B /* ListUser */ = {
 			isa = PBXGroup;
 			children = (
 				D9F853B324CC6A0100722C0B /* Fixture */,
+				D9F853FE24CC906600722C0B /* UserRepositorySpec.swift */,
 			);
-			path = List;
+			path = ListUser;
 			sourceTree = "<group>";
 		};
 		D9F853B324CC6A0100722C0B /* Fixture */ = {
@@ -335,9 +355,12 @@
 		D9F853BB24CC6D9700722C0B /* Infrasctruture */ = {
 			isa = PBXGroup;
 			children = (
+				D9F8540124CC90ED00722C0B /* Networking */,
 				D9F8539B24CC3AFE00722C0B /* Environment */,
 				D9F853BC24CC6DB000722C0B /* Service.swift */,
 				D9F853BF24CC6E9500722C0B /* Endpoint.swift */,
+				D9F853F624CC8BC600722C0B /* Mappable.swift */,
+				D9F8540524CC933300722C0B /* Moya+Networking.swift */,
 			);
 			path = Infrasctruture;
 			sourceTree = "<group>";
@@ -396,6 +419,7 @@
 			isa = PBXGroup;
 			children = (
 				D9F853D224CC773900722C0B /* User.swift */,
+				D9F853F824CC8D3900722C0B /* ListUsers.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -414,6 +438,7 @@
 			children = (
 				D9F853D824CC77F900722C0B /* UserApiDataSource.swift */,
 				D9F853DA24CC786A00722C0B /* Model */,
+				D9F853F324CC88C700722C0B /* Mapper */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -440,6 +465,72 @@
 				D9F853EC24CC7F3900722C0B /* PictureApiResponse.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		D9F853EE24CC857300722C0B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D9F853EF24CC859000722C0B /* CLLocationCoordinate2D+Optional.swift */,
+				D9F853F124CC867C00722C0B /* String+Date.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		D9F853F324CC88C700722C0B /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				D9F853F424CC890B00722C0B /* ListUserApiToDomainMapper.swift */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		D9F853FD24CC902C00722C0B /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8540C24CC96A900722C0B /* TestSetup */,
+				D9F8540724CC947200722C0B /* Data */,
+				D9F8540824CC947E00722C0B /* Infrastructure */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		D9F8540124CC90ED00722C0B /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8540224CC910100722C0B /* Networking.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		D9F8540424CC917900722C0B /* Application */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		D9F8540724CC947200722C0B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D9F853B224CC69FB00722C0B /* ListUser */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D9F8540824CC947E00722C0B /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8540924CC94A000722C0B /* Fixture.swift */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		D9F8540C24CC96A900722C0B /* TestSetup */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8540E24CC96C800722C0B /* TestSetup.swift */,
+			);
+			path = TestSetup;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -776,15 +867,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9F853F924CC8D3900722C0B /* ListUsers.swift in Sources */,
 				D9F853E024CC7AF000722C0B /* UserApiResponse.swift in Sources */,
 				D9F853D024CC76ED00722C0B /* UserRepository.swift in Sources */,
 				D9F8535924CC20BB00722C0B /* AppDelegate.swift in Sources */,
+				D9F853F524CC890B00722C0B /* ListUserApiToDomainMapper.swift in Sources */,
 				D9F853EB24CC7E9C00722C0B /* RegisteredApiResponse.swift in Sources */,
 				D9F853BD24CC6DB000722C0B /* Service.swift in Sources */,
+				D9F8540624CC933300722C0B /* Moya+Networking.swift in Sources */,
 				D9F853C024CC6E9500722C0B /* Endpoint.swift in Sources */,
+				D9F853F724CC8BC600722C0B /* Mappable.swift in Sources */,
 				D9F853ED24CC7F3900722C0B /* PictureApiResponse.swift in Sources */,
+				D9F853F024CC859000722C0B /* CLLocationCoordinate2D+Optional.swift in Sources */,
 				D9F8539E24CC3B3800722C0B /* Environment.swift in Sources */,
 				D9F853DE24CC799800722C0B /* InfoApiResponse.swift in Sources */,
+				D9F853F224CC867C00722C0B /* String+Date.swift in Sources */,
 				D9F853CD24CC710700722C0B /* ListUsersRequest.swift in Sources */,
 				D9F853DC24CC788800722C0B /* ListUsersApiResponse.swift in Sources */,
 				D9F8538E24CC272C00722C0B /* FakeViewController.swift in Sources */,
@@ -797,6 +894,7 @@
 				D9F853E724CC7D5100722C0B /* CoordinatesApiResponse.swift in Sources */,
 				D9F853D924CC77F900722C0B /* UserApiDataSource.swift in Sources */,
 				D9F8539324CC2AC900722C0B /* SceneDelegate.swift in Sources */,
+				D9F8540324CC910100722C0B /* Networking.swift in Sources */,
 				D9F853E524CC7C3F00722C0B /* LocationApiResponse.swift in Sources */,
 				D9F853E324CC7B5E00722C0B /* UserNameApiResponse.swift in Sources */,
 			);
@@ -806,8 +904,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9F8537024CC20C100722C0B /* RandomUserTests.swift in Sources */,
+				D9F853FF24CC906600722C0B /* UserRepositorySpec.swift in Sources */,
 				D9F853B124CC4C6A00722C0B /* AutoMockable.generated.swift in Sources */,
+				D9F8540A24CC94A000722C0B /* Fixture.swift in Sources */,
+				D9F8540F24CC96C900722C0B /* TestSetup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

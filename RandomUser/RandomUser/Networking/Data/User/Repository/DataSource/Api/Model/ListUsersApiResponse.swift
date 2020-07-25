@@ -1,10 +1,9 @@
 struct ListUsersApiResponse: Codable {
-  let results: [String]?
+  let results: [UserApiResponse]?
   let info: InfoApiResponse?
   
   enum CodingKeys: String, CodingKey {
-    case results = "results"
-    case info = "info"
+    case results
+    case info
   }
 }
-

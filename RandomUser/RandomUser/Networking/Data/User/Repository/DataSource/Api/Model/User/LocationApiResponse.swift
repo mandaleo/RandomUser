@@ -5,9 +5,9 @@ struct LocationApiResponse: Codable {
   let coordinates: CoordinatesApiResponse?
   
   enum CodingKeys: String, CodingKey {
-    case street = "street"
-    case city = "city"
-    case state = "state"
-    case coordinates = "coordinates"
+    case street
+    case city
+    case state
+    case coordinates
   }
 }

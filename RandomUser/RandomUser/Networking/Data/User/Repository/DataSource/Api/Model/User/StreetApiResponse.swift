@@ -3,7 +3,7 @@ struct StreetApiResponse: Codable {
   let name: String?
   
   enum CodingKeys: String, CodingKey {
-    case number = "number"
-    case name = "name"
+    case number
+    case name
   }
 }

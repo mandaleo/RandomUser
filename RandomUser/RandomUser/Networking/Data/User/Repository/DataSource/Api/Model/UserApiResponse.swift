@@ -8,12 +8,12 @@ struct UserApiResponse: Codable {
   let picture: PictureApiResponse?
   
   enum CodingKeys: String, CodingKey {
-    case gender = "gender"
-    case name = "name"
-    case location = "location"
-    case email = "email"
-    case registered = "registered"
-    case phone = "phone"
-    case picture = "picture"
+    case gender
+    case name
+    case location
+    case email
+    case registered
+    case phone
+    case picture
   }
 }

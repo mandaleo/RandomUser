@@ -1,5 +1,5 @@
 import RxSwift
 
 protocol UserDataSource {
-  func list(request: ListUsersRequest) -> Single<(users: [User], page: Int)>
+  func list(request: ListUsersRequest) -> Single<ListUsers>
 }
