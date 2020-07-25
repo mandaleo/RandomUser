@@ -292,7 +292,6 @@
 			isa = PBXGroup;
 			children = (
 				D9F853B824CC6B1900722C0B /* Service */,
-				D9F853C424CC6F5700722C0B /* Endpoint */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -301,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				D9F853B924CC6B5200722C0B /* UserService.swift */,
+				D9F853C424CC6F5700722C0B /* Endpoint */,
 			);
 			path = Service;
 			sourceTree = "<group>";
