@@ -27,6 +27,19 @@
 		D9F853C024CC6E9500722C0B /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F853BF24CC6E9500722C0B /* Endpoint.swift */; };
 		D9F853C624CC6F7500722C0B /* ListUsersEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F853C524CC6F7500722C0B /* ListUsersEndpoint.swift */; };
 		D9F853CD24CC710700722C0B /* ListUsersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F853CC24CC710700722C0B /* ListUsersRequest.swift */; };
+		D9F853D024CC76ED00722C0B /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F853CF24CC76ED00722C0B /* UserRepository.swift */; };
+		D9F853D324CC773900722C0B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F853D224CC773900722C0B /* User.swift */; };
+		D9F853D624CC777100722C0B /* UserDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F853D524CC777100722C0B /* UserDataSource.swift */; };
+		D9F853D924CC77F900722C0B /* UserApiDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F853D824CC77F900722C0B /* UserApiDataSource.swift */; };
+		D9F853DC24CC788800722C0B /* ListUsersApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F853DB24CC788800722C0B /* ListUsersApiResponse.swift */; };
+		D9F853DE24CC799800722C0B /* InfoApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F853DD24CC799800722C0B /* InfoApiResponse.swift */; };
+		D9F853E024CC7AF000722C0B /* UserApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F853DF24CC7AF000722C0B /* UserApiResponse.swift */; };
+		D9F853E324CC7B5E00722C0B /* UserNameApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F853E224CC7B5E00722C0B /* UserNameApiResponse.swift */; };
+		D9F853E524CC7C3F00722C0B /* LocationApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F853E424CC7C3F00722C0B /* LocationApiResponse.swift */; };
+		D9F853E724CC7D5100722C0B /* CoordinatesApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F853E624CC7D5100722C0B /* CoordinatesApiResponse.swift */; };
+		D9F853E924CC7DBB00722C0B /* StreetApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F853E824CC7DBB00722C0B /* StreetApiResponse.swift */; };
+		D9F853EB24CC7E9C00722C0B /* RegisteredApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F853EA24CC7E9C00722C0B /* RegisteredApiResponse.swift */; };
+		D9F853ED24CC7F3900722C0B /* PictureApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F853EC24CC7F3900722C0B /* PictureApiResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +92,19 @@
 		D9F853BF24CC6E9500722C0B /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		D9F853C524CC6F7500722C0B /* ListUsersEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersEndpoint.swift; sourceTree = "<group>"; };
 		D9F853CC24CC710700722C0B /* ListUsersRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersRequest.swift; sourceTree = "<group>"; };
+		D9F853CF24CC76ED00722C0B /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		D9F853D224CC773900722C0B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D9F853D524CC777100722C0B /* UserDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataSource.swift; sourceTree = "<group>"; };
+		D9F853D824CC77F900722C0B /* UserApiDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiDataSource.swift; sourceTree = "<group>"; };
+		D9F853DB24CC788800722C0B /* ListUsersApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersApiResponse.swift; sourceTree = "<group>"; };
+		D9F853DD24CC799800722C0B /* InfoApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoApiResponse.swift; sourceTree = "<group>"; };
+		D9F853DF24CC7AF000722C0B /* UserApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiResponse.swift; sourceTree = "<group>"; };
+		D9F853E224CC7B5E00722C0B /* UserNameApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameApiResponse.swift; sourceTree = "<group>"; };
+		D9F853E424CC7C3F00722C0B /* LocationApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationApiResponse.swift; sourceTree = "<group>"; };
+		D9F853E624CC7D5100722C0B /* CoordinatesApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatesApiResponse.swift; sourceTree = "<group>"; };
+		D9F853E824CC7DBB00722C0B /* StreetApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetApiResponse.swift; sourceTree = "<group>"; };
+		D9F853EA24CC7E9C00722C0B /* RegisteredApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteredApiResponse.swift; sourceTree = "<group>"; };
+		D9F853EC24CC7F3900722C0B /* PictureApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureApiResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,6 +317,7 @@
 		D9F853B724CC6B0100722C0B /* User */ = {
 			isa = PBXGroup;
 			children = (
+				D9F853CE24CC76A800722C0B /* Repository */,
 				D9F853B824CC6B1900722C0B /* Service */,
 			);
 			path = User;
@@ -343,6 +370,7 @@
 			isa = PBXGroup;
 			children = (
 				D9F853CB24CC70FC00722C0B /* Request */,
+				D9F853D124CC771F00722C0B /* Entity */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -353,6 +381,65 @@
 				D9F853CC24CC710700722C0B /* ListUsersRequest.swift */,
 			);
 			path = Request;
+			sourceTree = "<group>";
+		};
+		D9F853CE24CC76A800722C0B /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				D9F853CF24CC76ED00722C0B /* UserRepository.swift */,
+				D9F853D424CC775800722C0B /* DataSource */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		D9F853D124CC771F00722C0B /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				D9F853D224CC773900722C0B /* User.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		D9F853D424CC775800722C0B /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				D9F853D524CC777100722C0B /* UserDataSource.swift */,
+				D9F853D724CC77DF00722C0B /* Api */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		D9F853D724CC77DF00722C0B /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				D9F853D824CC77F900722C0B /* UserApiDataSource.swift */,
+				D9F853DA24CC786A00722C0B /* Model */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		D9F853DA24CC786A00722C0B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D9F853DB24CC788800722C0B /* ListUsersApiResponse.swift */,
+				D9F853DF24CC7AF000722C0B /* UserApiResponse.swift */,
+				D9F853E124CC7AFE00722C0B /* User */,
+				D9F853DD24CC799800722C0B /* InfoApiResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D9F853E124CC7AFE00722C0B /* User */ = {
+			isa = PBXGroup;
+			children = (
+				D9F853E224CC7B5E00722C0B /* UserNameApiResponse.swift */,
+				D9F853E424CC7C3F00722C0B /* LocationApiResponse.swift */,
+				D9F853E624CC7D5100722C0B /* CoordinatesApiResponse.swift */,
+				D9F853E824CC7DBB00722C0B /* StreetApiResponse.swift */,
+				D9F853EA24CC7E9C00722C0B /* RegisteredApiResponse.swift */,
+				D9F853EC24CC7F3900722C0B /* PictureApiResponse.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -689,16 +776,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9F853E024CC7AF000722C0B /* UserApiResponse.swift in Sources */,
+				D9F853D024CC76ED00722C0B /* UserRepository.swift in Sources */,
 				D9F8535924CC20BB00722C0B /* AppDelegate.swift in Sources */,
+				D9F853EB24CC7E9C00722C0B /* RegisteredApiResponse.swift in Sources */,
 				D9F853BD24CC6DB000722C0B /* Service.swift in Sources */,
 				D9F853C024CC6E9500722C0B /* Endpoint.swift in Sources */,
+				D9F853ED24CC7F3900722C0B /* PictureApiResponse.swift in Sources */,
 				D9F8539E24CC3B3800722C0B /* Environment.swift in Sources */,
+				D9F853DE24CC799800722C0B /* InfoApiResponse.swift in Sources */,
 				D9F853CD24CC710700722C0B /* ListUsersRequest.swift in Sources */,
+				D9F853DC24CC788800722C0B /* ListUsersApiResponse.swift in Sources */,
 				D9F8538E24CC272C00722C0B /* FakeViewController.swift in Sources */,
 				D9F853A324CC4ACE00722C0B /* AutoMockable.swift in Sources */,
+				D9F853D324CC773900722C0B /* User.swift in Sources */,
 				D9F853BA24CC6B5200722C0B /* UserService.swift in Sources */,
+				D9F853D624CC777100722C0B /* UserDataSource.swift in Sources */,
+				D9F853E924CC7DBB00722C0B /* StreetApiResponse.swift in Sources */,
 				D9F853C624CC6F7500722C0B /* ListUsersEndpoint.swift in Sources */,
+				D9F853E724CC7D5100722C0B /* CoordinatesApiResponse.swift in Sources */,
+				D9F853D924CC77F900722C0B /* UserApiDataSource.swift in Sources */,
 				D9F8539324CC2AC900722C0B /* SceneDelegate.swift in Sources */,
+				D9F853E524CC7C3F00722C0B /* LocationApiResponse.swift in Sources */,
+				D9F853E324CC7B5E00722C0B /* UserNameApiResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
