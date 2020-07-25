@@ -1,0 +1,30 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '13.0'
+inhibit_all_warnings!
+
+target 'RandomUser' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  pod 'Kingfisher'
+  pod 'Sourcery'
+  pod 'RxSwift'
+  pod 'Moya'
+  pod 'Moya/RxSwift'
+  pod 'Moya/ReactiveSwift'
+
+  # Pods for RandomUser
+
+  target 'RandomUserTests' do
+    inherit! :search_paths
+    # Pods for testing
+    pod 'RxBlocking', '5.0'
+    pod 'RxTest',     '5.0'
+    pod 'OHHTTPStubs/Swift'
+  end
+
+  target 'RandomUserUITests' do
+    # Pods for testing
+  end
+
+end

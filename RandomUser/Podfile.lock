@@ -1,0 +1,73 @@
+PODS:
+  - Alamofire (5.2.2)
+  - Kingfisher (5.14.1):
+    - Kingfisher/Core (= 5.14.1)
+  - Kingfisher/Core (5.14.1)
+  - Moya (14.0.0):
+    - Moya/Core (= 14.0.0)
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
+  - Moya/ReactiveSwift (14.0.0):
+    - Moya/Core
+    - ReactiveSwift (~> 6.0)
+  - Moya/RxSwift (14.0.0):
+    - Moya/Core
+    - RxSwift (~> 5.0)
+  - OHHTTPStubs/Core (9.0.0)
+  - OHHTTPStubs/Default (9.0.0):
+    - OHHTTPStubs/Core
+    - OHHTTPStubs/JSON
+    - OHHTTPStubs/NSURLSession
+    - OHHTTPStubs/OHPathHelpers
+  - OHHTTPStubs/JSON (9.0.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/NSURLSession (9.0.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/OHPathHelpers (9.0.0)
+  - OHHTTPStubs/Swift (9.0.0):
+    - OHHTTPStubs/Default
+  - ReactiveSwift (6.3.0)
+  - RxBlocking (5.0.0):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.1)
+  - RxTest (5.0.0):
+    - RxSwift (~> 5)
+  - Sourcery (0.18.0)
+
+DEPENDENCIES:
+  - Kingfisher
+  - Moya
+  - Moya/ReactiveSwift
+  - Moya/RxSwift
+  - OHHTTPStubs/Swift
+  - RxBlocking (= 5.0)
+  - RxSwift
+  - RxTest (= 5.0)
+  - Sourcery
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Kingfisher
+    - Moya
+    - OHHTTPStubs
+    - ReactiveSwift
+    - RxBlocking
+    - RxSwift
+    - RxTest
+    - Sourcery
+
+SPEC CHECKSUMS:
+  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  Kingfisher: 8050bc6f7f68cbf3908bd04df7ccbac188f6d6d6
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  OHHTTPStubs: cb29d2a9d09a828ecb93349a2b0c64f99e0db89f
+  ReactiveSwift: 7937f26ec18d555e2a99352bd0a8b2817d1f042d
+  RxBlocking: c67185d26498ea3cbe3e121917c3c16739e43123
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  RxTest: 4349afe98f564e0a9bc19063368904622d17d49a
+  Sourcery: e0e8658a1ce6d9f475156ad3ffce4c68f1261b3e
+
+PODFILE CHECKSUM: 7a982b2412043ee611de7ac221c5250c2026888f
+
+COCOAPODS: 1.8.4
