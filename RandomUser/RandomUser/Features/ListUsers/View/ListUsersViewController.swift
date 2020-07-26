@@ -13,8 +13,9 @@ final class ListUsersViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    view.backgroundColor = .white
     presenter?.didLoad()
-    self.view.backgroundColor = .yellow
+   
   }
 }
 
