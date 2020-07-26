@@ -193,4 +193,45 @@ class ListUsersPresenterMock: NSObject, ListUsersPresenter {
 }
 class ListUsersUIMock: NSObject, ListUsersUI {
 
+    //MARK: - setupUI
+
+    private(set) var setupUIWithCallsCount = 0
+    var setupUIWithCalled: Bool {
+        return setupUIWithCallsCount > 0
+    }
+    private(set) var setupUIWithReceivedUsers: [User]?
+    private(set) var setupUIWithReceivedInvocations: [[User]] = []
+    var setupUIWithClosure: (([User]) -> Void)?
+
+    func setupUI(with users: [User]) {
+        setupUIWithCallsCount += 1
+        setupUIWithReceivedUsers = users
+        setupUIWithReceivedInvocations.append(users)
+        setupUIWithClosure?(users)
+    }
+
+}
+class ListUsersViewMock: NSObject, ListUsersView {
+    var delegate: ListsUsersViewDelegate?
+
+    //MARK: - setup
+
+    private(set) var setupWithCallsCount = 0
+    var setupWithCalled: Bool {
+        return setupWithCallsCount > 0
+    }
+    private(set) var setupWithReceivedUsers: [User]?
+    private(set) var setupWithReceivedInvocations: [[User]] = []
+    var setupWithClosure: (([User]) -> Void)?
+
+    func setup(with users: [User]) {
+        setupWithCallsCount += 1
+        setupWithReceivedUsers = users
+        setupWithReceivedInvocations.append(users)
+        setupWithClosure?(users)
+    }
+
+}
+class ListsUsersViewDelegateMock: NSObject, ListsUsersViewDelegate {
+
 }

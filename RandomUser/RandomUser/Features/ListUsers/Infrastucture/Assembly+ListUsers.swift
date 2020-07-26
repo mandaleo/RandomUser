@@ -13,7 +13,7 @@ extension Assembly: ListUsersProvider {
                                        navigator: navigator)
     interactor.delegate = presenter
     presenter.ui = viewController
-    // TODO: - Assign view
+    viewController.listUsersView = listUsersView
     viewController.presenter = presenter
     return viewController
   }
@@ -32,5 +32,9 @@ extension Assembly: ListUsersProvider {
     return DefaultListUsersPresenter(interactor: interactor,
                                      navigator: navigator)
     
+  }
+  
+  private var listUsersView: ListUsersView {
+    return DefaultListUsersView()
   }
 }

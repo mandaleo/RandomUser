@@ -13,7 +13,9 @@ final class ListUsersDataSource: NSObject, UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let cell = tableView.dequeueReusableCell(withIdentifier: ListUserCell.cellIdentifier) as? ListUserCell else { fatalError("Maybe wrong cellIdentifier???") }
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: ListUserCell.cellIdentifier) as? ListUserCell else {
+      fatalError("Maybe wrong cellIdentifier???")
+    }
     guard let item = getItem(by: indexPath.row) else { fatalError("Index not correct") }
     cell.setup(with: ListUsersCellViewModel(user: item))
     return cell
@@ -22,5 +24,12 @@ final class ListUsersDataSource: NSObject, UITableViewDataSource {
   private func getItem(by index: Int) -> User? {
     guard users.indices.contains(index) else { return nil }
     return users[index]
+  }
+}
+
+// MARK: - UITableViewDataSource
+extension ListUsersDataSource: UITableViewDelegate {
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    fatalError("Not implemented yet")
   }
 }

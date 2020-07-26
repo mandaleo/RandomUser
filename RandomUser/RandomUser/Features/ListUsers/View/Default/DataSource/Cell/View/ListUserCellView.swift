@@ -53,5 +53,8 @@ final class ListUserCellView: UIView {
     verticalStack.addArrangedSubview(emailLabel)
     verticalStack.addArrangedSubview(phoneLabel)
     addSubview(verticalStack)
+    verticalStack.snp.makeConstraints { make in
+      make.edges.equalToSuperview()
+    }
   }
 }

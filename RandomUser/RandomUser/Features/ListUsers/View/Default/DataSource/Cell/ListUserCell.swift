@@ -7,20 +7,9 @@ final class ListUserCell: UITableViewCell {
     return ListUserCellView()
   }()
   
-  init() {
-    super.init(style: .default, reuseIdentifier: ListUserCell.cellIdentifier)
-    setupView()
-    setupConstraints()
-  }
-  
-  required init?(coder: NSCoder) {
-    super.init(coder: coder)
-    setupView()
-    setupConstraints()
-  }
-  
   private func setupView() {
     addSubview(cellView)
+    selectionStyle = .none
   }
   
   private func setupConstraints() {
@@ -30,6 +19,8 @@ final class ListUserCell: UITableViewCell {
   }
   
   func setup(with model: ListUsersCellViewModel) {
+    setupView()
+    setupConstraints()
     cellView.setup(with: model)
   }
 }

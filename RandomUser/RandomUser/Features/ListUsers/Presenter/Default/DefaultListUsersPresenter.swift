@@ -33,6 +33,7 @@ extension DefaultListUsersPresenter: ListUsersInteractorDelegate {
   
   func didLoad(users: [User], page: Int) {
     print("YES!!!!!!!!!!!!!!")
+    ui?.setupUI(with: users)
   }
   
   func didFailLoadingUsers(with error: Error) {
