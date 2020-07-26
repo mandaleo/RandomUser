@@ -13,11 +13,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
   }
   
-  /// This method configure the first view controller of the app and injects its dependencis
-  ///
-  /// - Returns: Return the first View Controller of the app
   func setRootViewController() -> UIViewController {
-    let rootController = FakeViewController()
+    let rootController = randonUser.listUserViewController()
     let navigationVC = UINavigationController(rootViewController: rootController)
     return navigationVC
   }

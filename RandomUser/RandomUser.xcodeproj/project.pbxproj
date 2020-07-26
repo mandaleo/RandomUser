@@ -13,7 +13,6 @@
 		D9F8535924CC20BB00722C0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8535824CC20BB00722C0B /* AppDelegate.swift */; };
 		D9F8536224CC20C100722C0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9F8536124CC20C100722C0B /* Assets.xcassets */; };
 		D9F8537B24CC20C100722C0B /* RandomUserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8537A24CC20C100722C0B /* RandomUserUITests.swift */; };
-		D9F8538E24CC272C00722C0B /* FakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8538D24CC272C00722C0B /* FakeViewController.swift */; };
 		D9F8539124CC2A4B00722C0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9F8536324CC20C100722C0B /* LaunchScreen.storyboard */; };
 		D9F8539324CC2AC900722C0B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8539224CC2AC800722C0B /* SceneDelegate.swift */; };
 		D9F8539824CC37E600722C0B /* Environment.plist in Resources */ = {isa = PBXBuildFile; fileRef = D9F8539724CC37E600722C0B /* Environment.plist */; };
@@ -54,6 +53,8 @@
 		D9F8541B24CDB03400722C0B /* Networking+UseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8541A24CDB03400722C0B /* Networking+UseCases.swift */; };
 		D9F8541F24CDB0E600722C0B /* ListUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8541E24CDB0E600722C0B /* ListUserService.swift */; };
 		D9F8542224CDB30500722C0B /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8542124CDB30500722C0B /* Assembly.swift */; };
+		D9F8542A24CDB8F600722C0B /* Assembly+ListUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8542924CDB8F600722C0B /* Assembly+ListUsers.swift */; };
+		D9F8542C24CDB96F00722C0B /* ListUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8542B24CDB96F00722C0B /* ListUsersViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,7 +94,6 @@
 		D9F8537624CC20C100722C0B /* RandomUserUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RandomUserUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F8537A24CC20C100722C0B /* RandomUserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserUITests.swift; sourceTree = "<group>"; };
 		D9F8537C24CC20C100722C0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D9F8538D24CC272C00722C0B /* FakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeViewController.swift; sourceTree = "<group>"; };
 		D9F8539224CC2AC800722C0B /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D9F8539724CC37E600722C0B /* Environment.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Environment.plist; sourceTree = "<group>"; };
 		D9F8539D24CC3B3800722C0B /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
@@ -133,6 +133,8 @@
 		D9F8541A24CDB03400722C0B /* Networking+UseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Networking+UseCases.swift"; sourceTree = "<group>"; };
 		D9F8541E24CDB0E600722C0B /* ListUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserService.swift; sourceTree = "<group>"; };
 		D9F8542124CDB30500722C0B /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
+		D9F8542924CDB8F600722C0B /* Assembly+ListUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Assembly+ListUsers.swift"; sourceTree = "<group>"; };
+		D9F8542B24CDB96F00722C0B /* ListUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,17 +264,9 @@
 		D9F8538B24CC268A00722C0B /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				D9F8538C24CC272300722C0B /* Fake */,
+				D9F8542324CDB86600722C0B /* ListUsers */,
 			);
 			path = Features;
-			sourceTree = "<group>";
-		};
-		D9F8538C24CC272300722C0B /* Fake */ = {
-			isa = PBXGroup;
-			children = (
-				D9F8538D24CC272C00722C0B /* FakeViewController.swift */,
-			);
-			path = Fake;
 			sourceTree = "<group>";
 		};
 		D9F8539B24CC3AFE00722C0B /* Environment */ = {
@@ -610,6 +604,55 @@
 				D9F8542124CDB30500722C0B /* Assembly.swift */,
 			);
 			path = Assembly;
+			sourceTree = "<group>";
+		};
+		D9F8542324CDB86600722C0B /* ListUsers */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8542824CDB8BF00722C0B /* View */,
+				D9F8542724CDB8AE00722C0B /* Presenter */,
+				D9F8542624CDB88E00722C0B /* Interactor */,
+				D9F8542524CDB88400722C0B /* Navigator */,
+				D9F8542424CDB87700722C0B /* Infrastucture */,
+			);
+			path = ListUsers;
+			sourceTree = "<group>";
+		};
+		D9F8542424CDB87700722C0B /* Infrastucture */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8542924CDB8F600722C0B /* Assembly+ListUsers.swift */,
+			);
+			path = Infrastucture;
+			sourceTree = "<group>";
+		};
+		D9F8542524CDB88400722C0B /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Navigator;
+			sourceTree = "<group>";
+		};
+		D9F8542624CDB88E00722C0B /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		D9F8542724CDB8AE00722C0B /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D9F8542824CDB8BF00722C0B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8542B24CDB96F00722C0B /* ListUsersViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -955,6 +998,7 @@
 				D9F853EB24CC7E9C00722C0B /* RegisteredApiResponse.swift in Sources */,
 				D9F8541B24CDB03400722C0B /* Networking+UseCases.swift in Sources */,
 				D9F853BD24CC6DB000722C0B /* Service.swift in Sources */,
+				D9F8542C24CDB96F00722C0B /* ListUsersViewController.swift in Sources */,
 				D9F8540624CC933300722C0B /* Moya+Networking.swift in Sources */,
 				D9F853C024CC6E9500722C0B /* Endpoint.swift in Sources */,
 				D9F853F724CC8BC600722C0B /* Mappable.swift in Sources */,
@@ -967,13 +1011,13 @@
 				D9F853CD24CC710700722C0B /* ListUsersRequest.swift in Sources */,
 				D9F853DC24CC788800722C0B /* ListUsersApiResponse.swift in Sources */,
 				D9F8541F24CDB0E600722C0B /* ListUserService.swift in Sources */,
-				D9F8538E24CC272C00722C0B /* FakeViewController.swift in Sources */,
 				D9F853A324CC4ACE00722C0B /* AutoMockable.swift in Sources */,
 				D9F853D324CC773900722C0B /* User.swift in Sources */,
 				D9F853BA24CC6B5200722C0B /* UserService.swift in Sources */,
 				D9F853D624CC777100722C0B /* UserDataSource.swift in Sources */,
 				D9F853E924CC7DBB00722C0B /* StreetApiResponse.swift in Sources */,
 				D9F853C624CC6F7500722C0B /* ListUsersEndpoint.swift in Sources */,
+				D9F8542A24CDB8F600722C0B /* Assembly+ListUsers.swift in Sources */,
 				D9F853E724CC7D5100722C0B /* CoordinatesApiResponse.swift in Sources */,
 				D9F853D924CC77F900722C0B /* UserApiDataSource.swift in Sources */,
 				D9F8539324CC2AC900722C0B /* SceneDelegate.swift in Sources */,
