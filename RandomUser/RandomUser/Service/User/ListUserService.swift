@@ -24,7 +24,7 @@ class DefaultListUserService: ListUserService {
     let request = ListUsersRequest(page: page, numberOfItems: numberOfItems, seed: seed)
     listUsers.execute(request: request).subscribe(onSuccess: { [weak self] listUsers in
       self?.delegate?.load(users: listUsers.users, page: listUsers.page)
-    }, onError:  { [weak self] error in
+    }, onError: { [weak self] error in
       self?.delegate?.didFailLoadingUsers(with: error)
       }).disposed(by: bag)
   }
