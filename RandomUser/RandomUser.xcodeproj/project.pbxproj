@@ -63,6 +63,11 @@
 		D9F8543A24CDBD8D00722C0B /* DefaultListUsersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8543924CDBD8D00722C0B /* DefaultListUsersPresenter.swift */; };
 		D9F8543C24CDBDCC00722C0B /* ListUsersNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8543B24CDBDCC00722C0B /* ListUsersNavigator.swift */; };
 		D9F8543F24CDBDF900722C0B /* DefaultListUsersNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8543E24CDBDF900722C0B /* DefaultListUsersNavigator.swift */; };
+		D9F8544124CDD05300722C0B /* ListUsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8544024CDD05300722C0B /* ListUsersView.swift */; };
+		D9F8544324CDD06500722C0B /* ListsUsersViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8544224CDD06500722C0B /* ListsUsersViewDelegate.swift */; };
+		D9F8544624CDD17200722C0B /* ListUsersDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8544524CDD17200722C0B /* ListUsersDataSource.swift */; };
+		D9F8544924CDD22500722C0B /* DefaultListUsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8544824CDD22500722C0B /* DefaultListUsersView.swift */; };
+		D9F8544C24CDD2BA00722C0B /* UITableView+Identifeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8544B24CDD2BA00722C0B /* UITableView+Identifeable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +156,11 @@
 		D9F8543924CDBD8D00722C0B /* DefaultListUsersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultListUsersPresenter.swift; sourceTree = "<group>"; };
 		D9F8543B24CDBDCC00722C0B /* ListUsersNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersNavigator.swift; sourceTree = "<group>"; };
 		D9F8543E24CDBDF900722C0B /* DefaultListUsersNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultListUsersNavigator.swift; sourceTree = "<group>"; };
+		D9F8544024CDD05300722C0B /* ListUsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersView.swift; sourceTree = "<group>"; };
+		D9F8544224CDD06500722C0B /* ListsUsersViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsUsersViewDelegate.swift; sourceTree = "<group>"; };
+		D9F8544524CDD17200722C0B /* ListUsersDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersDataSource.swift; sourceTree = "<group>"; };
+		D9F8544824CDD22500722C0B /* DefaultListUsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultListUsersView.swift; sourceTree = "<group>"; };
+		D9F8544B24CDD2BA00722C0B /* UITableView+Identifeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Identifeable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -495,6 +505,7 @@
 			children = (
 				D9F853EF24CC859000722C0B /* CLLocationCoordinate2D+Optional.swift */,
 				D9F853F124CC867C00722C0B /* String+Date.swift */,
+				D9F8544B24CDD2BA00722C0B /* UITableView+Identifeable.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -674,7 +685,10 @@
 		D9F8542824CDB8BF00722C0B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D9F8544724CDD21400722C0B /* Default */,
 				D9F8542B24CDB96F00722C0B /* ListUsersViewController.swift */,
+				D9F8544024CDD05300722C0B /* ListUsersView.swift */,
+				D9F8544224CDD06500722C0B /* ListsUsersViewDelegate.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -701,6 +715,31 @@
 				D9F8543E24CDBDF900722C0B /* DefaultListUsersNavigator.swift */,
 			);
 			path = Default;
+			sourceTree = "<group>";
+		};
+		D9F8544424CDD14100722C0B /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8544A24CDD25300722C0B /* New Group */,
+				D9F8544524CDD17200722C0B /* ListUsersDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		D9F8544724CDD21400722C0B /* Default */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8544424CDD14100722C0B /* DataSource */,
+				D9F8544824CDD22500722C0B /* DefaultListUsersView.swift */,
+			);
+			path = Default;
+			sourceTree = "<group>";
+		};
+		D9F8544A24CDD25300722C0B /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1025,22 +1064,26 @@
 				D9F8543F24CDBDF900722C0B /* DefaultListUsersNavigator.swift in Sources */,
 				D9F8535924CC20BB00722C0B /* AppDelegate.swift in Sources */,
 				D9F8541624CDAF9100722C0B /* ListUser.swift in Sources */,
+				D9F8544124CDD05300722C0B /* ListUsersView.swift in Sources */,
 				D9F853F524CC890B00722C0B /* ListUserApiToDomainMapper.swift in Sources */,
 				D9F8543024CDBB3000722C0B /* ListUsersInteractorDelegate.swift in Sources */,
 				D9F853EB24CC7E9C00722C0B /* RegisteredApiResponse.swift in Sources */,
 				D9F8541B24CDB03400722C0B /* Networking+UseCases.swift in Sources */,
 				D9F853BD24CC6DB000722C0B /* Service.swift in Sources */,
 				D9F8543C24CDBDCC00722C0B /* ListUsersNavigator.swift in Sources */,
+				D9F8544324CDD06500722C0B /* ListsUsersViewDelegate.swift in Sources */,
 				D9F8542C24CDB96F00722C0B /* ListUsersViewController.swift in Sources */,
 				D9F8540624CC933300722C0B /* Moya+Networking.swift in Sources */,
 				D9F853C024CC6E9500722C0B /* Endpoint.swift in Sources */,
 				D9F853F724CC8BC600722C0B /* Mappable.swift in Sources */,
+				D9F8544924CDD22500722C0B /* DefaultListUsersView.swift in Sources */,
 				D9F8543724CDBD1E00722C0B /* ListUsersUI.swift in Sources */,
 				D9F8542E24CDBB0B00722C0B /* ListUsersInteractor.swift in Sources */,
 				D9F853ED24CC7F3900722C0B /* PictureApiResponse.swift in Sources */,
 				D9F853F024CC859000722C0B /* CLLocationCoordinate2D+Optional.swift in Sources */,
 				D9F8541324CDACF500722C0B /* ListUsersUseCase.swift in Sources */,
 				D9F8539E24CC3B3800722C0B /* Environment.swift in Sources */,
+				D9F8544624CDD17200722C0B /* ListUsersDataSource.swift in Sources */,
 				D9F853DE24CC799800722C0B /* InfoApiResponse.swift in Sources */,
 				D9F853F224CC867C00722C0B /* String+Date.swift in Sources */,
 				D9F853CD24CC710700722C0B /* ListUsersRequest.swift in Sources */,
@@ -1054,6 +1097,7 @@
 				D9F853D624CC777100722C0B /* UserDataSource.swift in Sources */,
 				D9F853E924CC7DBB00722C0B /* StreetApiResponse.swift in Sources */,
 				D9F853C624CC6F7500722C0B /* ListUsersEndpoint.swift in Sources */,
+				D9F8544C24CDD2BA00722C0B /* UITableView+Identifeable.swift in Sources */,
 				D9F8542A24CDB8F600722C0B /* Assembly+ListUsers.swift in Sources */,
 				D9F853E724CC7D5100722C0B /* CoordinatesApiResponse.swift in Sources */,
 				D9F853D924CC77F900722C0B /* UserApiDataSource.swift in Sources */,

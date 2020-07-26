@@ -1,0 +1,3 @@
+protocol ListsUsersViewDelegate: class, AutoMockable {
+  
+}
