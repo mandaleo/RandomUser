@@ -9,10 +9,18 @@ final class ListUsersDataSource: NSObject, UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    <#code#>
+    return users.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    <#code#>
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: ListUserCell.cellIdentifier) as? ListUserCell else { fatalError("Maybe wrong cellIdentifier???") }
+    guard let item = getItem(by: indexPath.row) else { fatalError("Index not correct") }
+    cell.setup(with: ListUsersCellViewModel(user: item))
+    return cell
+  }
+  
+  private func getItem(by index: Int) -> User? {
+    guard users.indices.contains(index) else { return nil }
+    return users[index]
   }
 }

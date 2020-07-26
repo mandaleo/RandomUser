@@ -68,6 +68,9 @@
 		D9F8544624CDD17200722C0B /* ListUsersDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8544524CDD17200722C0B /* ListUsersDataSource.swift */; };
 		D9F8544924CDD22500722C0B /* DefaultListUsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8544824CDD22500722C0B /* DefaultListUsersView.swift */; };
 		D9F8544C24CDD2BA00722C0B /* UITableView+Identifeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8544B24CDD2BA00722C0B /* UITableView+Identifeable.swift */; };
+		D9F8544E24CDD39E00722C0B /* ListUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8544D24CDD39E00722C0B /* ListUserCell.swift */; };
+		D9F8545024CDD43800722C0B /* ListUsersCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8544F24CDD43800722C0B /* ListUsersCellViewModel.swift */; };
+		D9F8545424CDD53A00722C0B /* ListUserCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8545324CDD53A00722C0B /* ListUserCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +164,9 @@
 		D9F8544524CDD17200722C0B /* ListUsersDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersDataSource.swift; sourceTree = "<group>"; };
 		D9F8544824CDD22500722C0B /* DefaultListUsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultListUsersView.swift; sourceTree = "<group>"; };
 		D9F8544B24CDD2BA00722C0B /* UITableView+Identifeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Identifeable.swift"; sourceTree = "<group>"; };
+		D9F8544D24CDD39E00722C0B /* ListUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserCell.swift; sourceTree = "<group>"; };
+		D9F8544F24CDD43800722C0B /* ListUsersCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersCellViewModel.swift; sourceTree = "<group>"; };
+		D9F8545324CDD53A00722C0B /* ListUserCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -720,7 +726,7 @@
 		D9F8544424CDD14100722C0B /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
-				D9F8544A24CDD25300722C0B /* New Group */,
+				D9F8544A24CDD25300722C0B /* Cell */,
 				D9F8544524CDD17200722C0B /* ListUsersDataSource.swift */,
 			);
 			path = DataSource;
@@ -735,11 +741,30 @@
 			path = Default;
 			sourceTree = "<group>";
 		};
-		D9F8544A24CDD25300722C0B /* New Group */ = {
+		D9F8544A24CDD25300722C0B /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				D9F8545124CDD44100722C0B /* ViewModel */,
+				D9F8545224CDD52A00722C0B /* View */,
+				D9F8544D24CDD39E00722C0B /* ListUserCell.swift */,
 			);
-			path = "New Group";
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		D9F8545124CDD44100722C0B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8544F24CDD43800722C0B /* ListUsersCellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D9F8545224CDD52A00722C0B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8545324CDD53A00722C0B /* ListUserCellView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1080,6 +1105,7 @@
 				D9F8543724CDBD1E00722C0B /* ListUsersUI.swift in Sources */,
 				D9F8542E24CDBB0B00722C0B /* ListUsersInteractor.swift in Sources */,
 				D9F853ED24CC7F3900722C0B /* PictureApiResponse.swift in Sources */,
+				D9F8545424CDD53A00722C0B /* ListUserCellView.swift in Sources */,
 				D9F853F024CC859000722C0B /* CLLocationCoordinate2D+Optional.swift in Sources */,
 				D9F8541324CDACF500722C0B /* ListUsersUseCase.swift in Sources */,
 				D9F8539E24CC3B3800722C0B /* Environment.swift in Sources */,
@@ -1089,6 +1115,7 @@
 				D9F853CD24CC710700722C0B /* ListUsersRequest.swift in Sources */,
 				D9F853DC24CC788800722C0B /* ListUsersApiResponse.swift in Sources */,
 				D9F8541F24CDB0E600722C0B /* ListUserService.swift in Sources */,
+				D9F8545024CDD43800722C0B /* ListUsersCellViewModel.swift in Sources */,
 				D9F853A324CC4ACE00722C0B /* AutoMockable.swift in Sources */,
 				D9F8543A24CDBD8D00722C0B /* DefaultListUsersPresenter.swift in Sources */,
 				D9F853D324CC773900722C0B /* User.swift in Sources */,
@@ -1105,6 +1132,7 @@
 				D9F8542224CDB30500722C0B /* Assembly.swift in Sources */,
 				D9F8540324CC910100722C0B /* Networking.swift in Sources */,
 				D9F853E524CC7C3F00722C0B /* LocationApiResponse.swift in Sources */,
+				D9F8544E24CDD39E00722C0B /* ListUserCell.swift in Sources */,
 				D9F853E324CC7B5E00722C0B /* UserNameApiResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
