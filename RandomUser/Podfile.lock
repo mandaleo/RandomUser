@@ -32,6 +32,7 @@ PODS:
   - RxSwift (5.1.1)
   - RxTest (5.0.0):
     - RxSwift (~> 5)
+  - SnapKit (5.0.1)
   - Sourcery (0.18.0)
 
 DEPENDENCIES:
@@ -43,6 +44,7 @@ DEPENDENCIES:
   - RxBlocking (= 5.0)
   - RxSwift
   - RxTest (= 5.0)
+  - SnapKit
   - Sourcery
 
 SPEC REPOS:
@@ -55,6 +57,7 @@ SPEC REPOS:
     - RxBlocking
     - RxSwift
     - RxTest
+    - SnapKit
     - Sourcery
 
 SPEC CHECKSUMS:
@@ -66,8 +69,9 @@ SPEC CHECKSUMS:
   RxBlocking: c67185d26498ea3cbe3e121917c3c16739e43123
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   RxTest: 4349afe98f564e0a9bc19063368904622d17d49a
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   Sourcery: e0e8658a1ce6d9f475156ad3ffce4c68f1261b3e
 
-PODFILE CHECKSUM: 7a982b2412043ee611de7ac221c5250c2026888f
+PODFILE CHECKSUM: 1816e5e9948f8211e3c2c4572d36be0dec976b7a
 
 COCOAPODS: 1.8.4

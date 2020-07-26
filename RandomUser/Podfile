@@ -12,6 +12,7 @@ target 'RandomUser' do
   pod 'Moya'
   pod 'Moya/RxSwift'
   pod 'Moya/ReactiveSwift'
+  pod 'SnapKit'
 
   # Pods for RandomUser
 
