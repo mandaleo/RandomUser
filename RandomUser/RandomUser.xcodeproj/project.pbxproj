@@ -49,6 +49,9 @@
 		D9F8540624CC933300722C0B /* Moya+Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8540524CC933300722C0B /* Moya+Networking.swift */; };
 		D9F8540A24CC94A000722C0B /* Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8540924CC94A000722C0B /* Fixture.swift */; };
 		D9F8540F24CC96C900722C0B /* TestSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8540E24CC96C800722C0B /* TestSetup.swift */; };
+		D9F8541324CDACF500722C0B /* ListUsersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8541224CDACF500722C0B /* ListUsersUseCase.swift */; };
+		D9F8541624CDAF9100722C0B /* ListUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8541524CDAF9000722C0B /* ListUser.swift */; };
+		D9F8541B24CDB03400722C0B /* Networking+UseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8541A24CDB03400722C0B /* Networking+UseCases.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +126,9 @@
 		D9F8540524CC933300722C0B /* Moya+Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Moya+Networking.swift"; sourceTree = "<group>"; };
 		D9F8540924CC94A000722C0B /* Fixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fixture.swift; sourceTree = "<group>"; };
 		D9F8540E24CC96C800722C0B /* TestSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSetup.swift; sourceTree = "<group>"; };
+		D9F8541224CDACF500722C0B /* ListUsersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersUseCase.swift; sourceTree = "<group>"; };
+		D9F8541524CDAF9000722C0B /* ListUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUser.swift; sourceTree = "<group>"; };
+		D9F8541A24CDB03400722C0B /* Networking+UseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Networking+UseCases.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -376,6 +382,7 @@
 		D9F853C724CC708E00722C0B /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				D9F8541024CDACBE00722C0B /* Use Cases */,
 				D9F853C824CC70BE00722C0B /* Model */,
 			);
 			path = Domain;
@@ -505,6 +512,8 @@
 		D9F8540424CC917900722C0B /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				D9F8541824CDB00600722C0B /* Infrastucture */,
+				D9F8541724CDAFFE00722C0B /* Aplication */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -531,6 +540,46 @@
 				D9F8540E24CC96C800722C0B /* TestSetup.swift */,
 			);
 			path = TestSetup;
+			sourceTree = "<group>";
+		};
+		D9F8541024CDACBE00722C0B /* Use Cases */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8541124CDACDF00722C0B /* User */,
+			);
+			path = "Use Cases";
+			sourceTree = "<group>";
+		};
+		D9F8541124CDACDF00722C0B /* User */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8541224CDACF500722C0B /* ListUsersUseCase.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		D9F8541424CDAF6F00722C0B /* User */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8541524CDAF9000722C0B /* ListUser.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		D9F8541724CDAFFE00722C0B /* Aplication */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8541424CDAF6F00722C0B /* User */,
+			);
+			path = Aplication;
+			sourceTree = "<group>";
+		};
+		D9F8541824CDB00600722C0B /* Infrastucture */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8541A24CDB03400722C0B /* Networking+UseCases.swift */,
+			);
+			path = Infrastucture;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -871,14 +920,17 @@
 				D9F853E024CC7AF000722C0B /* UserApiResponse.swift in Sources */,
 				D9F853D024CC76ED00722C0B /* UserRepository.swift in Sources */,
 				D9F8535924CC20BB00722C0B /* AppDelegate.swift in Sources */,
+				D9F8541624CDAF9100722C0B /* ListUser.swift in Sources */,
 				D9F853F524CC890B00722C0B /* ListUserApiToDomainMapper.swift in Sources */,
 				D9F853EB24CC7E9C00722C0B /* RegisteredApiResponse.swift in Sources */,
+				D9F8541B24CDB03400722C0B /* Networking+UseCases.swift in Sources */,
 				D9F853BD24CC6DB000722C0B /* Service.swift in Sources */,
 				D9F8540624CC933300722C0B /* Moya+Networking.swift in Sources */,
 				D9F853C024CC6E9500722C0B /* Endpoint.swift in Sources */,
 				D9F853F724CC8BC600722C0B /* Mappable.swift in Sources */,
 				D9F853ED24CC7F3900722C0B /* PictureApiResponse.swift in Sources */,
 				D9F853F024CC859000722C0B /* CLLocationCoordinate2D+Optional.swift in Sources */,
+				D9F8541324CDACF500722C0B /* ListUsersUseCase.swift in Sources */,
 				D9F8539E24CC3B3800722C0B /* Environment.swift in Sources */,
 				D9F853DE24CC799800722C0B /* InfoApiResponse.swift in Sources */,
 				D9F853F224CC867C00722C0B /* String+Date.swift in Sources */,
