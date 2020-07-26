@@ -32,7 +32,7 @@ final class UserRepositorySpec: XCTestCase {
 
 extension UserRepositorySpec {
   private func givenUsers() {
-    stub(condition: isHost("mock.mock")) { _ in
+    stub(condition: pathMatches("/api")) { _ in
       return HTTPStubsResponse(jsonObject: Fixture.load("list.users.ok"),
                                statusCode: 200,
                                headers: nil
