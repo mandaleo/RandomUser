@@ -71,6 +71,16 @@
 		D9F8544E24CDD39E00722C0B /* ListUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8544D24CDD39E00722C0B /* ListUserCell.swift */; };
 		D9F8545024CDD43800722C0B /* ListUsersCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8544F24CDD43800722C0B /* ListUsersCellViewModel.swift */; };
 		D9F8545424CDD53A00722C0B /* ListUserCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8545324CDD53A00722C0B /* ListUserCellView.swift */; };
+		D9F8545624CDE72A00722C0B /* UIImageView+Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8545524CDE72A00722C0B /* UIImageView+Round.swift */; };
+		D9F8545824CDEEEC00722C0B /* String+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8545724CDEEEC00722C0B /* String+Image.swift */; };
+		D9F8545D24CDF0C300722C0B /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8545C24CDF0C300722C0B /* UserDetailsViewController.swift */; };
+		D9F8545F24CDF10E00722C0B /* UserDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8545E24CDF10E00722C0B /* UserDetailsView.swift */; };
+		D9F8546224CDF1D700722C0B /* DefaultUserDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8546124CDF1D700722C0B /* DefaultUserDetailsView.swift */; };
+		D9F8546524CDF21C00722C0B /* MapKitLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8546424CDF21C00722C0B /* MapKitLocationView.swift */; };
+		D9F8546924CDFD1900722C0B /* UserDetailsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8546824CDFD1900722C0B /* UserDetailsUI.swift */; };
+		D9F8546B24CDFD2500722C0B /* UserDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8546A24CDFD2500722C0B /* UserDetailsPresenter.swift */; };
+		D9F8546E24CDFD7200722C0B /* DefaultUserDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8546D24CDFD7200722C0B /* DefaultUserDetailsPresenter.swift */; };
+		D9F8547024CDFE7500722C0B /* Assembly+UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8546F24CDFE7500722C0B /* Assembly+UserDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,6 +177,16 @@
 		D9F8544D24CDD39E00722C0B /* ListUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserCell.swift; sourceTree = "<group>"; };
 		D9F8544F24CDD43800722C0B /* ListUsersCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersCellViewModel.swift; sourceTree = "<group>"; };
 		D9F8545324CDD53A00722C0B /* ListUserCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserCellView.swift; sourceTree = "<group>"; };
+		D9F8545524CDE72A00722C0B /* UIImageView+Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Round.swift"; sourceTree = "<group>"; };
+		D9F8545724CDEEEC00722C0B /* String+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Image.swift"; sourceTree = "<group>"; };
+		D9F8545C24CDF0C300722C0B /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
+		D9F8545E24CDF10E00722C0B /* UserDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsView.swift; sourceTree = "<group>"; };
+		D9F8546124CDF1D700722C0B /* DefaultUserDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUserDetailsView.swift; sourceTree = "<group>"; };
+		D9F8546424CDF21C00722C0B /* MapKitLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitLocationView.swift; sourceTree = "<group>"; };
+		D9F8546824CDFD1900722C0B /* UserDetailsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsUI.swift; sourceTree = "<group>"; };
+		D9F8546A24CDFD2500722C0B /* UserDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsPresenter.swift; sourceTree = "<group>"; };
+		D9F8546D24CDFD7200722C0B /* DefaultUserDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUserDetailsPresenter.swift; sourceTree = "<group>"; };
+		D9F8546F24CDFE7500722C0B /* Assembly+UserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Assembly+UserDetails.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -297,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				D9F8542324CDB86600722C0B /* ListUsers */,
+				D9F8545924CDF03000722C0B /* UserDetails */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -512,6 +533,8 @@
 				D9F853EF24CC859000722C0B /* CLLocationCoordinate2D+Optional.swift */,
 				D9F853F124CC867C00722C0B /* String+Date.swift */,
 				D9F8544B24CDD2BA00722C0B /* UITableView+Identifeable.swift */,
+				D9F8545524CDE72A00722C0B /* UIImageView+Round.swift */,
+				D9F8545724CDEEEC00722C0B /* String+Image.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -765,6 +788,69 @@
 				D9F8545324CDD53A00722C0B /* ListUserCellView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		D9F8545924CDF03000722C0B /* UserDetails */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8545B24CDF08900722C0B /* View */,
+				D9F8546724CDFD0700722C0B /* Presenter */,
+				D9F8545A24CDF08000722C0B /* Infrastucture */,
+			);
+			path = UserDetails;
+			sourceTree = "<group>";
+		};
+		D9F8545A24CDF08000722C0B /* Infrastucture */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8546F24CDFE7500722C0B /* Assembly+UserDetails.swift */,
+			);
+			path = Infrastucture;
+			sourceTree = "<group>";
+		};
+		D9F8545B24CDF08900722C0B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8546024CDF1BB00722C0B /* Default */,
+				D9F8545C24CDF0C300722C0B /* UserDetailsViewController.swift */,
+				D9F8545E24CDF10E00722C0B /* UserDetailsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D9F8546024CDF1BB00722C0B /* Default */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8546324CDF20600722C0B /* Subviews */,
+				D9F8546124CDF1D700722C0B /* DefaultUserDetailsView.swift */,
+			);
+			path = Default;
+			sourceTree = "<group>";
+		};
+		D9F8546324CDF20600722C0B /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8546424CDF21C00722C0B /* MapKitLocationView.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		D9F8546724CDFD0700722C0B /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8546C24CDFD6000722C0B /* Default */,
+				D9F8546A24CDFD2500722C0B /* UserDetailsPresenter.swift */,
+				D9F8546824CDFD1900722C0B /* UserDetailsUI.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D9F8546C24CDFD6000722C0B /* Default */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8546D24CDFD7200722C0B /* DefaultUserDetailsPresenter.swift */,
+			);
+			path = Default;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1082,6 +1168,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9F8545F24CDF10E00722C0B /* UserDetailsView.swift in Sources */,
 				D9F853F924CC8D3900722C0B /* ListUsers.swift in Sources */,
 				D9F8543524CDBCE200722C0B /* ListUsersPresenter.swift in Sources */,
 				D9F853E024CC7AF000722C0B /* UserApiResponse.swift in Sources */,
@@ -1091,8 +1178,10 @@
 				D9F8541624CDAF9100722C0B /* ListUser.swift in Sources */,
 				D9F8544124CDD05300722C0B /* ListUsersView.swift in Sources */,
 				D9F853F524CC890B00722C0B /* ListUserApiToDomainMapper.swift in Sources */,
+				D9F8546B24CDFD2500722C0B /* UserDetailsPresenter.swift in Sources */,
 				D9F8543024CDBB3000722C0B /* ListUsersInteractorDelegate.swift in Sources */,
 				D9F853EB24CC7E9C00722C0B /* RegisteredApiResponse.swift in Sources */,
+				D9F8545624CDE72A00722C0B /* UIImageView+Round.swift in Sources */,
 				D9F8541B24CDB03400722C0B /* Networking+UseCases.swift in Sources */,
 				D9F853BD24CC6DB000722C0B /* Service.swift in Sources */,
 				D9F8543C24CDBDCC00722C0B /* ListUsersNavigator.swift in Sources */,
@@ -1102,16 +1191,22 @@
 				D9F853C024CC6E9500722C0B /* Endpoint.swift in Sources */,
 				D9F853F724CC8BC600722C0B /* Mappable.swift in Sources */,
 				D9F8544924CDD22500722C0B /* DefaultListUsersView.swift in Sources */,
+				D9F8546E24CDFD7200722C0B /* DefaultUserDetailsPresenter.swift in Sources */,
+				D9F8545D24CDF0C300722C0B /* UserDetailsViewController.swift in Sources */,
 				D9F8543724CDBD1E00722C0B /* ListUsersUI.swift in Sources */,
 				D9F8542E24CDBB0B00722C0B /* ListUsersInteractor.swift in Sources */,
 				D9F853ED24CC7F3900722C0B /* PictureApiResponse.swift in Sources */,
 				D9F8545424CDD53A00722C0B /* ListUserCellView.swift in Sources */,
 				D9F853F024CC859000722C0B /* CLLocationCoordinate2D+Optional.swift in Sources */,
+				D9F8545824CDEEEC00722C0B /* String+Image.swift in Sources */,
+				D9F8546924CDFD1900722C0B /* UserDetailsUI.swift in Sources */,
 				D9F8541324CDACF500722C0B /* ListUsersUseCase.swift in Sources */,
 				D9F8539E24CC3B3800722C0B /* Environment.swift in Sources */,
 				D9F8544624CDD17200722C0B /* ListUsersDataSource.swift in Sources */,
+				D9F8547024CDFE7500722C0B /* Assembly+UserDetails.swift in Sources */,
 				D9F853DE24CC799800722C0B /* InfoApiResponse.swift in Sources */,
 				D9F853F224CC867C00722C0B /* String+Date.swift in Sources */,
+				D9F8546524CDF21C00722C0B /* MapKitLocationView.swift in Sources */,
 				D9F853CD24CC710700722C0B /* ListUsersRequest.swift in Sources */,
 				D9F853DC24CC788800722C0B /* ListUsersApiResponse.swift in Sources */,
 				D9F8541F24CDB0E600722C0B /* ListUserService.swift in Sources */,
@@ -1126,6 +1221,7 @@
 				D9F853C624CC6F7500722C0B /* ListUsersEndpoint.swift in Sources */,
 				D9F8544C24CDD2BA00722C0B /* UITableView+Identifeable.swift in Sources */,
 				D9F8542A24CDB8F600722C0B /* Assembly+ListUsers.swift in Sources */,
+				D9F8546224CDF1D700722C0B /* DefaultUserDetailsView.swift in Sources */,
 				D9F853E724CC7D5100722C0B /* CoordinatesApiResponse.swift in Sources */,
 				D9F853D924CC77F900722C0B /* UserApiDataSource.swift in Sources */,
 				D9F8539324CC2AC900722C0B /* SceneDelegate.swift in Sources */,

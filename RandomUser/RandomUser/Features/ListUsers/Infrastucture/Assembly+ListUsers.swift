@@ -7,9 +7,8 @@ extension Assembly: ListUsersProvider {
   func listUserViewController() -> ListUsersViewController {
     let viewController = ListUsersViewController()
     let interactor = listUsersInteractor()
-    let navigator = listUsersNavigator()
-    let presenter = listUsersPresenter(from: viewController,
-                                       interactor: interactor,
+    let navigator = listUsersNavigator(from: viewController)
+    let presenter = listUsersPresenter(interactor: interactor,
                                        navigator: navigator)
     interactor.delegate = presenter
     presenter.ui = viewController
@@ -22,12 +21,12 @@ extension Assembly: ListUsersProvider {
     return DefaultListUsersInteractor(listUserService: listUserService)
   }
   
-  private func listUsersNavigator() -> ListUsersNavigator {
-    return DefaultListUsersNavigator()
+  private func listUsersNavigator(from: ListUsersViewController) -> ListUsersNavigator {
+    return DefaultListUsersNavigator(from: from,
+                                     userDetailsProvider: self)
   }
   
-  private func listUsersPresenter(from: ListUsersViewController,
-                                  interactor: ListUsersInteractor,
+  private func listUsersPresenter(interactor: ListUsersInteractor,
                                   navigator: ListUsersNavigator) -> DefaultListUsersPresenter {
     return DefaultListUsersPresenter(interactor: interactor,
                                      navigator: navigator)

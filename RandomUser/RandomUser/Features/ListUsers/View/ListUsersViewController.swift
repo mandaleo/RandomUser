@@ -28,5 +28,7 @@ extension ListUsersViewController: ListUsersUI {
 
 // MARK: - ListsUsersViewDelegate
 extension ListUsersViewController: ListsUsersViewDelegate {
-  
+  func didSelect(user: User) {
+    presenter?.didSelect(user: user)
+  }
 }

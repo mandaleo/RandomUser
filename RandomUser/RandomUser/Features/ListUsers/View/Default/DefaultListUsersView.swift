@@ -24,9 +24,18 @@ final class DefaultListUsersView: UIView, ListUsersView {
   func setup(with users: [User]) {
     setupView()
     setupConstraints()
-    dataSource = ListUsersDataSource(users: users)
+    let dataSource =  ListUsersDataSource(users: users)
+    dataSource.delegate = self
+    self.dataSource = dataSource
     tableView.dataSource = dataSource
-    tableView.delegate = dataSource as? UITableViewDelegate
+    tableView.delegate = dataSource
     tableView.reloadData()
+  }
+}
+
+// MARL: - ListUsersDataSourceDelegate
+extension DefaultListUsersView: ListUsersDataSourceDelegate {
+  func didSelect(user: User) {
+    delegate?.didSelect(user: user)
   }
 }

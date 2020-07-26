@@ -4,8 +4,6 @@ import Kingfisher
 
 private enum ViewLayout {
   static let avatarSize = CGSize(width: 64, height: 64)
-  static let avatarBorderWidth = CGFloat(1)
-  static let avatarBorderColor = UIColor.black.cgColor
   static let spacing = CGFloat(8)
   static let mainFont = UIFont.boldSystemFont(ofSize: 20)
   static let secondaryFont = UIFont.italicSystemFont(ofSize: 16)
@@ -27,6 +25,7 @@ final class ListUserCellView: UIView {
   
   private var avatarImageView: UIImageView = {
     let imageView = UIImageView()
+    imageView.contentMode = .scaleAspectFit
     imageView.rounded(with: ViewLayout.avatarSize.height / 2)
     return imageView
   }()

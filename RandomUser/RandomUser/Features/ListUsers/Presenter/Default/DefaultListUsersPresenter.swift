@@ -21,6 +21,10 @@ final class DefaultListUsersPresenter: ListUsersPresenter {
     loadMoreUsers()
   }
   
+  func didSelect(user: User) {
+    navigator.show(user: user)
+  }
+  
   func loadMoreUsers() {
     interactor.getUsers(with: DefaultValues.seed,
                         numberOfItems: DefaultValues.numberOfITems,
