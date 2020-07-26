@@ -52,6 +52,8 @@
 		D9F8541324CDACF500722C0B /* ListUsersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8541224CDACF500722C0B /* ListUsersUseCase.swift */; };
 		D9F8541624CDAF9100722C0B /* ListUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8541524CDAF9000722C0B /* ListUser.swift */; };
 		D9F8541B24CDB03400722C0B /* Networking+UseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8541A24CDB03400722C0B /* Networking+UseCases.swift */; };
+		D9F8541F24CDB0E600722C0B /* ListUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8541E24CDB0E600722C0B /* ListUserService.swift */; };
+		D9F8542224CDB30500722C0B /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8542124CDB30500722C0B /* Assembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +131,8 @@
 		D9F8541224CDACF500722C0B /* ListUsersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersUseCase.swift; sourceTree = "<group>"; };
 		D9F8541524CDAF9000722C0B /* ListUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUser.swift; sourceTree = "<group>"; };
 		D9F8541A24CDB03400722C0B /* Networking+UseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Networking+UseCases.swift"; sourceTree = "<group>"; };
+		D9F8541E24CDB0E600722C0B /* ListUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserService.swift; sourceTree = "<group>"; };
+		D9F8542124CDB30500722C0B /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				D9F8538A24CC267D00722C0B /* App */,
+				D9F8541C24CDB0A300722C0B /* Service */,
 				D9F8538B24CC268A00722C0B /* Features */,
 				D9F8539C24CC3B1F00722C0B /* Networking */,
 				D9F8538924CC266B00722C0B /* Resources */,
@@ -293,6 +298,7 @@
 		D9F853A024CC4AB300722C0B /* Infrastucture */ = {
 			isa = PBXGroup;
 			children = (
+				D9F8542024CDB2D100722C0B /* Assembly */,
 				D9F853EE24CC857300722C0B /* Extension */,
 				D9F853A124CC4AC200722C0B /* AutoMockable */,
 			);
@@ -580,6 +586,30 @@
 				D9F8541A24CDB03400722C0B /* Networking+UseCases.swift */,
 			);
 			path = Infrastucture;
+			sourceTree = "<group>";
+		};
+		D9F8541C24CDB0A300722C0B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8541D24CDB0B000722C0B /* User */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		D9F8541D24CDB0B000722C0B /* User */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8541E24CDB0E600722C0B /* ListUserService.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		D9F8542024CDB2D100722C0B /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8542124CDB30500722C0B /* Assembly.swift */,
+			);
+			path = Assembly;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -936,6 +966,7 @@
 				D9F853F224CC867C00722C0B /* String+Date.swift in Sources */,
 				D9F853CD24CC710700722C0B /* ListUsersRequest.swift in Sources */,
 				D9F853DC24CC788800722C0B /* ListUsersApiResponse.swift in Sources */,
+				D9F8541F24CDB0E600722C0B /* ListUserService.swift in Sources */,
 				D9F8538E24CC272C00722C0B /* FakeViewController.swift in Sources */,
 				D9F853A324CC4ACE00722C0B /* AutoMockable.swift in Sources */,
 				D9F853D324CC773900722C0B /* User.swift in Sources */,
@@ -946,6 +977,7 @@
 				D9F853E724CC7D5100722C0B /* CoordinatesApiResponse.swift in Sources */,
 				D9F853D924CC77F900722C0B /* UserApiDataSource.swift in Sources */,
 				D9F8539324CC2AC900722C0B /* SceneDelegate.swift in Sources */,
+				D9F8542224CDB30500722C0B /* Assembly.swift in Sources */,
 				D9F8540324CC910100722C0B /* Networking.swift in Sources */,
 				D9F853E524CC7C3F00722C0B /* LocationApiResponse.swift in Sources */,
 				D9F853E324CC7B5E00722C0B /* UserNameApiResponse.swift in Sources */,

@@ -1,5 +1,3 @@
-import Foundation
-
 final class Networking {
   fileprivate static let shared = Networking()
 }
@@ -7,4 +5,3 @@ final class Networking {
 var networking: Networking {
   return Networking.shared
 }
-

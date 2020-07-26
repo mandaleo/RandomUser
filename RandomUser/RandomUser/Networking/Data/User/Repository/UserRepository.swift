@@ -13,6 +13,7 @@ struct UserRepository {
   }
 }
 
+// MARK: - Networking
 extension Networking {
   var userRespository: UserRepository {
     return UserRepository(apiDataSource: userDataSource)
