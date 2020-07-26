@@ -9,7 +9,7 @@ struct ListUsersEndpoint: Endpoint {
   }
   
   var path: String {
-    return ""
+    return "api"
   }
   
   var method: Moya.Method {

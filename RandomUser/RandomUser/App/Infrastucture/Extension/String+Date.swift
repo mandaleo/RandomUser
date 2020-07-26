@@ -1,16 +1,21 @@
 import Foundation
 
 private enum Defaults {
-  static let defaultFormat = "yyyy-MM-dd HH:mm:ss"
-  static let defaultLocale = Locale(identifier: "en_US_POSIX")
+  static let defaultFormat = "dd MMM yyyy HH:mm"
 }
 
 extension String {
-  func toDate(format: String? = nil,
-              locale: Locale? = nil) -> Date? {
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = format ?? Defaults.defaultFormat
-    dateFormatter.locale = locale ??  Defaults.defaultLocale
+  func toDate() -> Date? {
+    let dateFormatter = ISO8601DateFormatter()
+    dateFormatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
     return dateFormatter.date(from: self)
+  }
+}
+
+extension Date {
+  func toString() -> String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = Defaults.defaultFormat
+    return dateFormatter.string(from: self)
   }
 }

@@ -1,0 +1,3 @@
+protocol ListUsersUI: class, AutoMockable {
+  
+}

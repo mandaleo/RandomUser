@@ -1,7 +1,7 @@
 import RxSwift
 
 protocol ListUserServiceDelegate: class, AutoMockable {
-  func load(users: [User], page: Int)
+  func didLoad(users: [User], page: Int)
   func didFailLoadingUsers(with error: Error)
 }
 
@@ -23,7 +23,7 @@ class DefaultListUserService: ListUserService {
   func getUsers(with seed: String, numberOfItems: Int, page: Int) {
     let request = ListUsersRequest(page: page, numberOfItems: numberOfItems, seed: seed)
     listUsers.execute(request: request).subscribe(onSuccess: { [weak self] listUsers in
-      self?.delegate?.load(users: listUsers.users, page: listUsers.page)
+      self?.delegate?.didLoad(users: listUsers.users, page: listUsers.page)
     }, onError: { [weak self] error in
       self?.delegate?.didFailLoadingUsers(with: error)
       }).disposed(by: bag)
@@ -32,7 +32,7 @@ class DefaultListUserService: ListUserService {
 
 // MARK: - Assembly
 extension Assembly {
-  var lisUserService: ListUserService {
+  var listUserService: ListUserService {
     return DefaultListUserService(listUsers: networking.listUsers)
   }
 }

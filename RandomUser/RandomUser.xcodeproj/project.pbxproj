@@ -55,6 +55,14 @@
 		D9F8542224CDB30500722C0B /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8542124CDB30500722C0B /* Assembly.swift */; };
 		D9F8542A24CDB8F600722C0B /* Assembly+ListUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8542924CDB8F600722C0B /* Assembly+ListUsers.swift */; };
 		D9F8542C24CDB96F00722C0B /* ListUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8542B24CDB96F00722C0B /* ListUsersViewController.swift */; };
+		D9F8542E24CDBB0B00722C0B /* ListUsersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8542D24CDBB0B00722C0B /* ListUsersInteractor.swift */; };
+		D9F8543024CDBB3000722C0B /* ListUsersInteractorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8542F24CDBB3000722C0B /* ListUsersInteractorDelegate.swift */; };
+		D9F8543324CDBBC100722C0B /* DefaultListUsersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8543224CDBBC100722C0B /* DefaultListUsersInteractor.swift */; };
+		D9F8543524CDBCE200722C0B /* ListUsersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8543424CDBCE200722C0B /* ListUsersPresenter.swift */; };
+		D9F8543724CDBD1E00722C0B /* ListUsersUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8543624CDBD1E00722C0B /* ListUsersUI.swift */; };
+		D9F8543A24CDBD8D00722C0B /* DefaultListUsersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8543924CDBD8D00722C0B /* DefaultListUsersPresenter.swift */; };
+		D9F8543C24CDBDCC00722C0B /* ListUsersNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8543B24CDBDCC00722C0B /* ListUsersNavigator.swift */; };
+		D9F8543F24CDBDF900722C0B /* DefaultListUsersNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8543E24CDBDF900722C0B /* DefaultListUsersNavigator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +143,14 @@
 		D9F8542124CDB30500722C0B /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
 		D9F8542924CDB8F600722C0B /* Assembly+ListUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Assembly+ListUsers.swift"; sourceTree = "<group>"; };
 		D9F8542B24CDB96F00722C0B /* ListUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersViewController.swift; sourceTree = "<group>"; };
+		D9F8542D24CDBB0B00722C0B /* ListUsersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersInteractor.swift; sourceTree = "<group>"; };
+		D9F8542F24CDBB3000722C0B /* ListUsersInteractorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersInteractorDelegate.swift; sourceTree = "<group>"; };
+		D9F8543224CDBBC100722C0B /* DefaultListUsersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultListUsersInteractor.swift; sourceTree = "<group>"; };
+		D9F8543424CDBCE200722C0B /* ListUsersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersPresenter.swift; sourceTree = "<group>"; };
+		D9F8543624CDBD1E00722C0B /* ListUsersUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersUI.swift; sourceTree = "<group>"; };
+		D9F8543924CDBD8D00722C0B /* DefaultListUsersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultListUsersPresenter.swift; sourceTree = "<group>"; };
+		D9F8543B24CDBDCC00722C0B /* ListUsersNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersNavigator.swift; sourceTree = "<group>"; };
+		D9F8543E24CDBDF900722C0B /* DefaultListUsersNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultListUsersNavigator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -629,6 +645,8 @@
 		D9F8542524CDB88400722C0B /* Navigator */ = {
 			isa = PBXGroup;
 			children = (
+				D9F8543D24CDBDED00722C0B /* Default */,
+				D9F8543B24CDBDCC00722C0B /* ListUsersNavigator.swift */,
 			);
 			path = Navigator;
 			sourceTree = "<group>";
@@ -636,6 +654,9 @@
 		D9F8542624CDB88E00722C0B /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				D9F8543124CDBBAF00722C0B /* Default */,
+				D9F8542D24CDBB0B00722C0B /* ListUsersInteractor.swift */,
+				D9F8542F24CDBB3000722C0B /* ListUsersInteractorDelegate.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -643,6 +664,9 @@
 		D9F8542724CDB8AE00722C0B /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				D9F8543824CDBD7400722C0B /* Default */,
+				D9F8543424CDBCE200722C0B /* ListUsersPresenter.swift */,
+				D9F8543624CDBD1E00722C0B /* ListUsersUI.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -653,6 +677,30 @@
 				D9F8542B24CDB96F00722C0B /* ListUsersViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		D9F8543124CDBBAF00722C0B /* Default */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8543224CDBBC100722C0B /* DefaultListUsersInteractor.swift */,
+			);
+			path = Default;
+			sourceTree = "<group>";
+		};
+		D9F8543824CDBD7400722C0B /* Default */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8543924CDBD8D00722C0B /* DefaultListUsersPresenter.swift */,
+			);
+			path = Default;
+			sourceTree = "<group>";
+		};
+		D9F8543D24CDBDED00722C0B /* Default */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8543E24CDBDF900722C0B /* DefaultListUsersNavigator.swift */,
+			);
+			path = Default;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -668,7 +716,6 @@
 				D9F8535324CC20BB00722C0B /* Resources */,
 				D9F8539424CC312E00722C0B /* Swiftlint */,
 				D9F8539924CC37F300722C0B /* Environment variables */,
-				D9F8539A24CC382E00722C0B /* Reset Environment variables */,
 				4AFE1F3E1094DBDA5BF66F90 /* [CP] Embed Pods Frameworks */,
 				D9F8539F24CC469300722C0B /* Sourcery */,
 			);
@@ -924,24 +971,6 @@
 			shellPath = /bin/sh;
 			shellScript = "FILE=${SRCROOT}/.env.sh\n#FILE=${SRCROOT}/.env.prod.sh\n\nif [ -f $FILE ]; then\n  $FILE\nelse\n  echo \"Environment file does not exist\"\nfi\n";
 		};
-		D9F8539A24CC382E00722C0B /* Reset Environment variables */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Reset Environment variables";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [ -f ${SRCROOT}/.env.sh ] || [ -f ${SRCROOT}/.env.stg.sh] || [ -f ${SRCROOT}/.env.prod.sh ] ; then\n  git checkout ${SRCROOT}/RandomUser/Networking/Infrasctruture/Environment/Environment.plist\nelse\n  echo \"Environment file does not exist\"\nfi\n\n";
-		};
 		D9F8539F24CC469300722C0B /* Sourcery */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -990,18 +1019,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9F853F924CC8D3900722C0B /* ListUsers.swift in Sources */,
+				D9F8543524CDBCE200722C0B /* ListUsersPresenter.swift in Sources */,
 				D9F853E024CC7AF000722C0B /* UserApiResponse.swift in Sources */,
 				D9F853D024CC76ED00722C0B /* UserRepository.swift in Sources */,
+				D9F8543F24CDBDF900722C0B /* DefaultListUsersNavigator.swift in Sources */,
 				D9F8535924CC20BB00722C0B /* AppDelegate.swift in Sources */,
 				D9F8541624CDAF9100722C0B /* ListUser.swift in Sources */,
 				D9F853F524CC890B00722C0B /* ListUserApiToDomainMapper.swift in Sources */,
+				D9F8543024CDBB3000722C0B /* ListUsersInteractorDelegate.swift in Sources */,
 				D9F853EB24CC7E9C00722C0B /* RegisteredApiResponse.swift in Sources */,
 				D9F8541B24CDB03400722C0B /* Networking+UseCases.swift in Sources */,
 				D9F853BD24CC6DB000722C0B /* Service.swift in Sources */,
+				D9F8543C24CDBDCC00722C0B /* ListUsersNavigator.swift in Sources */,
 				D9F8542C24CDB96F00722C0B /* ListUsersViewController.swift in Sources */,
 				D9F8540624CC933300722C0B /* Moya+Networking.swift in Sources */,
 				D9F853C024CC6E9500722C0B /* Endpoint.swift in Sources */,
 				D9F853F724CC8BC600722C0B /* Mappable.swift in Sources */,
+				D9F8543724CDBD1E00722C0B /* ListUsersUI.swift in Sources */,
+				D9F8542E24CDBB0B00722C0B /* ListUsersInteractor.swift in Sources */,
 				D9F853ED24CC7F3900722C0B /* PictureApiResponse.swift in Sources */,
 				D9F853F024CC859000722C0B /* CLLocationCoordinate2D+Optional.swift in Sources */,
 				D9F8541324CDACF500722C0B /* ListUsersUseCase.swift in Sources */,
@@ -1012,7 +1047,9 @@
 				D9F853DC24CC788800722C0B /* ListUsersApiResponse.swift in Sources */,
 				D9F8541F24CDB0E600722C0B /* ListUserService.swift in Sources */,
 				D9F853A324CC4ACE00722C0B /* AutoMockable.swift in Sources */,
+				D9F8543A24CDBD8D00722C0B /* DefaultListUsersPresenter.swift in Sources */,
 				D9F853D324CC773900722C0B /* User.swift in Sources */,
+				D9F8543324CDBBC100722C0B /* DefaultListUsersInteractor.swift in Sources */,
 				D9F853BA24CC6B5200722C0B /* UserService.swift in Sources */,
 				D9F853D624CC777100722C0B /* UserDataSource.swift in Sources */,
 				D9F853E924CC7DBB00722C0B /* StreetApiResponse.swift in Sources */,
