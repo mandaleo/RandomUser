@@ -50,19 +50,15 @@ class ListUserServiceDelegateMock: NSObject, ListUserServiceDelegate {
 
     //MARK: - didLoadUsers
 
-    private(set) var didLoadUsersWithCallsCount = 0
-    var didLoadUsersWithCalled: Bool {
-        return didLoadUsersWithCallsCount > 0
+    private(set) var didLoadUsersCallsCount = 0
+    var didLoadUsersCalled: Bool {
+        return didLoadUsersCallsCount > 0
     }
-    private(set) var didLoadUsersWithReceivedContext: NSManagedObjectContext?
-    private(set) var didLoadUsersWithReceivedInvocations: [NSManagedObjectContext] = []
-    var didLoadUsersWithClosure: ((NSManagedObjectContext) -> Void)?
+    var didLoadUsersClosure: (() -> Void)?
 
-    func didLoadUsers(with context: NSManagedObjectContext) {
-        didLoadUsersWithCallsCount += 1
-        didLoadUsersWithReceivedContext = context
-        didLoadUsersWithReceivedInvocations.append(context)
-        didLoadUsersWithClosure?(context)
+    func didLoadUsers() {
+        didLoadUsersCallsCount += 1
+        didLoadUsersClosure?()
     }
 
     //MARK: - didFailLoadingUsers
@@ -128,19 +124,15 @@ class ListUsersInteractorDelegateMock: NSObject, ListUsersInteractorDelegate {
 
     //MARK: - didLoadUsers
 
-    private(set) var didLoadUsersWithCallsCount = 0
-    var didLoadUsersWithCalled: Bool {
-        return didLoadUsersWithCallsCount > 0
+    private(set) var didLoadUsersCallsCount = 0
+    var didLoadUsersCalled: Bool {
+        return didLoadUsersCallsCount > 0
     }
-    private(set) var didLoadUsersWithReceivedContext: NSManagedObjectContext?
-    private(set) var didLoadUsersWithReceivedInvocations: [NSManagedObjectContext] = []
-    var didLoadUsersWithClosure: ((NSManagedObjectContext) -> Void)?
+    var didLoadUsersClosure: (() -> Void)?
 
-    func didLoadUsers(with context: NSManagedObjectContext) {
-        didLoadUsersWithCallsCount += 1
-        didLoadUsersWithReceivedContext = context
-        didLoadUsersWithReceivedInvocations.append(context)
-        didLoadUsersWithClosure?(context)
+    func didLoadUsers() {
+        didLoadUsersCallsCount += 1
+        didLoadUsersClosure?()
     }
 
     //MARK: - didFailLoadingUsers
@@ -232,19 +224,15 @@ class ListUsersUIMock: NSObject, ListUsersUI {
 
     //MARK: - setupUI
 
-    private(set) var setupUIWithCallsCount = 0
-    var setupUIWithCalled: Bool {
-        return setupUIWithCallsCount > 0
+    private(set) var setupUICallsCount = 0
+    var setupUICalled: Bool {
+        return setupUICallsCount > 0
     }
-    private(set) var setupUIWithReceivedContext: NSManagedObjectContext?
-    private(set) var setupUIWithReceivedInvocations: [NSManagedObjectContext] = []
-    var setupUIWithClosure: ((NSManagedObjectContext) -> Void)?
+    var setupUIClosure: (() -> Void)?
 
-    func setupUI(with context: NSManagedObjectContext) {
-        setupUIWithCallsCount += 1
-        setupUIWithReceivedContext = context
-        setupUIWithReceivedInvocations.append(context)
-        setupUIWithClosure?(context)
+    func setupUI() {
+        setupUICallsCount += 1
+        setupUIClosure?()
     }
 
 }
@@ -253,19 +241,15 @@ class ListUsersViewMock: NSObject, ListUsersView {
 
     //MARK: - setup
 
-    private(set) var setupWithCallsCount = 0
-    var setupWithCalled: Bool {
-        return setupWithCallsCount > 0
+    private(set) var setupCallsCount = 0
+    var setupCalled: Bool {
+        return setupCallsCount > 0
     }
-    private(set) var setupWithReceivedContext: NSManagedObjectContext?
-    private(set) var setupWithReceivedInvocations: [NSManagedObjectContext] = []
-    var setupWithClosure: ((NSManagedObjectContext) -> Void)?
+    var setupClosure: (() -> Void)?
 
-    func setup(with context: NSManagedObjectContext) {
-        setupWithCallsCount += 1
-        setupWithReceivedContext = context
-        setupWithReceivedInvocations.append(context)
-        setupWithClosure?(context)
+    func setup() {
+        setupCallsCount += 1
+        setupClosure?()
     }
 
 }

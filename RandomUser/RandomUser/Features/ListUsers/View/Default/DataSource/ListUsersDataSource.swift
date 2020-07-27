@@ -7,16 +7,19 @@ protocol ListUsersDataSourceDelegate: class, AutoMockable {
 
 final class ListUsersDataSource: NSObject, UITableViewDataSource {
   
-  let fetchedResultsController: NSFetchedResultsController<RUser>
+  private let fetchedResultsController: NSFetchedResultsController<RUser>
+  private let coreDataService: LocalStorageService
   weak var delegate: ListUsersDataSourceDelegate?
   
-  init(context: NSManagedObjectContext) {
+  init(coreDataService: LocalStorageService = randonUser.coreDataService) {
+    self.coreDataService = coreDataService
     let fetchRequest: NSFetchRequest<RUser> = RUser.fetchRequest()
     fetchRequest.fetchBatchSize = 20
     let sortDescriptor = NSSortDescriptor(key: "firstName", ascending: true)
     fetchRequest.sortDescriptors = [sortDescriptor]
     fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
-                                                          managedObjectContext: context, sectionNameKeyPath: nil,
+                                                          managedObjectContext: coreDataService.context,
+                                                          sectionNameKeyPath: nil,
                                                           cacheName: "users")
     do {
       try fetchedResultsController.performFetch()
