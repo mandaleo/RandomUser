@@ -38,4 +38,20 @@ extension DefaultListUsersView: ListUsersDataSourceDelegate {
   func didSelect(user: User) {
     delegate?.didSelect(user: user)
   }
+  
+  func willChangeContent() {
+    tableView.beginUpdates()
+  }
+  
+  func didChangeContent() {
+    tableView.endUpdates()
+  }
+  
+  func insertRow(at indexPath: IndexPath) {
+    tableView.insertRows(at: [indexPath], with: .automatic)
+  }
+  
+  func deleteRow(at indexPath: IndexPath) {
+    tableView.deleteRows(at: [indexPath], with: .automatic)
+  }
 }

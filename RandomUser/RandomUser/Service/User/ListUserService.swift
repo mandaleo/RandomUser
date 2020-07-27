@@ -35,8 +35,8 @@ class DefaultListUserService: ListUserService {
   private func storage(users: [User]) {
     for user in users {
       RUser(user: user, context: localStorageService.context)
-      localStorageService.save()
     }
+    localStorageService.save()
     delegate?.didLoadUsers()
   }
 }

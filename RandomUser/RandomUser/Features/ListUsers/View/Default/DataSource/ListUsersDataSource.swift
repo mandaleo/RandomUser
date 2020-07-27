@@ -3,16 +3,18 @@ import CoreData
 
 protocol ListUsersDataSourceDelegate: class, AutoMockable {
   func didSelect(user: User)
+  func willChangeContent()
+  func didChangeContent()
+  func insertRow(at indexPath: IndexPath)
+  func deleteRow(at indexPath: IndexPath)
 }
 
 final class ListUsersDataSource: NSObject, UITableViewDataSource {
   
-  private let fetchedResultsController: NSFetchedResultsController<RUser>
-  private let coreDataService: LocalStorageService
+  private var fetchedResultsController: NSFetchedResultsController<RUser>
   weak var delegate: ListUsersDataSourceDelegate?
   
-  init(coreDataService: LocalStorageService = randonUser.coreDataService) {
-    self.coreDataService = coreDataService
+  init(coreDataService: LocalStorageService = coreDataService) {
     let fetchRequest: NSFetchRequest<RUser> = RUser.fetchRequest()
     fetchRequest.fetchBatchSize = 20
     let sortDescriptor = NSSortDescriptor(key: "firstName", ascending: true)
@@ -26,6 +28,8 @@ final class ListUsersDataSource: NSObject, UITableViewDataSource {
     } catch {
       fatalError(error.localizedDescription)
     }
+    super.init()
+    fetchedResultsController.delegate = self
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,5 +55,33 @@ extension ListUsersDataSource: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let user = getItem(by: indexPath)
     delegate?.didSelect(user: user)
+  }
+}
+
+// MARK: - NSFetchedResultsControllerDelegate
+extension ListUsersDataSource: NSFetchedResultsControllerDelegate {
+  func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+    delegate?.willChangeContent()
+  }
+  
+  func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
+                  didChange anObject: Any,
+                  at indexPath: IndexPath?,
+                  for type: NSFetchedResultsChangeType,
+                  newIndexPath: IndexPath?) {
+    switch type {
+    case .insert:
+      guard let newIndexPath = newIndexPath else { return }
+      delegate?.insertRow(at: newIndexPath)
+    case .delete:
+      guard let indexPath = indexPath else { return }
+      delegate?.deleteRow(at: indexPath)
+    default:
+      break
+    }
+  }
+  
+  func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+    delegate?.didChangeContent()
   }
 }

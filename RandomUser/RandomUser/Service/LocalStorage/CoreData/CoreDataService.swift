@@ -7,6 +7,7 @@ struct CoreDataService: LocalStorageService {
   init(databaseName: String) {
     let container = NSPersistentContainer(name: databaseName)
     container.loadPersistentStores { ( _, error) in
+      container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
       guard let error = error else { return }
       fatalError("CoreData Error ===>  \(error.localizedDescription)")
     }
@@ -27,8 +28,6 @@ struct CoreDataService: LocalStorageService {
 }
 
 // MARK: - Assembly
-extension Assembly {
-  var coreDataService: LocalStorageService {
-    return CoreDataService(databaseName: "Model")
-  }
-}
+var coreDataService: LocalStorageService = {
+  return CoreDataService(databaseName: "Model")
+}()

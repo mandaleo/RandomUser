@@ -98,6 +98,66 @@ class ListUsersDataSourceDelegateMock: NSObject, ListUsersDataSourceDelegate {
         didSelectUserClosure?(user)
     }
 
+    //MARK: - willChangeContent
+
+    private(set) var willChangeContentCallsCount = 0
+    var willChangeContentCalled: Bool {
+        return willChangeContentCallsCount > 0
+    }
+    var willChangeContentClosure: (() -> Void)?
+
+    func willChangeContent() {
+        willChangeContentCallsCount += 1
+        willChangeContentClosure?()
+    }
+
+    //MARK: - didChangeContent
+
+    private(set) var didChangeContentCallsCount = 0
+    var didChangeContentCalled: Bool {
+        return didChangeContentCallsCount > 0
+    }
+    var didChangeContentClosure: (() -> Void)?
+
+    func didChangeContent() {
+        didChangeContentCallsCount += 1
+        didChangeContentClosure?()
+    }
+
+    //MARK: - insertRow
+
+    private(set) var insertRowAtCallsCount = 0
+    var insertRowAtCalled: Bool {
+        return insertRowAtCallsCount > 0
+    }
+    private(set) var insertRowAtReceivedIndexPath: IndexPath?
+    private(set) var insertRowAtReceivedInvocations: [IndexPath] = []
+    var insertRowAtClosure: ((IndexPath) -> Void)?
+
+    func insertRow(at indexPath: IndexPath) {
+        insertRowAtCallsCount += 1
+        insertRowAtReceivedIndexPath = indexPath
+        insertRowAtReceivedInvocations.append(indexPath)
+        insertRowAtClosure?(indexPath)
+    }
+
+    //MARK: - deleteRow
+
+    private(set) var deleteRowAtCallsCount = 0
+    var deleteRowAtCalled: Bool {
+        return deleteRowAtCallsCount > 0
+    }
+    private(set) var deleteRowAtReceivedIndexPath: IndexPath?
+    private(set) var deleteRowAtReceivedInvocations: [IndexPath] = []
+    var deleteRowAtClosure: ((IndexPath) -> Void)?
+
+    func deleteRow(at indexPath: IndexPath) {
+        deleteRowAtCallsCount += 1
+        deleteRowAtReceivedIndexPath = indexPath
+        deleteRowAtReceivedInvocations.append(indexPath)
+        deleteRowAtClosure?(indexPath)
+    }
+
 }
 class ListUsersInteractorMock: NSObject, ListUsersInteractor {
     var delegate: ListUsersInteractorDelegate?
