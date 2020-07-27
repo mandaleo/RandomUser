@@ -17,7 +17,7 @@ final class DefaultListUsersPresenter: ListUsersPresenter {
   }
   
   func didLoad() {
-    // TODO: - Check this
+    ui?.setupUI()
     loadMoreUsers()
   }
   
@@ -35,9 +35,8 @@ final class DefaultListUsersPresenter: ListUsersPresenter {
 // MARK: - ListUsersInteractorDelegate
 extension DefaultListUsersPresenter: ListUsersInteractorDelegate {
   
-  func didLoad(users: [User], page: Int) {
+  func didLoadUsers() {
     print("YES!!!!!!!!!!!!!!")
-    ui?.setupUI(with: users)
   }
   
   func didFailLoadingUsers(with error: Error) {

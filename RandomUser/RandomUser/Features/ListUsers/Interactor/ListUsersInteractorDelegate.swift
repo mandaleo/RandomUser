@@ -1,4 +1,4 @@
 protocol ListUsersInteractorDelegate: class, AutoMockable {
-  func didLoad(users: [User], page: Int)
+  func didLoadUsers()
   func didFailLoadingUsers(with error: Error)
 }

@@ -3,6 +3,6 @@
 <plist version="1.0">
 <dict>
 	<key>BASE_URL</key>
-	<string></string>
+	<string>http://randomuser.me/</string>
 </dict>
 </plist>

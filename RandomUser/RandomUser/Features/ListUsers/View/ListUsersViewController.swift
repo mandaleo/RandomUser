@@ -21,8 +21,8 @@ final class ListUsersViewController: UIViewController {
 
 // MARK: - ListUsersUI
 extension ListUsersViewController: ListUsersUI {
-  func setupUI(with users: [User]) {
-    listUsersView?.setup(with: users)
+  func setupUI() {
+    listUsersView?.setup()
   }
 }
 

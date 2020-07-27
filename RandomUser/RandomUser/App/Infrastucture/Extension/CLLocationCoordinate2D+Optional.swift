@@ -8,4 +8,10 @@ extension CLLocationCoordinate2D {
     guard let longitude = Double(longitudeStr) else { return nil }
     return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
   }
+  
+  static func coordinatesOrNil(latitude: Double?, longitude: Double?) -> CLLocationCoordinate2D? {
+    guard let latitude = latitude else { return nil }
+    guard let longitude = longitude else { return nil }
+    return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+  }
 }
