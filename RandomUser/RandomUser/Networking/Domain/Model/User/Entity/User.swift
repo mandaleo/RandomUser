@@ -15,6 +15,7 @@ struct User {
   let phone: String
   let thumbnail: URL?
   let image: URL?
+  var isHidden: Bool
   
   var name: String {
     return self.fistName + " " + self.lastName
@@ -34,6 +35,7 @@ struct User {
     phone = apiResponse.phone ?? ""
     thumbnail = URL(string: apiResponse.picture?.thumbnail ?? "")
     image = URL(string: apiResponse.picture?.large ?? "")
+    isHidden = false
   }
   
   init(gender: String?,
@@ -47,7 +49,8 @@ struct User {
        registeredDate: Date?,
        phone: String?,
        thumbnail: URL?,
-       image: URL?) {
+       image: URL?,
+       isHidden: Bool) {
     self.gender = gender ?? ""
     self.fistName = fistName ?? ""
     self.lastName = lastName ?? ""
@@ -60,6 +63,7 @@ struct User {
     self.phone = phone ?? ""
     self.thumbnail = thumbnail
     self.image = image
+    self.isHidden = isHidden
   }
 }
 
@@ -76,7 +80,8 @@ extension User {
                 registeredDate: "2008-06-29T08:34:20.967Z".toDate(),
                 phone: "(700)-675-1814",
                 thumbnail: URL(string: "https://randomuser.me/api/portraits/thumb/women/95.jpg"),
-                image: URL(string: "https://randomuser.me/api/portraits/women/95.jpg"))
+                image: URL(string: "https://randomuser.me/api/portraits/women/95.jpg"),
+                isHidden: false)
   }
   
   static var mock2: User {
@@ -91,6 +96,7 @@ extension User {
                 registeredDate: "1950-04-12T13:08:50.686Z".toDate(),
                 phone: "(811)-087-5515",
                 thumbnail: URL(string: "https://randomuser.me/api/portraits/thumb/men/58.jpg"),
-                image: URL(string: "https://randomuser.me/api/portraits/men/58.jpg"))
+                image: URL(string: "https://randomuser.me/api/portraits/men/58.jpg"),
+                isHidden: false)
   }
 }

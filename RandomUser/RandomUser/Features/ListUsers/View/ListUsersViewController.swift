@@ -55,7 +55,7 @@ extension ListUsersViewController: UISearchBarDelegate {
   }
   
   @objc private func filterList() {
-    print("filtrar")
+    listUsersView?.filter(by: searchBarView.text ?? "")
   }
   
   func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -63,6 +63,8 @@ extension ListUsersViewController: UISearchBarDelegate {
   }
   
   func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+    searchBarView.text = nil
+    listUsersView?.filter(by: ")
     searchBar.resignFirstResponder()
   }
   
