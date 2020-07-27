@@ -861,13 +861,14 @@
 			buildConfigurationList = D9F8537F24CC20C100722C0B /* Build configuration list for PBXNativeTarget "RandomUser" */;
 			buildPhases = (
 				019B2A73D657B5B6494291B9 /* [CP] Check Pods Manifest.lock */,
+				D9F8539924CC37F300722C0B /* Environment variables */,
+				D9F8539F24CC469300722C0B /* Sourcery */,
 				D9F8535124CC20BB00722C0B /* Sources */,
 				D9F8535224CC20BB00722C0B /* Frameworks */,
 				D9F8535324CC20BB00722C0B /* Resources */,
 				D9F8539424CC312E00722C0B /* Swiftlint */,
-				D9F8539924CC37F300722C0B /* Environment variables */,
 				4AFE1F3E1094DBDA5BF66F90 /* [CP] Embed Pods Frameworks */,
-				D9F8539F24CC469300722C0B /* Sourcery */,
+				D9F8547124CF0D7500722C0B /* Reset Environment Variables */,
 			);
 			buildRules = (
 			);
@@ -1138,6 +1139,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "$PODS_ROOT/Sourcery/bin/sourcery --sources ./ --templates ./Templates/Sourcery --output ./RandomUserTests/AutoMockable\n";
+		};
+		D9F8547124CF0D7500722C0B /* Reset Environment Variables */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Reset Environment Variables";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ -f ${SRCROOT}/.env.sh ] || [ -f ${SRCROOT}/.env.stg.sh] || [ -f ${SRCROOT}/.env.prod.sh ] ; then\n  git checkout ${SRCROOT}/RandomUser/Networking/Infrasctruture/Environment/Environment.plist\nelse\n  echo \"Environment file does not exist\"\nfi\n";
 		};
 		E8C8B8CC5D70E36B35275F2B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
