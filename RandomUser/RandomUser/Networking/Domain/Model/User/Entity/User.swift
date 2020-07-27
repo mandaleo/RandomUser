@@ -36,28 +36,28 @@ struct User {
     image = URL(string: apiResponse.picture?.large ?? "")
   }
   
-  fileprivate init(gender: String,
-                   fistName: String,
-                   lastName: String,
-                   street: String,
-                   city: String,
-                   state: String,
-                   coordinates: CLLocationCoordinate2D?,
-                   email: String,
-                   registeredDate: Date?,
-                   phone: String,
-                   thumbnail: URL?,
-                   image: URL?) {
-    self.gender = gender
-    self.fistName = fistName
-    self.lastName = lastName
-    self.street = street
-    self.city = city
-    self.state = state
+  init(gender: String?,
+       fistName: String?,
+       lastName: String?,
+       street: String?,
+       city: String?,
+       state: String?,
+       coordinates: CLLocationCoordinate2D?,
+       email: String?,
+       registeredDate: Date?,
+       phone: String?,
+       thumbnail: URL?,
+       image: URL?) {
+    self.gender = gender ?? ""
+    self.fistName = fistName ?? ""
+    self.lastName = lastName ?? ""
+    self.street = street ?? ""
+    self.city = city ?? ""
+    self.state = state ?? ""
     self.coordinates = coordinates
-    self.email = email
+    self.email = email ?? ""
     self.registeredDate = registeredDate
-    self.phone = phone
+    self.phone = phone ?? ""
     self.thumbnail = thumbnail
     self.image = image
   }
@@ -80,17 +80,17 @@ extension User {
   }
   
   static var mock2: User {
-     return User(gender: "male",
-                 fistName: "Maurice",
-                 lastName: "Jimenez",
-                 street: "Walnut Hill Ln, 138",
-                 city: "Boulder",
-                 state: "Washington",
-                 coordinates: CLLocationCoordinate2D(latitude: -41.7203, longitude: 11.2935),
-                 email: "maurice.jimenez@example.com",
-                 registeredDate: "1950-04-12T13:08:50.686Z".toDate(),
-                 phone: "(811)-087-5515",
-                 thumbnail: URL(string: "https://randomuser.me/api/portraits/thumb/men/58.jpg"),
-                 image: URL(string: "https://randomuser.me/api/portraits/men/58.jpg"))
-   }
+    return User(gender: "male",
+                fistName: "Maurice",
+                lastName: "Jimenez",
+                street: "Walnut Hill Ln, 138",
+                city: "Boulder",
+                state: "Washington",
+                coordinates: CLLocationCoordinate2D(latitude: -41.7203, longitude: 11.2935),
+                email: "maurice.jimenez@example.com",
+                registeredDate: "1950-04-12T13:08:50.686Z".toDate(),
+                phone: "(811)-087-5515",
+                thumbnail: URL(string: "https://randomuser.me/api/portraits/thumb/men/58.jpg"),
+                image: URL(string: "https://randomuser.me/api/portraits/men/58.jpg"))
+  }
 }

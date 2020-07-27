@@ -290,6 +290,24 @@ class ListsUsersViewDelegateMock: NSObject, ListsUsersViewDelegate {
 
 }
 class LocalStorageServiceMock: NSObject, LocalStorageService {
+    var context: NSManagedObjectContext {
+        get { return underlyingContext }
+        set(value) { underlyingContext = value }
+    }
+    var underlyingContext: NSManagedObjectContext!
+
+    //MARK: - save
+
+    private(set) var saveCallsCount = 0
+    var saveCalled: Bool {
+        return saveCallsCount > 0
+    }
+    var saveClosure: (() -> Void)?
+
+    func save() {
+        saveCallsCount += 1
+        saveClosure?()
+    }
 
 }
 class UserDetailsPresenterMock: NSObject, UserDetailsPresenter {

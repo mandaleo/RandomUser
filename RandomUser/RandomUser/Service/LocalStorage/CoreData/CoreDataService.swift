@@ -21,7 +21,7 @@ struct CoreDataService: LocalStorageService {
     do {
       try context.save()
     } catch {
-      fatalError("CoreData Save context Error ===>  \(error.localizedDescription)")
+      print("CoreData Save context Error ===>  \(error.localizedDescription)")
     }
   }
 }
@@ -32,4 +32,3 @@ extension Assembly {
     return CoreDataService(databaseName: "Model")
   }
 }
-
