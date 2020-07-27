@@ -11,6 +11,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
       self.window?.rootViewController = setRootViewController()
       self.window?.makeKeyAndVisible()
     }
+    if let directoryLocation = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask).last {
+      print("Documents Directory: \(directoryLocation)Application Support")
+    }
   }
   
   func setRootViewController() -> UIViewController {

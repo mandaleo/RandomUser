@@ -16,8 +16,8 @@ final class DefaultListUsersInteractor: ListUsersInteractor {
 // MARK: - ListUserServiceDelegate
 extension DefaultListUsersInteractor: ListUserServiceDelegate {
   
-  func didLoad(users: [User], page: Int) {
-    delegate?.didLoad(users: users, page: page)
+  func didLoadUsers() {
+    delegate?.didLoadUsers()
   }
   
   func didFailLoadingUsers(with error: Error) {

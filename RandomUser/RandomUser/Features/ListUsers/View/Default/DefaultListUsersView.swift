@@ -3,7 +3,7 @@ import SnapKit
 
 final class DefaultListUsersView: UIView, ListUsersView {
   
-  private var dataSource: UITableViewDataSource?
+  private var dataSource: ListUsersDataSource?
   weak var delegate: ListsUsersViewDelegate?
   
   private var tableView: UITableView = {
@@ -21,15 +21,19 @@ final class DefaultListUsersView: UIView, ListUsersView {
     }
   }
   
-  func setup(with users: [User]) {
+  func setup() {
     setupView()
     setupConstraints()
-    let dataSource =  ListUsersDataSource(users: users)
+    let dataSource =  ListUsersDataSource()
     dataSource.delegate = self
     self.dataSource = dataSource
     tableView.dataSource = dataSource
     tableView.delegate = dataSource
     tableView.reloadData()
+  }
+  
+  func filter(by text: String) {
+    dataSource?.filter(by: text)
   }
 }
 
@@ -37,5 +41,25 @@ final class DefaultListUsersView: UIView, ListUsersView {
 extension DefaultListUsersView: ListUsersDataSourceDelegate {
   func didSelect(user: User) {
     delegate?.didSelect(user: user)
+  }
+  
+  func willChangeContent() {
+    tableView.beginUpdates()
+  }
+  
+  func didChangeContent() {
+    tableView.endUpdates()
+  }
+  
+  func insertRow(at indexPath: IndexPath) {
+    tableView.insertRows(at: [indexPath], with: .automatic)
+  }
+  
+  func deleteRow(at indexPath: IndexPath) {
+    tableView.deleteRows(at: [indexPath], with: .automatic)
+  }
+  
+  func reloadTableView() {
+    tableView.reloadData()
   }
 }

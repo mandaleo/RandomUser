@@ -1,7 +1,7 @@
 import RxSwift
 
 protocol ListUserServiceDelegate: class, AutoMockable {
-  func didLoad(users: [User], page: Int)
+  func didLoadUsers()
   func didFailLoadingUsers(with error: Error)
 }
 
@@ -14,25 +14,37 @@ class DefaultListUserService: ListUserService {
   
   weak var delegate: ListUserServiceDelegate?
   private let listUsers: ListUsersUseCase
+  private var localStorageService: LocalStorageService
   private let bag = DisposeBag()
   
-  init(listUsers: ListUsersUseCase) {
+  init(listUsers: ListUsersUseCase,
+       localStorageService: LocalStorageService) {
     self.listUsers = listUsers
+    self.localStorageService = localStorageService
   }
   
   func getUsers(with seed: String, numberOfItems: Int, page: Int) {
     let request = ListUsersRequest(page: page, numberOfItems: numberOfItems, seed: seed)
     listUsers.execute(request: request).subscribe(onSuccess: { [weak self] listUsers in
-      self?.delegate?.didLoad(users: listUsers.users, page: listUsers.page)
+      self?.storage(users: listUsers.users)
     }, onError: { [weak self] error in
       self?.delegate?.didFailLoadingUsers(with: error)
       }).disposed(by: bag)
+  }
+  
+  private func storage(users: [User]) {
+    for user in users {
+      RUser(user: user, context: localStorageService.context)
+    }
+    localStorageService.save()
+    delegate?.didLoadUsers()
   }
 }
 
 // MARK: - Assembly
 extension Assembly {
   var listUserService: ListUserService {
-    return DefaultListUserService(listUsers: networking.listUsers)
+    return DefaultListUserService(listUsers: networking.listUsers,
+                                  localStorageService: coreDataService)
   }
 }
