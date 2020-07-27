@@ -1,4 +1,6 @@
+import CoreData
+
 protocol ListUsersInteractorDelegate: class, AutoMockable {
-  func didLoad(users: [User], page: Int)
+  func didLoadUsers(with context: NSManagedObjectContext)
   func didFailLoadingUsers(with error: Error)
 }

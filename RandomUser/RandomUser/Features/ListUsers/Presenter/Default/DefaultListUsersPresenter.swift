@@ -1,3 +1,5 @@
+import CoreData
+
 private enum DefaultValues {
   static let seed = "abc"
   static let numberOfITems = 20
@@ -35,9 +37,9 @@ final class DefaultListUsersPresenter: ListUsersPresenter {
 // MARK: - ListUsersInteractorDelegate
 extension DefaultListUsersPresenter: ListUsersInteractorDelegate {
   
-  func didLoad(users: [User], page: Int) {
+  func didLoadUsers(with context: NSManagedObjectContext) {
     print("YES!!!!!!!!!!!!!!")
-    ui?.setupUI(with: users)
+    ui?.setupUI(with: context)
   }
   
   func didFailLoadingUsers(with error: Error) {

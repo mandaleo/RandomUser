@@ -1,7 +1,8 @@
 import RxSwift
+import CoreData
 
 protocol ListUserServiceDelegate: class, AutoMockable {
-  func didLoad(users: [User], page: Int)
+  func didLoadUsers(with context: NSManagedObjectContext)
   func didFailLoadingUsers(with error: Error)
 }
 
@@ -27,7 +28,6 @@ class DefaultListUserService: ListUserService {
     let request = ListUsersRequest(page: page, numberOfItems: numberOfItems, seed: seed)
     listUsers.execute(request: request).subscribe(onSuccess: { [weak self] listUsers in
       self?.storage(users: listUsers.users)
-      self?.delegate?.didLoad(users: listUsers.users, page: listUsers.page)
     }, onError: { [weak self] error in
       self?.delegate?.didFailLoadingUsers(with: error)
       }).disposed(by: bag)
@@ -38,6 +38,7 @@ class DefaultListUserService: ListUserService {
       RUser(user: user, context: localStorageService.context)
       localStorageService.save()
     }
+    delegate?.didLoadUsers(with: localStorageService.context)
   }
 }
 

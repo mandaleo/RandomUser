@@ -1,3 +1,5 @@
+import CoreData
+
 protocol ListUsersUI: class, AutoMockable {
-  func setupUI(with users: [User])
+  func setupUI(with context: NSManagedObjectContext)
 }

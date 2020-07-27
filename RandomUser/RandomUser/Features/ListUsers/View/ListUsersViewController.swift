@@ -1,4 +1,5 @@
 import UIKit
+import CoreData
 
 final class ListUsersViewController: UIViewController {
   
@@ -21,8 +22,8 @@ final class ListUsersViewController: UIViewController {
 
 // MARK: - ListUsersUI
 extension ListUsersViewController: ListUsersUI {
-  func setupUI(with users: [User]) {
-    listUsersView?.setup(with: users)
+  func setupUI(with context: NSManagedObjectContext) {
+    listUsersView?.setup(with: context)
   }
 }
 

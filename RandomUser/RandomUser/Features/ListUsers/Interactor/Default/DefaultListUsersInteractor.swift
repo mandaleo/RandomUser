@@ -1,3 +1,5 @@
+import CoreData
+
 final class DefaultListUsersInteractor: ListUsersInteractor {
   
   weak var delegate: ListUsersInteractorDelegate?
@@ -16,8 +18,8 @@ final class DefaultListUsersInteractor: ListUsersInteractor {
 // MARK: - ListUserServiceDelegate
 extension DefaultListUsersInteractor: ListUserServiceDelegate {
   
-  func didLoad(users: [User], page: Int) {
-    delegate?.didLoad(users: users, page: page)
+  func didLoadUsers(with context: NSManagedObjectContext) {
+    delegate?.didLoadUsers(with: context)
   }
   
   func didFailLoadingUsers(with error: Error) {

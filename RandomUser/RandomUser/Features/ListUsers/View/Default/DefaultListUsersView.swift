@@ -1,5 +1,6 @@
 import UIKit
 import SnapKit
+import CoreData
 
 final class DefaultListUsersView: UIView, ListUsersView {
   
@@ -21,10 +22,10 @@ final class DefaultListUsersView: UIView, ListUsersView {
     }
   }
   
-  func setup(with users: [User]) {
+  func setup(with context: NSManagedObjectContext) {
     setupView()
     setupConstraints()
-    let dataSource =  ListUsersDataSource(users: users)
+    let dataSource =  ListUsersDataSource(context: context)
     dataSource.delegate = self
     self.dataSource = dataSource
     tableView.dataSource = dataSource
