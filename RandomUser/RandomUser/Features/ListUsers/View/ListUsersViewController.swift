@@ -64,7 +64,7 @@ extension ListUsersViewController: UISearchBarDelegate {
   
   func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
     searchBarView.text = nil
-    listUsersView?.filter(by: ")
+    listUsersView?.filter(by: "")
     searchBar.resignFirstResponder()
   }
   
