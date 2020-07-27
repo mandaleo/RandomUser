@@ -289,6 +289,9 @@ class ListsUsersViewDelegateMock: NSObject, ListsUsersViewDelegate {
     }
 
 }
+class LocalStorageServiceMock: NSObject, LocalStorageService {
+
+}
 class UserDetailsPresenterMock: NSObject, UserDetailsPresenter {
     var ui: UserDetailsUI?
 
