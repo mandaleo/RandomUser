@@ -158,6 +158,19 @@ class ListUsersDataSourceDelegateMock: NSObject, ListUsersDataSourceDelegate {
         deleteRowAtClosure?(indexPath)
     }
 
+    //MARK: - reloadTableView
+
+    private(set) var reloadTableViewCallsCount = 0
+    var reloadTableViewCalled: Bool {
+        return reloadTableViewCallsCount > 0
+    }
+    var reloadTableViewClosure: (() -> Void)?
+
+    func reloadTableView() {
+        reloadTableViewCallsCount += 1
+        reloadTableViewClosure?()
+    }
+
 }
 class ListUsersInteractorMock: NSObject, ListUsersInteractor {
     var delegate: ListUsersInteractorDelegate?
@@ -310,6 +323,23 @@ class ListUsersViewMock: NSObject, ListUsersView {
     func setup() {
         setupCallsCount += 1
         setupClosure?()
+    }
+
+    //MARK: - filter
+
+    private(set) var filterByCallsCount = 0
+    var filterByCalled: Bool {
+        return filterByCallsCount > 0
+    }
+    private(set) var filterByReceivedText: String?
+    private(set) var filterByReceivedInvocations: [String] = []
+    var filterByClosure: ((String) -> Void)?
+
+    func filter(by text: String) {
+        filterByCallsCount += 1
+        filterByReceivedText = text
+        filterByReceivedInvocations.append(text)
+        filterByClosure?(text)
     }
 
 }

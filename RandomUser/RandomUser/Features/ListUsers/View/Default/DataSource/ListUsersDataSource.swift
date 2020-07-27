@@ -7,22 +7,25 @@ protocol ListUsersDataSourceDelegate: class, AutoMockable {
   func didChangeContent()
   func insertRow(at indexPath: IndexPath)
   func deleteRow(at indexPath: IndexPath)
+  func reloadTableView()
 }
 
 final class ListUsersDataSource: NSObject, UITableViewDataSource {
   
   private var fetchedResultsController: NSFetchedResultsController<RUser>
   weak var delegate: ListUsersDataSourceDelegate?
+  private let isHiddenPredicate = NSPredicate(format: "isHidden == NO")
   
   init(coreDataService: LocalStorageService = coreDataService) {
     let fetchRequest: NSFetchRequest<RUser> = RUser.fetchRequest()
     fetchRequest.fetchBatchSize = 20
     let sortDescriptor = NSSortDescriptor(key: "firstName", ascending: true)
     fetchRequest.sortDescriptors = [sortDescriptor]
+    fetchRequest.predicate = isHiddenPredicate
     fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
                                                           managedObjectContext: coreDataService.context,
                                                           sectionNameKeyPath: nil,
-                                                          cacheName: "users")
+                                                          cacheName: nil)
     do {
       try fetchedResultsController.performFetch()
     } catch {
@@ -30,6 +33,29 @@ final class ListUsersDataSource: NSObject, UITableViewDataSource {
     }
     super.init()
     fetchedResultsController.delegate = self
+  }
+  
+  func filter(by text: String) {
+    defer {
+      do {
+        try fetchedResultsController.performFetch()
+      } catch {
+        fatalError(error.localizedDescription)
+      }
+      delegate?.reloadTableView()
+    }
+    guard !text.isEmpty else {
+      fetchedResultsController.fetchRequest.predicate = isHiddenPredicate
+      return
+    }
+    let namePredicate = NSPredicate(format: "firstName CONTAINS[c] %@", text)
+    let surnamePredicate = NSPredicate(format: "lastName CONTAINS[c] %@", text)
+    let emailPredicate = NSPredicate(format: "email CONTAINS[c] %@", text)
+    let filterPredicate = NSCompoundPredicate(type: .or,
+                                         subpredicates: [namePredicate, surnamePredicate, emailPredicate])
+    let predicates = NSCompoundPredicate(type: .and, subpredicates: [isHiddenPredicate, filterPredicate])
+    fetchedResultsController.fetchRequest.predicate = predicates
+   
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

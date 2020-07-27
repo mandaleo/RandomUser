@@ -18,6 +18,7 @@ extension RUser {
     phone = user.phone
     thumbnail = user.thumbnail?.absoluteString
     image = user.image?.absoluteString
+    isHidden = user.isHidden
   }
 }
 
@@ -35,6 +36,7 @@ extension RUser {
                 registeredDate: registeredDate,
                 phone: phone,
                 thumbnail: URL(string: thumbnail ?? ""),
-                image: URL(string: image ?? ""))
+                image: URL(string: image ?? ""),
+                isHidden: isHidden)
   }
 }
