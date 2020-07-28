@@ -1,4 +1,3 @@
-
 final class DefaultListUsersPresenter: ListUsersPresenter {
   
   weak var ui: ListUsersUI?
