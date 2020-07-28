@@ -264,13 +264,6 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
-		D915C93E24CF167600FECE7D /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
 		D915C93F24CF169200FECE7D /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,7 +350,6 @@
 			isa = PBXGroup;
 			children = (
 				D9F8538A24CC267D00722C0B /* App */,
-				D915C93E24CF167600FECE7D /* Domain */,
 				D9F8541C24CDB0A300722C0B /* Service */,
 				D9F8538B24CC268A00722C0B /* Features */,
 				D9F8539C24CC3B1F00722C0B /* Networking */,

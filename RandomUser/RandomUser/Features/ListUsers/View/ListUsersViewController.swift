@@ -49,7 +49,7 @@ extension ListUsersViewController: ListsUsersViewDelegate {
   }
   
   func loadMoreUsers() {
-    presenter?.loadMoreUsers()
+    presenter?.loadUsers()
   }
 }
 

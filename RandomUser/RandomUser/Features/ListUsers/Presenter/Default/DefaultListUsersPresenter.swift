@@ -1,8 +1,3 @@
-private enum DefaultValues {
-  static let seed = "abc"
-  static let numberOfITems = 20
-  static let page = 1
-}
 
 final class DefaultListUsersPresenter: ListUsersPresenter {
   
@@ -18,17 +13,15 @@ final class DefaultListUsersPresenter: ListUsersPresenter {
   
   func didLoad() {
     ui?.setupUI()
-    loadMoreUsers()
+    loadUsers()
   }
   
   func didSelect(user: User) {
     navigator.show(user: user)
   }
   
-  func loadMoreUsers() {
-    interactor.getUsers(with: DefaultValues.seed,
-                        numberOfItems: DefaultValues.numberOfITems,
-                        page: DefaultValues.page)
+  func loadUsers() {
+    interactor.loadUsers()
   }
   
   func hideUser(with email: String) {

@@ -64,21 +64,17 @@ class ListUserCellViewDelegateMock: NSObject, ListUserCellViewDelegate {
 class ListUserServiceMock: NSObject, ListUserService {
     var delegate: ListUserServiceDelegate?
 
-    //MARK: - getUsers
+    //MARK: - loadUsers
 
-    private(set) var getUsersWithNumberOfItemsPageCallsCount = 0
-    var getUsersWithNumberOfItemsPageCalled: Bool {
-        return getUsersWithNumberOfItemsPageCallsCount > 0
+    private(set) var loadUsersCallsCount = 0
+    var loadUsersCalled: Bool {
+        return loadUsersCallsCount > 0
     }
-    private(set) var getUsersWithNumberOfItemsPageReceivedArguments: (seed: String, numberOfItems: Int, page: Int)?
-    private(set) var getUsersWithNumberOfItemsPageReceivedInvocations: [(seed: String, numberOfItems: Int, page: Int)] = []
-    var getUsersWithNumberOfItemsPageClosure: ((String, Int, Int) -> Void)?
+    var loadUsersClosure: (() -> Void)?
 
-    func getUsers(with seed: String, numberOfItems: Int, page: Int) {
-        getUsersWithNumberOfItemsPageCallsCount += 1
-        getUsersWithNumberOfItemsPageReceivedArguments = (seed: seed, numberOfItems: numberOfItems, page: page)
-        getUsersWithNumberOfItemsPageReceivedInvocations.append((seed: seed, numberOfItems: numberOfItems, page: page))
-        getUsersWithNumberOfItemsPageClosure?(seed, numberOfItems, page)
+    func loadUsers() {
+        loadUsersCallsCount += 1
+        loadUsersClosure?()
     }
 
     //MARK: - hideUser
@@ -262,21 +258,17 @@ class ListUsersDataSourceDelegateMock: NSObject, ListUsersDataSourceDelegate {
 class ListUsersInteractorMock: NSObject, ListUsersInteractor {
     var delegate: ListUsersInteractorDelegate?
 
-    //MARK: - getUsers
+    //MARK: - loadUsers
 
-    private(set) var getUsersWithNumberOfItemsPageCallsCount = 0
-    var getUsersWithNumberOfItemsPageCalled: Bool {
-        return getUsersWithNumberOfItemsPageCallsCount > 0
+    private(set) var loadUsersCallsCount = 0
+    var loadUsersCalled: Bool {
+        return loadUsersCallsCount > 0
     }
-    private(set) var getUsersWithNumberOfItemsPageReceivedArguments: (seed: String, numberOfItems: Int, page: Int)?
-    private(set) var getUsersWithNumberOfItemsPageReceivedInvocations: [(seed: String, numberOfItems: Int, page: Int)] = []
-    var getUsersWithNumberOfItemsPageClosure: ((String, Int, Int) -> Void)?
+    var loadUsersClosure: (() -> Void)?
 
-    func getUsers(with seed: String, numberOfItems: Int, page: Int) {
-        getUsersWithNumberOfItemsPageCallsCount += 1
-        getUsersWithNumberOfItemsPageReceivedArguments = (seed: seed, numberOfItems: numberOfItems, page: page)
-        getUsersWithNumberOfItemsPageReceivedInvocations.append((seed: seed, numberOfItems: numberOfItems, page: page))
-        getUsersWithNumberOfItemsPageClosure?(seed, numberOfItems, page)
+    func loadUsers() {
+        loadUsersCallsCount += 1
+        loadUsersClosure?()
     }
 
     //MARK: - hideUser
@@ -370,17 +362,17 @@ class ListUsersPresenterMock: NSObject, ListUsersPresenter {
         didSelectUserClosure?(user)
     }
 
-    //MARK: - loadMoreUsers
+    //MARK: - loadUsers
 
-    private(set) var loadMoreUsersCallsCount = 0
-    var loadMoreUsersCalled: Bool {
-        return loadMoreUsersCallsCount > 0
+    private(set) var loadUsersCallsCount = 0
+    var loadUsersCalled: Bool {
+        return loadUsersCallsCount > 0
     }
-    var loadMoreUsersClosure: (() -> Void)?
+    var loadUsersClosure: (() -> Void)?
 
-    func loadMoreUsers() {
-        loadMoreUsersCallsCount += 1
-        loadMoreUsersClosure?()
+    func loadUsers() {
+        loadUsersCallsCount += 1
+        loadUsersClosure?()
     }
 
     //MARK: - hideUser
