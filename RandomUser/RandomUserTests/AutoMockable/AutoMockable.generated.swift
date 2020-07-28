@@ -25,6 +25,42 @@ import AppKit
 
 
 
+class ListUserCellDelegateMock: NSObject, ListUserCellDelegate {
+
+    //MARK: - didTapOnHideUser
+
+    private(set) var didTapOnHideUserWithCallsCount = 0
+    var didTapOnHideUserWithCalled: Bool {
+        return didTapOnHideUserWithCallsCount > 0
+    }
+    private(set) var didTapOnHideUserWithReceivedEmail: String?
+    private(set) var didTapOnHideUserWithReceivedInvocations: [String] = []
+    var didTapOnHideUserWithClosure: ((String) -> Void)?
+
+    func didTapOnHideUser(with email: String) {
+        didTapOnHideUserWithCallsCount += 1
+        didTapOnHideUserWithReceivedEmail = email
+        didTapOnHideUserWithReceivedInvocations.append(email)
+        didTapOnHideUserWithClosure?(email)
+    }
+
+}
+class ListUserCellViewDelegateMock: NSObject, ListUserCellViewDelegate {
+
+    //MARK: - didTapOnHideUser
+
+    private(set) var didTapOnHideUserCallsCount = 0
+    var didTapOnHideUserCalled: Bool {
+        return didTapOnHideUserCallsCount > 0
+    }
+    var didTapOnHideUserClosure: (() -> Void)?
+
+    func didTapOnHideUser() {
+        didTapOnHideUserCallsCount += 1
+        didTapOnHideUserClosure?()
+    }
+
+}
 class ListUserServiceMock: NSObject, ListUserService {
     var delegate: ListUserServiceDelegate?
 
@@ -43,6 +79,23 @@ class ListUserServiceMock: NSObject, ListUserService {
         getUsersWithNumberOfItemsPageReceivedArguments = (seed: seed, numberOfItems: numberOfItems, page: page)
         getUsersWithNumberOfItemsPageReceivedInvocations.append((seed: seed, numberOfItems: numberOfItems, page: page))
         getUsersWithNumberOfItemsPageClosure?(seed, numberOfItems, page)
+    }
+
+    //MARK: - hideUser
+
+    private(set) var hideUserWithCallsCount = 0
+    var hideUserWithCalled: Bool {
+        return hideUserWithCallsCount > 0
+    }
+    private(set) var hideUserWithReceivedEmail: String?
+    private(set) var hideUserWithReceivedInvocations: [String] = []
+    var hideUserWithClosure: ((String) -> Void)?
+
+    func hideUser(with email: String) {
+        hideUserWithCallsCount += 1
+        hideUserWithReceivedEmail = email
+        hideUserWithReceivedInvocations.append(email)
+        hideUserWithClosure?(email)
     }
 
 }
@@ -158,6 +211,23 @@ class ListUsersDataSourceDelegateMock: NSObject, ListUsersDataSourceDelegate {
         deleteRowAtClosure?(indexPath)
     }
 
+    //MARK: - updateRow
+
+    private(set) var updateRowAtCallsCount = 0
+    var updateRowAtCalled: Bool {
+        return updateRowAtCallsCount > 0
+    }
+    private(set) var updateRowAtReceivedIndexPath: IndexPath?
+    private(set) var updateRowAtReceivedInvocations: [IndexPath] = []
+    var updateRowAtClosure: ((IndexPath) -> Void)?
+
+    func updateRow(at indexPath: IndexPath) {
+        updateRowAtCallsCount += 1
+        updateRowAtReceivedIndexPath = indexPath
+        updateRowAtReceivedInvocations.append(indexPath)
+        updateRowAtClosure?(indexPath)
+    }
+
     //MARK: - reloadTableView
 
     private(set) var reloadTableViewCallsCount = 0
@@ -169,6 +239,23 @@ class ListUsersDataSourceDelegateMock: NSObject, ListUsersDataSourceDelegate {
     func reloadTableView() {
         reloadTableViewCallsCount += 1
         reloadTableViewClosure?()
+    }
+
+    //MARK: - didTapOnHideUser
+
+    private(set) var didTapOnHideUserWithCallsCount = 0
+    var didTapOnHideUserWithCalled: Bool {
+        return didTapOnHideUserWithCallsCount > 0
+    }
+    private(set) var didTapOnHideUserWithReceivedEmail: String?
+    private(set) var didTapOnHideUserWithReceivedInvocations: [String] = []
+    var didTapOnHideUserWithClosure: ((String) -> Void)?
+
+    func didTapOnHideUser(with email: String) {
+        didTapOnHideUserWithCallsCount += 1
+        didTapOnHideUserWithReceivedEmail = email
+        didTapOnHideUserWithReceivedInvocations.append(email)
+        didTapOnHideUserWithClosure?(email)
     }
 
 }
@@ -192,21 +279,25 @@ class ListUsersInteractorMock: NSObject, ListUsersInteractor {
         getUsersWithNumberOfItemsPageClosure?(seed, numberOfItems, page)
     }
 
+    //MARK: - hideUser
+
+    private(set) var hideUserWithCallsCount = 0
+    var hideUserWithCalled: Bool {
+        return hideUserWithCallsCount > 0
+    }
+    private(set) var hideUserWithReceivedEmail: String?
+    private(set) var hideUserWithReceivedInvocations: [String] = []
+    var hideUserWithClosure: ((String) -> Void)?
+
+    func hideUser(with email: String) {
+        hideUserWithCallsCount += 1
+        hideUserWithReceivedEmail = email
+        hideUserWithReceivedInvocations.append(email)
+        hideUserWithClosure?(email)
+    }
+
 }
 class ListUsersInteractorDelegateMock: NSObject, ListUsersInteractorDelegate {
-
-    //MARK: - didLoadUsers
-
-    private(set) var didLoadUsersCallsCount = 0
-    var didLoadUsersCalled: Bool {
-        return didLoadUsersCallsCount > 0
-    }
-    var didLoadUsersClosure: (() -> Void)?
-
-    func didLoadUsers() {
-        didLoadUsersCallsCount += 1
-        didLoadUsersClosure?()
-    }
 
     //MARK: - didFailLoadingUsers
 
@@ -292,6 +383,23 @@ class ListUsersPresenterMock: NSObject, ListUsersPresenter {
         loadMoreUsersClosure?()
     }
 
+    //MARK: - hideUser
+
+    private(set) var hideUserWithCallsCount = 0
+    var hideUserWithCalled: Bool {
+        return hideUserWithCallsCount > 0
+    }
+    private(set) var hideUserWithReceivedEmail: String?
+    private(set) var hideUserWithReceivedInvocations: [String] = []
+    var hideUserWithClosure: ((String) -> Void)?
+
+    func hideUser(with email: String) {
+        hideUserWithCallsCount += 1
+        hideUserWithReceivedEmail = email
+        hideUserWithReceivedInvocations.append(email)
+        hideUserWithClosure?(email)
+    }
+
 }
 class ListUsersUIMock: NSObject, ListUsersUI {
 
@@ -362,6 +470,23 @@ class ListsUsersViewDelegateMock: NSObject, ListsUsersViewDelegate {
         didSelectUserClosure?(user)
     }
 
+    //MARK: - didTapOnHideUser
+
+    private(set) var didTapOnHideUserWithCallsCount = 0
+    var didTapOnHideUserWithCalled: Bool {
+        return didTapOnHideUserWithCallsCount > 0
+    }
+    private(set) var didTapOnHideUserWithReceivedEmail: String?
+    private(set) var didTapOnHideUserWithReceivedInvocations: [String] = []
+    var didTapOnHideUserWithClosure: ((String) -> Void)?
+
+    func didTapOnHideUser(with email: String) {
+        didTapOnHideUserWithCallsCount += 1
+        didTapOnHideUserWithReceivedEmail = email
+        didTapOnHideUserWithReceivedInvocations.append(email)
+        didTapOnHideUserWithClosure?(email)
+    }
+
 }
 class LocalStorageServiceMock: NSObject, LocalStorageService {
     var context: NSManagedObjectContext {
@@ -381,6 +506,23 @@ class LocalStorageServiceMock: NSObject, LocalStorageService {
     func save() {
         saveCallsCount += 1
         saveClosure?()
+    }
+
+    //MARK: - hideUser
+
+    private(set) var hideUserWithCallsCount = 0
+    var hideUserWithCalled: Bool {
+        return hideUserWithCallsCount > 0
+    }
+    private(set) var hideUserWithReceivedEmail: String?
+    private(set) var hideUserWithReceivedInvocations: [String] = []
+    var hideUserWithClosure: ((String) -> Void)?
+
+    func hideUser(with email: String) {
+        hideUserWithCallsCount += 1
+        hideUserWithReceivedEmail = email
+        hideUserWithReceivedInvocations.append(email)
+        hideUserWithClosure?(email)
     }
 
 }

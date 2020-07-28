@@ -7,7 +7,7 @@ struct CoreDataService: LocalStorageService {
   init(databaseName: String) {
     let container = NSPersistentContainer(name: databaseName)
     container.loadPersistentStores { ( _, error) in
-      container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+      container.viewContext.mergePolicy = NSRollbackMergePolicy
       guard let error = error else { return }
       fatalError("CoreData Error ===>  \(error.localizedDescription)")
     }
@@ -23,6 +23,21 @@ struct CoreDataService: LocalStorageService {
       try context.save()
     } catch {
       print("CoreData Save context Error ===>  \(error.localizedDescription)")
+    }
+  }
+  
+  func hideUser(with email: String) {
+    let fetchRequest: NSFetchRequest<RUser> = RUser.fetchRequest()
+    let predicate = NSPredicate(format: "email = %@", email)
+    fetchRequest.predicate = predicate
+    do {
+      let items = try context.fetch(fetchRequest)
+      for item in items {
+        item.setValue(true, forKey: "isHidden")
+      }
+      save()
+    } catch {
+      print("CoreData find email fail ===>  \(error.localizedDescription)")
     }
   }
 }

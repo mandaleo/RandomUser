@@ -30,14 +30,14 @@ final class DefaultListUsersPresenter: ListUsersPresenter {
                         numberOfItems: DefaultValues.numberOfITems,
                         page: DefaultValues.page)
   }
+  
+  func hideUser(with email: String) {
+    interactor.hideUser(with: email)
+  }
 }
 
 // MARK: - ListUsersInteractorDelegate
 extension DefaultListUsersPresenter: ListUsersInteractorDelegate {
-  
-  func didLoadUsers() {
-    print("YES!!!!!!!!!!!!!!")
-  }
   
   func didFailLoadingUsers(with error: Error) {
     print("NO!!!!!!!!!!!!!!")

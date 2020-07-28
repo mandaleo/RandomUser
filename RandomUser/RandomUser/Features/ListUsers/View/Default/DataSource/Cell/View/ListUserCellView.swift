@@ -14,7 +14,13 @@ private enum ViewLayout {
                                        height: CGFloat(16))
 }
 
+protocol ListUserCellViewDelegate: class, AutoMockable {
+  func didTapOnHideUser()
+}
+
 final class ListUserCellView: UIView {
+  
+  weak var delegate: ListUserCellViewDelegate?
   
   private var mainStack: UIStackView = {
     let stack = UIStackView()
@@ -120,6 +126,6 @@ final class ListUserCellView: UIView {
   }
   
   @objc private func didTapOnHideUser() {
-    print("Hide User")
+    delegate?.didTapOnHideUser()
   }
 }

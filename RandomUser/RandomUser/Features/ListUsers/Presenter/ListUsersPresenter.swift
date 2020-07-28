@@ -3,4 +3,5 @@ protocol ListUsersPresenter: class, AutoMockable {
   func didLoad()
   func didSelect(user: User)
   func loadMoreUsers()
+  func hideUser(with email: String)
 }

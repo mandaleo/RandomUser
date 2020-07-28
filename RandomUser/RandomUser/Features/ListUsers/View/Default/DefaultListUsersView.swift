@@ -59,7 +59,15 @@ extension DefaultListUsersView: ListUsersDataSourceDelegate {
     tableView.deleteRows(at: [indexPath], with: .automatic)
   }
   
+  func updateRow(at indexPath: IndexPath) {
+    tableView.reloadRows(at: [indexPath], with: .automatic)
+  }
+  
   func reloadTableView() {
     tableView.reloadData()
+  }
+  
+  func didTapOnHideUser(with email: String) {
+    delegate?.didTapOnHideUser(with: email)
   }
 }
