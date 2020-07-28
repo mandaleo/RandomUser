@@ -4,6 +4,8 @@ import Kingfisher
 
 private enum ViewLayout {
   static let avatarSize = CGSize(width: 64, height: 64)
+  static let hideButtonSize = CGSize(width: 24, height: 24)
+  static let hideButtonTintColor = UIColor.gray
   static let spacing = Spacing.xxs
   static let mainFont = RFont.main
   static let secondaryFont = RFont.secondary
@@ -12,7 +14,13 @@ private enum ViewLayout {
                                        height: CGFloat(16))
 }
 
+protocol ListUserCellViewDelegate: class, AutoMockable {
+  func didTapOnHideUser()
+}
+
 final class ListUserCellView: UIView {
+  
+  weak var delegate: ListUserCellViewDelegate?
   
   private var mainStack: UIStackView = {
     let stack = UIStackView()
@@ -28,6 +36,15 @@ final class ListUserCellView: UIView {
     imageView.contentMode = .scaleAspectFit
     imageView.rounded(with: ViewLayout.avatarSize.height / 2)
     return imageView
+  }()
+  
+  private var hideUserButton: UIButton = {
+    let button = UIButton()
+    button.setImage(Icon.eyeSlash.withRenderingMode(.alwaysTemplate),
+                    for: .normal)
+    button.contentMode = .scaleAspectFit
+    button.tintColor = ViewLayout.hideButtonTintColor
+    return button
   }()
   
   private var verticalStack: UIStackView = {
@@ -74,6 +91,7 @@ final class ListUserCellView: UIView {
   private func setupView() {
     setupAvatarImageView()
     setupVerticalStack()
+    setupHideUserButton()
     addSubview(mainStack)
     mainStack.snp.makeConstraints { make in
       make.leading.equalToSuperview().offset(ViewLayout.spacing)
@@ -95,5 +113,19 @@ final class ListUserCellView: UIView {
     verticalStack.addArrangedSubview(emailLabel)
     verticalStack.addArrangedSubview(phoneLabel)
     mainStack.addArrangedSubview(verticalStack)
+  }
+  
+  private func setupHideUserButton() {
+    mainStack.addArrangedSubview(hideUserButton)
+    hideUserButton.snp.makeConstraints { make in
+      make.size.equalTo(ViewLayout.hideButtonSize)
+    }
+    hideUserButton.addTarget(self,
+                             action: #selector(didTapOnHideUser),
+                             for: .touchUpInside)
+  }
+  
+  @objc private func didTapOnHideUser() {
+    delegate?.didTapOnHideUser()
   }
 }

@@ -8,6 +8,7 @@ protocol ListUserServiceDelegate: class, AutoMockable {
 protocol ListUserService: AutoMockable {
   var delegate: ListUserServiceDelegate? { get set }
   func getUsers(with seed: String, numberOfItems: Int, page: Int)
+  func hideUser(with email: String)
 }
 
 class DefaultListUserService: ListUserService {
@@ -30,6 +31,10 @@ class DefaultListUserService: ListUserService {
     }, onError: { [weak self] error in
       self?.delegate?.didFailLoadingUsers(with: error)
       }).disposed(by: bag)
+  }
+  
+  func hideUser(with email: String) {
+    localStorageService.hideUser(with: email)
   }
   
   private func storage(users: [User]) {

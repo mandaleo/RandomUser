@@ -11,13 +11,17 @@ final class DefaultListUsersInteractor: ListUsersInteractor {
   func getUsers(with seed: String, numberOfItems: Int, page: Int) {
     listUserService.getUsers(with: seed, numberOfItems: numberOfItems, page: page)
   }
+  
+  func hideUser(with email: String) {
+    listUserService.hideUser(with: email)
+  }
 }
 
 // MARK: - ListUserServiceDelegate
 extension DefaultListUsersInteractor: ListUserServiceDelegate {
   
   func didLoadUsers() {
-    delegate?.didLoadUsers()
+    // Nothing to do
   }
   
   func didFailLoadingUsers(with error: Error) {
