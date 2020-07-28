@@ -13,6 +13,7 @@ target 'RandomUser' do
   pod 'Moya/RxSwift'
   pod 'Moya/ReactiveSwift'
   pod 'SnapKit'
+  pod 'UIScrollView-InfiniteScroll'
 
   # Pods for RandomUser
 

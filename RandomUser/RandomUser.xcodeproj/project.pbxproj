@@ -123,6 +123,7 @@
 		D915C94E24D065A700FECE7D /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
 		D915C95124D0669B00FECE7D /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
 		D915C95424D067A900FECE7D /* RFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFont.swift; sourceTree = "<group>"; };
+		D915C95B24D086D800FECE7D /* RandomUser-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RandomUser-Bridging-Header.h"; sourceTree = "<group>"; };
 		D9F8535524CC20BB00722C0B /* RandomUser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomUser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F8535824CC20BB00722C0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9F8536124CC20C100722C0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -392,6 +393,7 @@
 				D9F8536324CC20C100722C0B /* LaunchScreen.storyboard */,
 				D9F8536624CC20C100722C0B /* Info.plist */,
 				D9F853A024CC4AB300722C0B /* Infrastucture */,
+				D915C95B24D086D800FECE7D /* RandomUser-Bridging-Header.h */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -1024,6 +1026,7 @@
 				TargetAttributes = {
 					D9F8535424CC20BB00722C0B = {
 						CreatedOnToolsVersion = 11.6;
+						LastSwiftMigration = 1160;
 					};
 					D9F8536A24CC20C100722C0B = {
 						CreatedOnToolsVersion = 11.6;
@@ -1517,6 +1520,7 @@
 			baseConfigurationReference = 3D5C5347E12EDD5C3B0137E1 /* Pods-RandomUser.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BUS8BGZ883;
 				INFOPLIST_FILE = RandomUser/App/Info.plist;
@@ -1526,6 +1530,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mandaleo.RandomUser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RandomUser/App/RandomUser-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1536,6 +1542,7 @@
 			baseConfigurationReference = 47CD61C1F9C4158C85C31ACC /* Pods-RandomUser.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BUS8BGZ883;
 				INFOPLIST_FILE = RandomUser/App/Info.plist;
@@ -1545,6 +1552,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mandaleo.RandomUser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RandomUser/App/RandomUser-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
