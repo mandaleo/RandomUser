@@ -1,6 +1,6 @@
 import CoreData
 
-protocol LocalStorageService: AutoMockable {
+protocol DbStorageService: AutoMockable {
   var context: NSManagedObjectContext { get }
   func save()
   func hideUser(with email: String)

@@ -1,6 +1,6 @@
 import CoreData
 
-struct CoreDataService: LocalStorageService {
+struct CoreDataService: DbStorageService {
   
   var context: NSManagedObjectContext
   
@@ -43,6 +43,6 @@ struct CoreDataService: LocalStorageService {
 }
 
 // MARK: - Assembly
-var coreDataService: LocalStorageService = {
+var coreDataService: DbStorageService = {
   return CoreDataService(databaseName: "Model")
 }()

@@ -25,6 +25,44 @@ import AppKit
 
 
 
+class DbStorageServiceMock: NSObject, DbStorageService {
+    var context: NSManagedObjectContext {
+        get { return underlyingContext }
+        set(value) { underlyingContext = value }
+    }
+    var underlyingContext: NSManagedObjectContext!
+
+    //MARK: - save
+
+    private(set) var saveCallsCount = 0
+    var saveCalled: Bool {
+        return saveCallsCount > 0
+    }
+    var saveClosure: (() -> Void)?
+
+    func save() {
+        saveCallsCount += 1
+        saveClosure?()
+    }
+
+    //MARK: - hideUser
+
+    private(set) var hideUserWithCallsCount = 0
+    var hideUserWithCalled: Bool {
+        return hideUserWithCallsCount > 0
+    }
+    private(set) var hideUserWithReceivedEmail: String?
+    private(set) var hideUserWithReceivedInvocations: [String] = []
+    var hideUserWithClosure: ((String) -> Void)?
+
+    func hideUser(with email: String) {
+        hideUserWithCallsCount += 1
+        hideUserWithReceivedEmail = email
+        hideUserWithReceivedInvocations.append(email)
+        hideUserWithClosure?(email)
+    }
+
+}
 class ListUserCellDelegateMock: NSObject, ListUserCellDelegate {
 
     //MARK: - didTapOnHideUser
@@ -494,40 +532,40 @@ class ListsUsersViewDelegateMock: NSObject, ListsUsersViewDelegate {
 
 }
 class LocalStorageServiceMock: NSObject, LocalStorageService {
-    var context: NSManagedObjectContext {
-        get { return underlyingContext }
-        set(value) { underlyingContext = value }
+
+    //MARK: - store
+
+    private(set) var storeValueForKeyCallsCount = 0
+    var storeValueForKeyCalled: Bool {
+        return storeValueForKeyCallsCount > 0
     }
-    var underlyingContext: NSManagedObjectContext!
+    private(set) var storeValueForKeyReceivedArguments: (value: Int, key: LocalStorageKey)?
+    private(set) var storeValueForKeyReceivedInvocations: [(value: Int, key: LocalStorageKey)] = []
+    var storeValueForKeyClosure: ((Int, LocalStorageKey) -> Void)?
 
-    //MARK: - save
-
-    private(set) var saveCallsCount = 0
-    var saveCalled: Bool {
-        return saveCallsCount > 0
-    }
-    var saveClosure: (() -> Void)?
-
-    func save() {
-        saveCallsCount += 1
-        saveClosure?()
+    func store(value: Int, forKey key: LocalStorageKey) {
+        storeValueForKeyCallsCount += 1
+        storeValueForKeyReceivedArguments = (value: value, key: key)
+        storeValueForKeyReceivedInvocations.append((value: value, key: key))
+        storeValueForKeyClosure?(value, key)
     }
 
-    //MARK: - hideUser
+    //MARK: - integer
 
-    private(set) var hideUserWithCallsCount = 0
-    var hideUserWithCalled: Bool {
-        return hideUserWithCallsCount > 0
+    private(set) var integerForKeyCallsCount = 0
+    var integerForKeyCalled: Bool {
+        return integerForKeyCallsCount > 0
     }
-    private(set) var hideUserWithReceivedEmail: String?
-    private(set) var hideUserWithReceivedInvocations: [String] = []
-    var hideUserWithClosure: ((String) -> Void)?
+    private(set) var integerForKeyReceivedKey: LocalStorageKey?
+    private(set) var integerForKeyReceivedInvocations: [LocalStorageKey] = []
+    var integerForKeyReturnValue: Int!
+    var integerForKeyClosure: ((LocalStorageKey) -> Int)?
 
-    func hideUser(with email: String) {
-        hideUserWithCallsCount += 1
-        hideUserWithReceivedEmail = email
-        hideUserWithReceivedInvocations.append(email)
-        hideUserWithClosure?(email)
+    func integer(forKey key: LocalStorageKey) -> Int {
+        integerForKeyCallsCount += 1
+        integerForKeyReceivedKey = key
+        integerForKeyReceivedInvocations.append(key)
+        return integerForKeyClosure.map({ $0(key) }) ?? integerForKeyReturnValue
     }
 
 }
