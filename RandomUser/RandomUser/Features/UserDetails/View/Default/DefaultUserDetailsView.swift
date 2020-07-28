@@ -4,8 +4,7 @@ import Kingfisher
 
 private enum ViewLayout {
   static let spacing = CGFloat(8)
-  static let mainFont = UIFont.boldSystemFont(ofSize: 32)
-  static let secondaryFont = UIFont.italicSystemFont(ofSize: 24)
+  static let secondaryFont = RFont.secondary
   static let mapViewHeight = CGFloat(300)
 }
 

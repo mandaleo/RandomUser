@@ -13,6 +13,9 @@
 		D915C93D24CF122600FECE7D /* LocalStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C93C24CF122600FECE7D /* LocalStorageService.swift */; };
 		D915C94124CF16AD00FECE7D /* RUser+ CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C94024CF16AD00FECE7D /* RUser+ CoreData.swift */; };
 		D915C94424CF178C00FECE7D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D915C94224CF178C00FECE7D /* Model.xcdatamodeld */; };
+		D915C94F24D065A700FECE7D /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C94E24D065A700FECE7D /* Icon.swift */; };
+		D915C95224D0669B00FECE7D /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C95124D0669B00FECE7D /* Spacing.swift */; };
+		D915C95524D067A900FECE7D /* RFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C95424D067A900FECE7D /* RFont.swift */; };
 		D9F8535924CC20BB00722C0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8535824CC20BB00722C0B /* AppDelegate.swift */; };
 		D9F8536224CC20C100722C0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9F8536124CC20C100722C0B /* Assets.xcassets */; };
 		D9F8537B24CC20C100722C0B /* RandomUserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8537A24CC20C100722C0B /* RandomUserUITests.swift */; };
@@ -117,6 +120,9 @@
 		D915C93C24CF122600FECE7D /* LocalStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageService.swift; sourceTree = "<group>"; };
 		D915C94024CF16AD00FECE7D /* RUser+ CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RUser+ CoreData.swift"; sourceTree = "<group>"; };
 		D915C94324CF178C00FECE7D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		D915C94E24D065A700FECE7D /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
+		D915C95124D0669B00FECE7D /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
+		D915C95424D067A900FECE7D /* RFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFont.swift; sourceTree = "<group>"; };
 		D9F8535524CC20BB00722C0B /* RandomUser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomUser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F8535824CC20BB00722C0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9F8536124CC20C100722C0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -273,6 +279,57 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		D915C94524D0645E00FECE7D /* Desing System */ = {
+			isa = PBXGroup;
+			children = (
+				D915C94C24D0658A00FECE7D /* Components */,
+				D915C94824D064E100FECE7D /* Resources */,
+			);
+			path = "Desing System";
+			sourceTree = "<group>";
+		};
+		D915C94824D064E100FECE7D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8536124CC20C100722C0B /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D915C94C24D0658A00FECE7D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D915C95324D0675800FECE7D /* Font */,
+				D915C95024D0668B00FECE7D /* Spacing */,
+				D915C94D24D0659600FECE7D /* Icons */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		D915C94D24D0659600FECE7D /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				D915C94E24D065A700FECE7D /* Icon.swift */,
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
+		D915C95024D0668B00FECE7D /* Spacing */ = {
+			isa = PBXGroup;
+			children = (
+				D915C95124D0669B00FECE7D /* Spacing.swift */,
+			);
+			path = Spacing;
+			sourceTree = "<group>";
+		};
+		D915C95324D0675800FECE7D /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				D915C95424D067A900FECE7D /* RFont.swift */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		D9F8534C24CC20BB00722C0B = {
 			isa = PBXGroup;
 			children = (
@@ -303,7 +360,7 @@
 				D9F8541C24CDB0A300722C0B /* Service */,
 				D9F8538B24CC268A00722C0B /* Features */,
 				D9F8539C24CC3B1F00722C0B /* Networking */,
-				D9F8538924CC266B00722C0B /* Resources */,
+				D915C94524D0645E00FECE7D /* Desing System */,
 			);
 			path = RandomUser;
 			sourceTree = "<group>";
@@ -325,14 +382,6 @@
 				D9F8537C24CC20C100722C0B /* Info.plist */,
 			);
 			path = RandomUserUITests;
-			sourceTree = "<group>";
-		};
-		D9F8538924CC266B00722C0B /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				D9F8536124CC20C100722C0B /* Assets.xcassets */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		D9F8538A24CC267D00722C0B /* App */ = {
@@ -1248,9 +1297,11 @@
 				D9F8545624CDE72A00722C0B /* UIImageView+Round.swift in Sources */,
 				D9F8541B24CDB03400722C0B /* Networking+UseCases.swift in Sources */,
 				D9F853BD24CC6DB000722C0B /* Service.swift in Sources */,
+				D915C94F24D065A700FECE7D /* Icon.swift in Sources */,
 				D9F8543C24CDBDCC00722C0B /* ListUsersNavigator.swift in Sources */,
 				D9F8544324CDD06500722C0B /* ListsUsersViewDelegate.swift in Sources */,
 				D9F8542C24CDB96F00722C0B /* ListUsersViewController.swift in Sources */,
+				D915C95224D0669B00FECE7D /* Spacing.swift in Sources */,
 				D9F8540624CC933300722C0B /* Moya+Networking.swift in Sources */,
 				D9F853C024CC6E9500722C0B /* Endpoint.swift in Sources */,
 				D9F853F724CC8BC600722C0B /* Mappable.swift in Sources */,
@@ -1278,6 +1329,7 @@
 				D9F8545024CDD43800722C0B /* ListUsersCellViewModel.swift in Sources */,
 				D9F853A324CC4ACE00722C0B /* AutoMockable.swift in Sources */,
 				D9F8543A24CDBD8D00722C0B /* DefaultListUsersPresenter.swift in Sources */,
+				D915C95524D067A900FECE7D /* RFont.swift in Sources */,
 				D9F853D324CC773900722C0B /* User.swift in Sources */,
 				D9F8543324CDBBC100722C0B /* DefaultListUsersInteractor.swift in Sources */,
 				D9F853BA24CC6B5200722C0B /* UserService.swift in Sources */,

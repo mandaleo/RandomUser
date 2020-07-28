@@ -4,9 +4,9 @@ import Kingfisher
 
 private enum ViewLayout {
   static let avatarSize = CGSize(width: 64, height: 64)
-  static let spacing = CGFloat(8)
-  static let mainFont = UIFont.boldSystemFont(ofSize: 20)
-  static let secondaryFont = UIFont.italicSystemFont(ofSize: 16)
+  static let spacing = Spacing.xxs
+  static let mainFont = RFont.main
+  static let secondaryFont = RFont.secondary
   static let attachmentBounds = CGRect(x: 0, y: -3,
                                        width: CGFloat(16),
                                        height: CGFloat(16))
@@ -64,9 +64,9 @@ final class ListUserCellView: UIView {
   func setup(with model: ListUsersCellViewModel) {
     setupView()
     nameLabel.text =  model.name
-    emailLabel.attributedText = model.email.concat(image: UIImage(systemName: "envelope.fill"),
+    emailLabel.attributedText = model.email.concat(image: Icon.email,
                                                    bounds: ViewLayout.attachmentBounds)
-    phoneLabel.attributedText = model.phone.concat(image: UIImage(systemName: "phone.circle.fill"),
+    phoneLabel.attributedText = model.phone.concat(image: Icon.phone,
                                                    bounds: ViewLayout.attachmentBounds)
     avatarImageView.kf.setImage(with: model.thumbnail)
   }
