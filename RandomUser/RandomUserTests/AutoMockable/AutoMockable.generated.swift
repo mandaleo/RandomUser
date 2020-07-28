@@ -5,6 +5,7 @@
 // swiftlint:disable variable_name
 
 import Foundation
+import CoreData
 @testable import RandomUser
 #if os(iOS) || os(tvOS) || os(watchOS)
 import UIKit
@@ -60,6 +61,19 @@ class DbStorageServiceMock: NSObject, DbStorageService {
         hideUserWithReceivedEmail = email
         hideUserWithReceivedInvocations.append(email)
         hideUserWithClosure?(email)
+    }
+
+    //MARK: - clear
+
+    private(set) var clearCallsCount = 0
+    var clearCalled: Bool {
+        return clearCallsCount > 0
+    }
+    var clearClosure: (() -> Void)?
+
+    func clear() {
+        clearCallsCount += 1
+        clearClosure?()
     }
 
 }
