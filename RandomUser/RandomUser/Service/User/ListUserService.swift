@@ -1,5 +1,10 @@
 import RxSwift
 
+private enum DefaultValues {
+  static let seed = "abc"
+  static let numberOfItems = 10
+}
+
 protocol ListUserServiceDelegate: class, AutoMockable {
   func didLoadUsers()
   func didFailLoadingUsers(with error: Error)
@@ -7,7 +12,7 @@ protocol ListUserServiceDelegate: class, AutoMockable {
 
 protocol ListUserService: AutoMockable {
   var delegate: ListUserServiceDelegate? { get set }
-  func getUsers(with seed: String, numberOfItems: Int, page: Int)
+  func loadUsers()
   func hideUser(with email: String)
 }
 
@@ -15,18 +20,24 @@ class DefaultListUserService: ListUserService {
   
   weak var delegate: ListUserServiceDelegate?
   private let listUsers: ListUsersUseCase
-  private var localStorageService: LocalStorageService
+  private let dbStorageService: DbStorageService
+  private let localStorageService: LocalStorageService
   private let bag = DisposeBag()
   
   init(listUsers: ListUsersUseCase,
+       dbStorageService: DbStorageService,
        localStorageService: LocalStorageService) {
     self.listUsers = listUsers
+    self.dbStorageService = dbStorageService
     self.localStorageService = localStorageService
   }
   
-  func getUsers(with seed: String, numberOfItems: Int, page: Int) {
-    let request = ListUsersRequest(page: page, numberOfItems: numberOfItems, seed: seed)
+  func loadUsers() {
+    let request = ListUsersRequest(page: nextPage,
+                                   numberOfItems: DefaultValues.numberOfItems,
+                                   seed: DefaultValues.seed)
     listUsers.execute(request: request).subscribe(onSuccess: { [weak self] listUsers in
+      self?.save(currentPage: listUsers.page)
       self?.storage(users: listUsers.users)
     }, onError: { [weak self] error in
       self?.delegate?.didFailLoadingUsers(with: error)
@@ -34,15 +45,23 @@ class DefaultListUserService: ListUserService {
   }
   
   func hideUser(with email: String) {
-    localStorageService.hideUser(with: email)
+    dbStorageService.hideUser(with: email)
   }
   
   private func storage(users: [User]) {
     for user in users {
-      RUser(user: user, context: localStorageService.context)
+      RUser(user: user, context: dbStorageService.context)
     }
-    localStorageService.save()
+    dbStorageService.save()
     delegate?.didLoadUsers()
+  }
+  
+  func save(currentPage: Int) {
+    localStorageService.store(value: currentPage, forKey: .currentPage)
+  }
+  
+  private var nextPage: Int {
+    return localStorageService.integer(forKey: .currentPage) + 1
   }
 }
 
@@ -50,6 +69,7 @@ class DefaultListUserService: ListUserService {
 extension Assembly {
   var listUserService: ListUserService {
     return DefaultListUserService(listUsers: networking.listUsers,
-                                  localStorageService: coreDataService)
+                                  dbStorageService: coreDataService,
+                                  localStorageService: localStorageService)
   }
 }

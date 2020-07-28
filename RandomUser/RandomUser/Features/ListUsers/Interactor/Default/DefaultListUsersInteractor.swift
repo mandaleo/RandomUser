@@ -8,8 +8,8 @@ final class DefaultListUsersInteractor: ListUsersInteractor {
     self.listUserService.delegate = self
   }
 
-  func getUsers(with seed: String, numberOfItems: Int, page: Int) {
-    listUserService.getUsers(with: seed, numberOfItems: numberOfItems, page: page)
+  func loadUsers() {
+    listUserService.loadUsers()
   }
   
   func hideUser(with email: String) {

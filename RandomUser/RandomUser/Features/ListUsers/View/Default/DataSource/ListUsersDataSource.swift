@@ -18,7 +18,7 @@ final class ListUsersDataSource: NSObject, UITableViewDataSource {
   weak var delegate: ListUsersDataSourceDelegate?
   private let isHiddenPredicate = NSPredicate(format: "isHidden == NO")
   
-  init(coreDataService: LocalStorageService = coreDataService) {
+  init(coreDataService: DbStorageService = coreDataService) {
     let fetchRequest: NSFetchRequest<RUser> = RUser.fetchRequest()
     fetchRequest.fetchBatchSize = 20
     let sortDescriptor = NSSortDescriptor(key: "firstName", ascending: true)

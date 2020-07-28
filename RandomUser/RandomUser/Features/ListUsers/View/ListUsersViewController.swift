@@ -47,6 +47,10 @@ extension ListUsersViewController: ListsUsersViewDelegate {
   func didTapOnHideUser(with email: String) {
     presenter?.hideUser(with: email)
   }
+  
+  func loadMoreUsers() {
+    presenter?.loadUsers()
+  }
 }
 
 // MARK: - UISearchBarDelegate
