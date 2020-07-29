@@ -2,7 +2,7 @@ import XCTest
 @testable import RandomUser
 
 final class ListUsersPresenterSpec: XCTestCase {
-
+  
   private var ui: ListUsersUIMock!
   private var interactor: ListUsersInteractorMock!
   private var navigator: ListUsersNavigatorMock!
@@ -43,6 +43,15 @@ final class ListUsersPresenterSpec: XCTestCase {
   func test_load_more_users() {
     sut.loadUsers()
     XCTAssertTrue(interactor.loadUsersCalled, "Should call interactor to show more users")
+  }
+  
+  func test_load_more_users_fail() {
+    interactor.loadUsersClosure = {
+      self.sut.didFailLoadingUsers(with: NSError())
+    }
+    sut.loadUsers()
+    XCTAssertTrue(interactor.loadUsersCalled, "Should call interactor to show more users")
+    XCTAssertTrue(ui.showErrorWithActionCalled, "Should show the error")
   }
   
   func test_hide_user() {
