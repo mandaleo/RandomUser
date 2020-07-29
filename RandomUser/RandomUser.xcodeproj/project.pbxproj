@@ -22,6 +22,8 @@
 		D915C96C24D1ABC800FECE7D /* ListUserServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C96B24D1ABC800FECE7D /* ListUserServiceSpec.swift */; };
 		D915C97024D1B42200FECE7D /* UserDetailsViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C96F24D1B42200FECE7D /* UserDetailsViewSpec.swift */; };
 		D915C97824D1BF7200FECE7D /* ListUsersInteractorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C97724D1BF7200FECE7D /* ListUsersInteractorSpec.swift */; };
+		D915C97B24D1CE3D00FECE7D /* ListUsersPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C97A24D1CE3D00FECE7D /* ListUsersPresenterSpec.swift */; };
+		D915C97E24D1D0C900FECE7D /* UserDetailsPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C97D24D1D0C900FECE7D /* UserDetailsPresenterSpec.swift */; };
 		D9F8535924CC20BB00722C0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8535824CC20BB00722C0B /* AppDelegate.swift */; };
 		D9F8536224CC20C100722C0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9F8536124CC20C100722C0B /* Assets.xcassets */; };
 		D9F8537B24CC20C100722C0B /* RandomUserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8537A24CC20C100722C0B /* RandomUserUITests.swift */; };
@@ -136,6 +138,8 @@
 		D915C96B24D1ABC800FECE7D /* ListUserServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserServiceSpec.swift; sourceTree = "<group>"; };
 		D915C96F24D1B42200FECE7D /* UserDetailsViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewSpec.swift; sourceTree = "<group>"; };
 		D915C97724D1BF7200FECE7D /* ListUsersInteractorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersInteractorSpec.swift; sourceTree = "<group>"; };
+		D915C97A24D1CE3D00FECE7D /* ListUsersPresenterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersPresenterSpec.swift; sourceTree = "<group>"; };
+		D915C97D24D1D0C900FECE7D /* UserDetailsPresenterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsPresenterSpec.swift; sourceTree = "<group>"; };
 		D9F8535524CC20BB00722C0B /* RandomUser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomUser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F8535824CC20BB00722C0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9F8536124CC20C100722C0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -383,6 +387,7 @@
 			isa = PBXGroup;
 			children = (
 				D915C97124D1B93600FECE7D /* View */,
+				D915C97C24D1D0AE00FECE7D /* Presenter */,
 			);
 			path = UserDetails;
 			sourceTree = "<group>";
@@ -398,6 +403,7 @@
 		D915C97224D1B98400FECE7D /* ListUsers */ = {
 			isa = PBXGroup;
 			children = (
+				D915C97924D1CE1D00FECE7D /* Presenter */,
 				D915C97624D1BF3A00FECE7D /* Interactor */,
 			);
 			path = ListUsers;
@@ -409,6 +415,22 @@
 				D915C97724D1BF7200FECE7D /* ListUsersInteractorSpec.swift */,
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		D915C97924D1CE1D00FECE7D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D915C97A24D1CE3D00FECE7D /* ListUsersPresenterSpec.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D915C97C24D1D0AE00FECE7D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D915C97D24D1D0C900FECE7D /* UserDetailsPresenterSpec.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		D9F8534C24CC20BB00722C0B = {
@@ -1446,6 +1468,8 @@
 				D915C96624D09B9700FECE7D /* CoreDataServiceSpec.swift in Sources */,
 				D9F853FF24CC906600722C0B /* UserRepositorySpec.swift in Sources */,
 				D915C97824D1BF7200FECE7D /* ListUsersInteractorSpec.swift in Sources */,
+				D915C97E24D1D0C900FECE7D /* UserDetailsPresenterSpec.swift in Sources */,
+				D915C97B24D1CE3D00FECE7D /* ListUsersPresenterSpec.swift in Sources */,
 				D9F853B124CC4C6A00722C0B /* AutoMockable.generated.swift in Sources */,
 				D915C96C24D1ABC800FECE7D /* ListUserServiceSpec.swift in Sources */,
 				D9F8540A24CC94A000722C0B /* Fixture.swift in Sources */,
