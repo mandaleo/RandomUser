@@ -1,4 +1,4 @@
-protocol UserDetailsProvider {
+protocol UserDetailsProvider: AutoMockable {
   func userDetailsViewController(for user: User) -> UserDetailsViewController
 }
 

@@ -1,4 +1,4 @@
-protocol ListUsersProvider {
+protocol ListUsersProvider: AutoMockable {
   func listUserViewController() -> ListUsersViewController
 }
 
@@ -29,7 +29,8 @@ extension Assembly: ListUsersProvider {
   private func listUsersPresenter(interactor: ListUsersInteractor,
                                   navigator: ListUsersNavigator) -> DefaultListUsersPresenter {
     return DefaultListUsersPresenter(interactor: interactor,
-                                     navigator: navigator)
+                                     navigator: navigator,
+                                     localStorageService: localStorageService)
     
   }
   

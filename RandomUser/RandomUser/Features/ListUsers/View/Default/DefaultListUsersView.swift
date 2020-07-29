@@ -30,6 +30,9 @@ final class DefaultListUsersView: UIView, ListUsersView {
     tableView.dataSource = dataSource
     tableView.delegate = dataSource
     tableView.reloadData()
+    tableView.addInfiniteScroll { [weak self] _ in
+      self?.delegate?.loadMoreUsers()
+    }
   }
   
   func filter(by text: String) {
@@ -49,6 +52,7 @@ extension DefaultListUsersView: ListUsersDataSourceDelegate {
   
   func didChangeContent() {
     tableView.endUpdates()
+    tableView.finishInfiniteScroll()
   }
   
   func insertRow(at indexPath: IndexPath) {
@@ -59,7 +63,15 @@ extension DefaultListUsersView: ListUsersDataSourceDelegate {
     tableView.deleteRows(at: [indexPath], with: .automatic)
   }
   
+  func updateRow(at indexPath: IndexPath) {
+    tableView.reloadRows(at: [indexPath], with: .automatic)
+  }
+  
   func reloadTableView() {
     tableView.reloadData()
+  }
+  
+  func didTapOnHideUser(with email: String) {
+    delegate?.didTapOnHideUser(with: email)
   }
 }

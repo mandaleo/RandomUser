@@ -13,6 +13,7 @@ target 'RandomUser' do
   pod 'Moya/RxSwift'
   pod 'Moya/ReactiveSwift'
   pod 'SnapKit'
+  pod 'UIScrollView-InfiniteScroll'
 
   # Pods for RandomUser
 
@@ -22,10 +23,14 @@ target 'RandomUser' do
     pod 'RxBlocking', '5.0'
     pod 'RxTest',     '5.0'
     pod 'OHHTTPStubs/Swift'
+    pod 'SnapshotTesting', '~> 1.7.2'
   end
 
   target 'RandomUserUITests' do
     # Pods for testing
+    pod 'RxBlocking', '5.0'
+    pod 'RxTest',     '5.0'
+    pod 'OHHTTPStubs/Swift'
   end
 
 end

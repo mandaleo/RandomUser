@@ -7,7 +7,9 @@ protocol ListUsersDataSourceDelegate: class, AutoMockable {
   func didChangeContent()
   func insertRow(at indexPath: IndexPath)
   func deleteRow(at indexPath: IndexPath)
+  func updateRow(at indexPath: IndexPath)
   func reloadTableView()
+  func didTapOnHideUser(with email: String)
 }
 
 final class ListUsersDataSource: NSObject, UITableViewDataSource {
@@ -16,7 +18,7 @@ final class ListUsersDataSource: NSObject, UITableViewDataSource {
   weak var delegate: ListUsersDataSourceDelegate?
   private let isHiddenPredicate = NSPredicate(format: "isHidden == NO")
   
-  init(coreDataService: LocalStorageService = coreDataService) {
+  init(coreDataService: DbStorageService = coreDataService) {
     let fetchRequest: NSFetchRequest<RUser> = RUser.fetchRequest()
     fetchRequest.fetchBatchSize = 20
     let sortDescriptor = NSSortDescriptor(key: "firstName", ascending: true)
@@ -48,9 +50,9 @@ final class ListUsersDataSource: NSObject, UITableViewDataSource {
       fetchedResultsController.fetchRequest.predicate = isHiddenPredicate
       return
     }
-    let namePredicate = NSPredicate(format: "firstName CONTAINS[c] %@", text)
-    let surnamePredicate = NSPredicate(format: "lastName CONTAINS[c] %@", text)
-    let emailPredicate = NSPredicate(format: "email CONTAINS[c] %@", text)
+    let namePredicate = NSPredicate(format: "firstName CONTAINS[c] %@", text.lowercased())
+    let surnamePredicate = NSPredicate(format: "lastName CONTAINS[c] %@", text.lowercased())
+    let emailPredicate = NSPredicate(format: "email CONTAINS[c] %@", text.lowercased())
     let filterPredicate = NSCompoundPredicate(type: .or,
                                          subpredicates: [namePredicate, surnamePredicate, emailPredicate])
     let predicates = NSCompoundPredicate(type: .and, subpredicates: [isHiddenPredicate, filterPredicate])
@@ -68,6 +70,7 @@ final class ListUsersDataSource: NSObject, UITableViewDataSource {
     }
     let user = getItem(by: indexPath)
     cell.setup(with: ListUsersCellViewModel(user: user))
+    cell.delegate = self
     return cell
   }
   
@@ -81,6 +84,13 @@ extension ListUsersDataSource: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let user = getItem(by: indexPath)
     delegate?.didSelect(user: user)
+  }
+}
+
+// MARK: - ListUserCellDelegate
+extension ListUsersDataSource: ListUserCellDelegate {
+  func didTapOnHideUser(with email: String) {
+    delegate?.didTapOnHideUser(with: email)
   }
 }
 
@@ -102,6 +112,9 @@ extension ListUsersDataSource: NSFetchedResultsControllerDelegate {
     case .delete:
       guard let indexPath = indexPath else { return }
       delegate?.deleteRow(at: indexPath)
+    case .update:
+      guard let indexPath = indexPath else { return }
+      delegate?.updateRow(at: indexPath)
     default:
       break
     }

@@ -67,6 +67,7 @@ struct User {
   }
 }
 
+// MARK: - Mocks
 extension User {
   static var mock: User {
     return User(gender: "female",
@@ -98,5 +99,21 @@ extension User {
                 thumbnail: URL(string: "https://randomuser.me/api/portraits/thumb/men/58.jpg"),
                 image: URL(string: "https://randomuser.me/api/portraits/men/58.jpg"),
                 isHidden: false)
+  }
+  
+  static var hideUser: User {
+    return User(gender: "male",
+                fistName: "Maurice",
+                lastName: "Jimenez",
+                street: "Walnut Hill Ln, 138",
+                city: "Boulder",
+                state: "Washington",
+                coordinates: CLLocationCoordinate2D(latitude: -41.7203, longitude: 11.2935),
+                email: "maurice.jimenez@example.com",
+                registeredDate: "1950-04-12T13:08:50.686Z".toDate(),
+                phone: "(811)-087-5515",
+                thumbnail: URL(string: "https://randomuser.me/api/portraits/thumb/men/58.jpg"),
+                image: URL(string: "https://randomuser.me/api/portraits/men/58.jpg"),
+                isHidden: true)
   }
 }

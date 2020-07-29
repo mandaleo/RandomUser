@@ -1,45 +1,46 @@
-private enum DefaultValues {
-  static let seed = "abc"
-  static let numberOfITems = 20
-  static let page = 1
-}
-
 final class DefaultListUsersPresenter: ListUsersPresenter {
   
   weak var ui: ListUsersUI?
   private let interactor: ListUsersInteractor
   private let navigator: ListUsersNavigator
+  private let localStorageService: LocalStorageService
   
   init(interactor: ListUsersInteractor,
-       navigator: ListUsersNavigator) {
+       navigator: ListUsersNavigator,
+       localStorageService: LocalStorageService) {
     self.interactor = interactor
     self.navigator = navigator
+    self.localStorageService = localStorageService
   }
   
   func didLoad() {
     ui?.setupUI()
-    loadMoreUsers()
+    guard localStorageService.integer(forKey: .currentPage) == 0 else { return }
+    loadUsers()
   }
   
   func didSelect(user: User) {
     navigator.show(user: user)
   }
   
-  func loadMoreUsers() {
-    interactor.getUsers(with: DefaultValues.seed,
-                        numberOfItems: DefaultValues.numberOfITems,
-                        page: DefaultValues.page)
+  func loadUsers() {
+    interactor.loadUsers()
+  }
+  
+  func hideUser(with email: String) {
+    interactor.hideUser(with: email)
   }
 }
 
 // MARK: - ListUsersInteractorDelegate
 extension DefaultListUsersPresenter: ListUsersInteractorDelegate {
   
-  func didLoadUsers() {
-    print("YES!!!!!!!!!!!!!!")
-  }
-  
   func didFailLoadingUsers(with error: Error) {
-    print("NO!!!!!!!!!!!!!!")
+    let retryAction = UIAlertAction(title: "Retry",
+                                    style: .default) { [weak self] _ in
+                                self?.loadUsers()
+    }
+    ui?.showError(with: "Random user api is not too good",
+                  action: retryAction)
   }
 }

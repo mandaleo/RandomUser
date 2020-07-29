@@ -8,10 +8,11 @@ final class ListUsersViewController: UIViewController {
   private var searchBarView: UISearchBar = {
     let searchBar = UISearchBar()
     searchBar.searchBarStyle = .prominent
-    searchBar.placeholder = " Search..."
+    searchBar.placeholder = "Search..."
     searchBar.sizeToFit()
     searchBar.isTranslucent = false
     searchBar.showsCancelButton = true
+    searchBar.accessibilityIdentifier = "randomUser.searchBar"
     return searchBar
   }()
   
@@ -36,12 +37,24 @@ extension ListUsersViewController: ListUsersUI {
   func setupUI() {
     listUsersView?.setup()
   }
+  
+  func showError(with message: String, action: UIAlertAction?) {
+    showAlertError(with: message, action: action)
+  }
 }
 
 // MARK: - ListsUsersViewDelegate
 extension ListUsersViewController: ListsUsersViewDelegate {
   func didSelect(user: User) {
     presenter?.didSelect(user: user)
+  }
+  
+  func didTapOnHideUser(with email: String) {
+    presenter?.hideUser(with: email)
+  }
+  
+  func loadMoreUsers() {
+    presenter?.loadUsers()
   }
 }
 
