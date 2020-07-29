@@ -21,6 +21,7 @@
 		D915C96624D09B9700FECE7D /* CoreDataServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C96524D09B9700FECE7D /* CoreDataServiceSpec.swift */; };
 		D915C96C24D1ABC800FECE7D /* ListUserServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C96B24D1ABC800FECE7D /* ListUserServiceSpec.swift */; };
 		D915C97024D1B42200FECE7D /* UserDetailsViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C96F24D1B42200FECE7D /* UserDetailsViewSpec.swift */; };
+		D915C97524D1BBEC00FECE7D /* ListUsersNavigatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C97424D1BBEC00FECE7D /* ListUsersNavigatorSpec.swift */; };
 		D9F8535924CC20BB00722C0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8535824CC20BB00722C0B /* AppDelegate.swift */; };
 		D9F8536224CC20C100722C0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9F8536124CC20C100722C0B /* Assets.xcassets */; };
 		D9F8537B24CC20C100722C0B /* RandomUserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8537A24CC20C100722C0B /* RandomUserUITests.swift */; };
@@ -134,6 +135,7 @@
 		D915C96524D09B9700FECE7D /* CoreDataServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataServiceSpec.swift; sourceTree = "<group>"; };
 		D915C96B24D1ABC800FECE7D /* ListUserServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserServiceSpec.swift; sourceTree = "<group>"; };
 		D915C96F24D1B42200FECE7D /* UserDetailsViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewSpec.swift; sourceTree = "<group>"; };
+		D915C97424D1BBEC00FECE7D /* ListUsersNavigatorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersNavigatorSpec.swift; sourceTree = "<group>"; };
 		D9F8535524CC20BB00722C0B /* RandomUser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomUser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F8535824CC20BB00722C0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9F8536124CC20C100722C0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -371,6 +373,7 @@
 		D915C96D24D1B3A300FECE7D /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				D915C97224D1B98400FECE7D /* ListUsers */,
 				D915C96E24D1B3C300FECE7D /* UserDetails */,
 			);
 			path = Features;
@@ -390,6 +393,22 @@
 				D915C96F24D1B42200FECE7D /* UserDetailsViewSpec.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		D915C97224D1B98400FECE7D /* ListUsers */ = {
+			isa = PBXGroup;
+			children = (
+				D915C97324D1BA1500FECE7D /* Navigator */,
+			);
+			path = ListUsers;
+			sourceTree = "<group>";
+		};
+		D915C97324D1BA1500FECE7D /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+				D915C97424D1BBEC00FECE7D /* ListUsersNavigatorSpec.swift */,
+			);
+			path = Navigator;
 			sourceTree = "<group>";
 		};
 		D9F8534C24CC20BB00722C0B = {
@@ -1427,6 +1446,7 @@
 				D915C96624D09B9700FECE7D /* CoreDataServiceSpec.swift in Sources */,
 				D9F853FF24CC906600722C0B /* UserRepositorySpec.swift in Sources */,
 				D9F853B124CC4C6A00722C0B /* AutoMockable.generated.swift in Sources */,
+				D915C97524D1BBEC00FECE7D /* ListUsersNavigatorSpec.swift in Sources */,
 				D915C96C24D1ABC800FECE7D /* ListUserServiceSpec.swift in Sources */,
 				D9F8540A24CC94A000722C0B /* Fixture.swift in Sources */,
 				D915C97024D1B42200FECE7D /* UserDetailsViewSpec.swift in Sources */,

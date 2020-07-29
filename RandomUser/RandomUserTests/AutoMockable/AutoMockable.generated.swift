@@ -446,6 +446,23 @@ class ListUsersPresenterMock: NSObject, ListUsersPresenter {
     }
 
 }
+class ListUsersProviderMock: NSObject, ListUsersProvider {
+
+    //MARK: - listUserViewController
+
+    private(set) var listUserViewControllerCallsCount = 0
+    var listUserViewControllerCalled: Bool {
+        return listUserViewControllerCallsCount > 0
+    }
+    var listUserViewControllerReturnValue: ListUsersViewController!
+    var listUserViewControllerClosure: (() -> ListUsersViewController)?
+
+    func listUserViewController() -> ListUsersViewController {
+        listUserViewControllerCallsCount += 1
+        return listUserViewControllerClosure.map({ $0() }) ?? listUserViewControllerReturnValue
+    }
+
+}
 class ListUsersUIMock: NSObject, ListUsersUI {
 
     //MARK: - setupUI
@@ -619,6 +636,27 @@ class UserDetailsPresenterMock: NSObject, UserDetailsPresenter {
     func didLoad() {
         didLoadCallsCount += 1
         didLoadClosure?()
+    }
+
+}
+class UserDetailsProviderMock: NSObject, UserDetailsProvider {
+
+    //MARK: - userDetailsViewController
+
+    private(set) var userDetailsViewControllerForCallsCount = 0
+    var userDetailsViewControllerForCalled: Bool {
+        return userDetailsViewControllerForCallsCount > 0
+    }
+    private(set) var userDetailsViewControllerForReceivedUser: User?
+    private(set) var userDetailsViewControllerForReceivedInvocations: [User] = []
+    var userDetailsViewControllerForReturnValue: UserDetailsViewController!
+    var userDetailsViewControllerForClosure: ((User) -> UserDetailsViewController)?
+
+    func userDetailsViewController(for user: User) -> UserDetailsViewController {
+        userDetailsViewControllerForCallsCount += 1
+        userDetailsViewControllerForReceivedUser = user
+        userDetailsViewControllerForReceivedInvocations.append(user)
+        return userDetailsViewControllerForClosure.map({ $0(user) }) ?? userDetailsViewControllerForReturnValue
     }
 
 }

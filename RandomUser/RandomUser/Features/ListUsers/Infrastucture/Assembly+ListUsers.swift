@@ -1,4 +1,4 @@
-protocol ListUsersProvider {
+protocol ListUsersProvider: AutoMockable {
   func listUserViewController() -> ListUsersViewController
 }
 
