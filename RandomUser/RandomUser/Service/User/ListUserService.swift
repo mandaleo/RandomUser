@@ -56,7 +56,7 @@ class DefaultListUserService: ListUserService {
     delegate?.didLoadUsers()
   }
   
-  func save(currentPage: Int) {
+  private func save(currentPage: Int) {
     localStorageService.store(value: currentPage, forKey: .currentPage)
   }
   

@@ -6,6 +6,7 @@
 
 import Foundation
 import CoreData
+import RxSwift
 @testable import RandomUser
 #if os(iOS) || os(tvOS) || os(watchOS)
 import UIKit
@@ -458,6 +459,27 @@ class ListUsersUIMock: NSObject, ListUsersUI {
     func setupUI() {
         setupUICallsCount += 1
         setupUIClosure?()
+    }
+
+}
+class ListUsersUseCaseMock: NSObject, ListUsersUseCase {
+
+    //MARK: - execute
+
+    private(set) var executeRequestCallsCount = 0
+    var executeRequestCalled: Bool {
+        return executeRequestCallsCount > 0
+    }
+    private(set) var executeRequestReceivedRequest: ListUsersRequest?
+    private(set) var executeRequestReceivedInvocations: [ListUsersRequest] = []
+    var executeRequestReturnValue: Single<ListUsers>!
+    var executeRequestClosure: ((ListUsersRequest) -> Single<ListUsers>)?
+
+    func execute(request: ListUsersRequest) -> Single<ListUsers> {
+        executeRequestCallsCount += 1
+        executeRequestReceivedRequest = request
+        executeRequestReceivedInvocations.append(request)
+        return executeRequestClosure.map({ $0(request) }) ?? executeRequestReturnValue
     }
 
 }

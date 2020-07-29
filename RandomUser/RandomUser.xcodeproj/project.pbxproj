@@ -19,6 +19,7 @@
 		D915C96024D08ACE00FECE7D /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C95F24D08ACE00FECE7D /* LocalStorage.swift */; };
 		D915C96224D08BA400FECE7D /* LocalStorageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C96124D08BA400FECE7D /* LocalStorageKey.swift */; };
 		D915C96624D09B9700FECE7D /* CoreDataServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C96524D09B9700FECE7D /* CoreDataServiceSpec.swift */; };
+		D915C96C24D1ABC800FECE7D /* ListUserServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C96B24D1ABC800FECE7D /* ListUserServiceSpec.swift */; };
 		D9F8535924CC20BB00722C0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8535824CC20BB00722C0B /* AppDelegate.swift */; };
 		D9F8536224CC20C100722C0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9F8536124CC20C100722C0B /* Assets.xcassets */; };
 		D9F8537B24CC20C100722C0B /* RandomUserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8537A24CC20C100722C0B /* RandomUserUITests.swift */; };
@@ -130,6 +131,7 @@
 		D915C95F24D08ACE00FECE7D /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		D915C96124D08BA400FECE7D /* LocalStorageKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageKey.swift; sourceTree = "<group>"; };
 		D915C96524D09B9700FECE7D /* CoreDataServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataServiceSpec.swift; sourceTree = "<group>"; };
+		D915C96B24D1ABC800FECE7D /* ListUserServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserServiceSpec.swift; sourceTree = "<group>"; };
 		D9F8535524CC20BB00722C0B /* RandomUser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomUser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F8535824CC20BB00722C0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9F8536124CC20C100722C0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -343,6 +345,7 @@
 			isa = PBXGroup;
 			children = (
 				D915C96424D09B6B00FECE7D /* DbStorage */,
+				D915C96A24D1AB9600FECE7D /* User */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -353,6 +356,14 @@
 				D915C96524D09B9700FECE7D /* CoreDataServiceSpec.swift */,
 			);
 			path = DbStorage;
+			sourceTree = "<group>";
+		};
+		D915C96A24D1AB9600FECE7D /* User */ = {
+			isa = PBXGroup;
+			children = (
+				D915C96B24D1ABC800FECE7D /* ListUserServiceSpec.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		D9F8534C24CC20BB00722C0B = {
@@ -1389,6 +1400,7 @@
 				D915C96624D09B9700FECE7D /* CoreDataServiceSpec.swift in Sources */,
 				D9F853FF24CC906600722C0B /* UserRepositorySpec.swift in Sources */,
 				D9F853B124CC4C6A00722C0B /* AutoMockable.generated.swift in Sources */,
+				D915C96C24D1ABC800FECE7D /* ListUserServiceSpec.swift in Sources */,
 				D9F8540A24CC94A000722C0B /* Fixture.swift in Sources */,
 				D9F8540F24CC96C900722C0B /* TestSetup.swift in Sources */,
 			);

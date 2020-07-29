@@ -67,6 +67,7 @@ struct User {
   }
 }
 
+// MARK: - Mocks
 extension User {
   static var mock: User {
     return User(gender: "female",
