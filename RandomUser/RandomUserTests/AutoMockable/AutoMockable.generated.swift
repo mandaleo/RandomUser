@@ -478,6 +478,23 @@ class ListUsersUIMock: NSObject, ListUsersUI {
         setupUIClosure?()
     }
 
+    //MARK: - showError
+
+    private(set) var showErrorWithActionCallsCount = 0
+    var showErrorWithActionCalled: Bool {
+        return showErrorWithActionCallsCount > 0
+    }
+    private(set) var showErrorWithActionReceivedArguments: (message: String, action: UIAlertAction?)?
+    private(set) var showErrorWithActionReceivedInvocations: [(message: String, action: UIAlertAction?)] = []
+    var showErrorWithActionClosure: ((String, UIAlertAction?) -> Void)?
+
+    func showError(with message: String, action: UIAlertAction?) {
+        showErrorWithActionCallsCount += 1
+        showErrorWithActionReceivedArguments = (message: message, action: action)
+        showErrorWithActionReceivedInvocations.append((message: message, action: action))
+        showErrorWithActionClosure?(message, action)
+    }
+
 }
 class ListUsersUseCaseMock: NSObject, ListUsersUseCase {
 

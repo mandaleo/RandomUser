@@ -3,15 +3,19 @@ final class DefaultListUsersPresenter: ListUsersPresenter {
   weak var ui: ListUsersUI?
   private let interactor: ListUsersInteractor
   private let navigator: ListUsersNavigator
+  private let localStorageService: LocalStorageService
   
   init(interactor: ListUsersInteractor,
-       navigator: ListUsersNavigator) {
+       navigator: ListUsersNavigator,
+       localStorageService: LocalStorageService) {
     self.interactor = interactor
     self.navigator = navigator
+    self.localStorageService = localStorageService
   }
   
   func didLoad() {
     ui?.setupUI()
+    guard localStorageService.integer(forKey: .currentPage) == 0 else { return }
     loadUsers()
   }
   
@@ -32,6 +36,11 @@ final class DefaultListUsersPresenter: ListUsersPresenter {
 extension DefaultListUsersPresenter: ListUsersInteractorDelegate {
   
   func didFailLoadingUsers(with error: Error) {
-    print("NO!!!!!!!!!!!!!!")
+    let retryAction = UIAlertAction(title: "Retry",
+                                    style: .default) { [weak self] _ in
+                                self?.loadUsers()
+    }
+    ui?.showError(with: "Random user api is not too good",
+                  action: retryAction)
   }
 }

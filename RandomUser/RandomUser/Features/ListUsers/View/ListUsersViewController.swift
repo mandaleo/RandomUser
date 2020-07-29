@@ -36,6 +36,10 @@ extension ListUsersViewController: ListUsersUI {
   func setupUI() {
     listUsersView?.setup()
   }
+  
+  func showError(with message: String, action: UIAlertAction?) {
+    showAlertError(with: message, action: action)
+  }
 }
 
 // MARK: - ListsUsersViewDelegate
