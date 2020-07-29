@@ -379,9 +379,17 @@
 		D915C96E24D1B3C300FECE7D /* UserDetails */ = {
 			isa = PBXGroup;
 			children = (
-				D915C96F24D1B42200FECE7D /* UserDetailsViewSpec.swift */,
+				D915C97124D1B93600FECE7D /* View */,
 			);
 			path = UserDetails;
+			sourceTree = "<group>";
+		};
+		D915C97124D1B93600FECE7D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D915C96F24D1B42200FECE7D /* UserDetailsViewSpec.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D9F8534C24CC20BB00722C0B = {
