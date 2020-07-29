@@ -8,10 +8,11 @@ final class ListUsersViewController: UIViewController {
   private var searchBarView: UISearchBar = {
     let searchBar = UISearchBar()
     searchBar.searchBarStyle = .prominent
-    searchBar.placeholder = " Search..."
+    searchBar.placeholder = "Search..."
     searchBar.sizeToFit()
     searchBar.isTranslucent = false
     searchBar.showsCancelButton = true
+    searchBar.accessibilityIdentifier = "randomUser.searchBar"
     return searchBar
   }()
   

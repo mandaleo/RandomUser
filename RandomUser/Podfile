@@ -28,6 +28,9 @@ target 'RandomUser' do
 
   target 'RandomUserUITests' do
     # Pods for testing
+    pod 'RxBlocking', '5.0'
+    pod 'RxTest',     '5.0'
+    pod 'OHHTTPStubs/Swift'
   end
 
 end
