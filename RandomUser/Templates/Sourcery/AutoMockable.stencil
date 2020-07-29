@@ -2,6 +2,8 @@
 // swiftlint:disable variable_name
 
 import Foundation
+import CoreData
+import RxSwift
 @testable import RandomUser
 #if os(iOS) || os(tvOS) || os(watchOS)
 import UIKit

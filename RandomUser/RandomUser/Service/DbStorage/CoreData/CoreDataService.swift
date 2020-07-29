@@ -40,6 +40,17 @@ struct CoreDataService: DbStorageService {
       print("CoreData find email fail ===>  \(error.localizedDescription)")
     }
   }
+  
+  func clear() {
+    let fetchRequest: NSFetchRequest<NSFetchRequestResult> = RUser.fetchRequest()
+    let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+    do {
+      try context.execute(deleteRequest)
+      save()
+    } catch let error as NSError {
+      print(error)
+    }
+  }
 }
 
 // MARK: - Assembly

@@ -5,6 +5,8 @@
 // swiftlint:disable variable_name
 
 import Foundation
+import CoreData
+import RxSwift
 @testable import RandomUser
 #if os(iOS) || os(tvOS) || os(watchOS)
 import UIKit
@@ -60,6 +62,19 @@ class DbStorageServiceMock: NSObject, DbStorageService {
         hideUserWithReceivedEmail = email
         hideUserWithReceivedInvocations.append(email)
         hideUserWithClosure?(email)
+    }
+
+    //MARK: - clear
+
+    private(set) var clearCallsCount = 0
+    var clearCalled: Bool {
+        return clearCallsCount > 0
+    }
+    var clearClosure: (() -> Void)?
+
+    func clear() {
+        clearCallsCount += 1
+        clearClosure?()
     }
 
 }
@@ -431,6 +446,23 @@ class ListUsersPresenterMock: NSObject, ListUsersPresenter {
     }
 
 }
+class ListUsersProviderMock: NSObject, ListUsersProvider {
+
+    //MARK: - listUserViewController
+
+    private(set) var listUserViewControllerCallsCount = 0
+    var listUserViewControllerCalled: Bool {
+        return listUserViewControllerCallsCount > 0
+    }
+    var listUserViewControllerReturnValue: ListUsersViewController!
+    var listUserViewControllerClosure: (() -> ListUsersViewController)?
+
+    func listUserViewController() -> ListUsersViewController {
+        listUserViewControllerCallsCount += 1
+        return listUserViewControllerClosure.map({ $0() }) ?? listUserViewControllerReturnValue
+    }
+
+}
 class ListUsersUIMock: NSObject, ListUsersUI {
 
     //MARK: - setupUI
@@ -444,6 +476,27 @@ class ListUsersUIMock: NSObject, ListUsersUI {
     func setupUI() {
         setupUICallsCount += 1
         setupUIClosure?()
+    }
+
+}
+class ListUsersUseCaseMock: NSObject, ListUsersUseCase {
+
+    //MARK: - execute
+
+    private(set) var executeRequestCallsCount = 0
+    var executeRequestCalled: Bool {
+        return executeRequestCallsCount > 0
+    }
+    private(set) var executeRequestReceivedRequest: ListUsersRequest?
+    private(set) var executeRequestReceivedInvocations: [ListUsersRequest] = []
+    var executeRequestReturnValue: Single<ListUsers>!
+    var executeRequestClosure: ((ListUsersRequest) -> Single<ListUsers>)?
+
+    func execute(request: ListUsersRequest) -> Single<ListUsers> {
+        executeRequestCallsCount += 1
+        executeRequestReceivedRequest = request
+        executeRequestReceivedInvocations.append(request)
+        return executeRequestClosure.map({ $0(request) }) ?? executeRequestReturnValue
     }
 
 }
@@ -583,6 +636,27 @@ class UserDetailsPresenterMock: NSObject, UserDetailsPresenter {
     func didLoad() {
         didLoadCallsCount += 1
         didLoadClosure?()
+    }
+
+}
+class UserDetailsProviderMock: NSObject, UserDetailsProvider {
+
+    //MARK: - userDetailsViewController
+
+    private(set) var userDetailsViewControllerForCallsCount = 0
+    var userDetailsViewControllerForCalled: Bool {
+        return userDetailsViewControllerForCallsCount > 0
+    }
+    private(set) var userDetailsViewControllerForReceivedUser: User?
+    private(set) var userDetailsViewControllerForReceivedInvocations: [User] = []
+    var userDetailsViewControllerForReturnValue: UserDetailsViewController!
+    var userDetailsViewControllerForClosure: ((User) -> UserDetailsViewController)?
+
+    func userDetailsViewController(for user: User) -> UserDetailsViewController {
+        userDetailsViewControllerForCallsCount += 1
+        userDetailsViewControllerForReceivedUser = user
+        userDetailsViewControllerForReceivedInvocations.append(user)
+        return userDetailsViewControllerForClosure.map({ $0(user) }) ?? userDetailsViewControllerForReturnValue
     }
 
 }

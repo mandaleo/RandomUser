@@ -18,6 +18,12 @@
 		D915C95524D067A900FECE7D /* RFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C95424D067A900FECE7D /* RFont.swift */; };
 		D915C96024D08ACE00FECE7D /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C95F24D08ACE00FECE7D /* LocalStorage.swift */; };
 		D915C96224D08BA400FECE7D /* LocalStorageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C96124D08BA400FECE7D /* LocalStorageKey.swift */; };
+		D915C96624D09B9700FECE7D /* CoreDataServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C96524D09B9700FECE7D /* CoreDataServiceSpec.swift */; };
+		D915C96C24D1ABC800FECE7D /* ListUserServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C96B24D1ABC800FECE7D /* ListUserServiceSpec.swift */; };
+		D915C97024D1B42200FECE7D /* UserDetailsViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C96F24D1B42200FECE7D /* UserDetailsViewSpec.swift */; };
+		D915C97824D1BF7200FECE7D /* ListUsersInteractorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C97724D1BF7200FECE7D /* ListUsersInteractorSpec.swift */; };
+		D915C97B24D1CE3D00FECE7D /* ListUsersPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C97A24D1CE3D00FECE7D /* ListUsersPresenterSpec.swift */; };
+		D915C97E24D1D0C900FECE7D /* UserDetailsPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C97D24D1D0C900FECE7D /* UserDetailsPresenterSpec.swift */; };
 		D9F8535924CC20BB00722C0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8535824CC20BB00722C0B /* AppDelegate.swift */; };
 		D9F8536224CC20C100722C0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9F8536124CC20C100722C0B /* Assets.xcassets */; };
 		D9F8537B24CC20C100722C0B /* RandomUserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8537A24CC20C100722C0B /* RandomUserUITests.swift */; };
@@ -128,6 +134,12 @@
 		D915C95B24D086D800FECE7D /* RandomUser-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RandomUser-Bridging-Header.h"; sourceTree = "<group>"; };
 		D915C95F24D08ACE00FECE7D /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		D915C96124D08BA400FECE7D /* LocalStorageKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageKey.swift; sourceTree = "<group>"; };
+		D915C96524D09B9700FECE7D /* CoreDataServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataServiceSpec.swift; sourceTree = "<group>"; };
+		D915C96B24D1ABC800FECE7D /* ListUserServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserServiceSpec.swift; sourceTree = "<group>"; };
+		D915C96F24D1B42200FECE7D /* UserDetailsViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewSpec.swift; sourceTree = "<group>"; };
+		D915C97724D1BF7200FECE7D /* ListUsersInteractorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersInteractorSpec.swift; sourceTree = "<group>"; };
+		D915C97A24D1CE3D00FECE7D /* ListUsersPresenterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersPresenterSpec.swift; sourceTree = "<group>"; };
+		D915C97D24D1D0C900FECE7D /* UserDetailsPresenterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsPresenterSpec.swift; sourceTree = "<group>"; };
 		D9F8535524CC20BB00722C0B /* RandomUser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomUser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F8535824CC20BB00722C0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9F8536124CC20C100722C0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -337,6 +349,90 @@
 			path = LocalStorage;
 			sourceTree = "<group>";
 		};
+		D915C96324D09B5C00FECE7D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D915C96424D09B6B00FECE7D /* DbStorage */,
+				D915C96A24D1AB9600FECE7D /* User */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D915C96424D09B6B00FECE7D /* DbStorage */ = {
+			isa = PBXGroup;
+			children = (
+				D915C96524D09B9700FECE7D /* CoreDataServiceSpec.swift */,
+			);
+			path = DbStorage;
+			sourceTree = "<group>";
+		};
+		D915C96A24D1AB9600FECE7D /* User */ = {
+			isa = PBXGroup;
+			children = (
+				D915C96B24D1ABC800FECE7D /* ListUserServiceSpec.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		D915C96D24D1B3A300FECE7D /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				D915C97224D1B98400FECE7D /* ListUsers */,
+				D915C96E24D1B3C300FECE7D /* UserDetails */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		D915C96E24D1B3C300FECE7D /* UserDetails */ = {
+			isa = PBXGroup;
+			children = (
+				D915C97124D1B93600FECE7D /* View */,
+				D915C97C24D1D0AE00FECE7D /* Presenter */,
+			);
+			path = UserDetails;
+			sourceTree = "<group>";
+		};
+		D915C97124D1B93600FECE7D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D915C96F24D1B42200FECE7D /* UserDetailsViewSpec.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D915C97224D1B98400FECE7D /* ListUsers */ = {
+			isa = PBXGroup;
+			children = (
+				D915C97924D1CE1D00FECE7D /* Presenter */,
+				D915C97624D1BF3A00FECE7D /* Interactor */,
+			);
+			path = ListUsers;
+			sourceTree = "<group>";
+		};
+		D915C97624D1BF3A00FECE7D /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				D915C97724D1BF7200FECE7D /* ListUsersInteractorSpec.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		D915C97924D1CE1D00FECE7D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D915C97A24D1CE3D00FECE7D /* ListUsersPresenterSpec.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D915C97C24D1D0AE00FECE7D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D915C97D24D1D0C900FECE7D /* UserDetailsPresenterSpec.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		D9F8534C24CC20BB00722C0B = {
 			isa = PBXGroup;
 			children = (
@@ -374,6 +470,8 @@
 		D9F8536E24CC20C100722C0B /* RandomUserTests */ = {
 			isa = PBXGroup;
 			children = (
+				D915C96324D09B5C00FECE7D /* Services */,
+				D915C96D24D1B3A300FECE7D /* Features */,
 				D9F853FD24CC902C00722C0B /* NetworkLayer */,
 				D9F853AF24CC4C6A00722C0B /* AutoMockable */,
 				D9F8537124CC20C100722C0B /* Info.plist */,
@@ -1258,7 +1356,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ -f ${SRCROOT}/.env.sh ] || [ -f ${SRCROOT}/.env.stg.sh] || [ -f ${SRCROOT}/.env.prod.sh ] ; then\n  git checkout ${SRCROOT}/RandomUser/Networking/Infrasctruture/Environment/Environment.plist\nelse\n  echo \"Environment file does not exist\"\nfi\n";
+			shellScript = "#if [ -f ${SRCROOT}/.env.sh ] ||  [ -f ${SRCROOT}/.env.prod.sh ] ; then\n # git checkout ${SRCROOT}/RandomUser/Networking/Infrasctruture/Environment/Environment.plist\n#else\n # echo \"Environment file does not exist\"\n#fi\n";
 		};
 		E8C8B8CC5D70E36B35275F2B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1367,9 +1465,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D915C96624D09B9700FECE7D /* CoreDataServiceSpec.swift in Sources */,
 				D9F853FF24CC906600722C0B /* UserRepositorySpec.swift in Sources */,
+				D915C97824D1BF7200FECE7D /* ListUsersInteractorSpec.swift in Sources */,
+				D915C97E24D1D0C900FECE7D /* UserDetailsPresenterSpec.swift in Sources */,
+				D915C97B24D1CE3D00FECE7D /* ListUsersPresenterSpec.swift in Sources */,
 				D9F853B124CC4C6A00722C0B /* AutoMockable.generated.swift in Sources */,
+				D915C96C24D1ABC800FECE7D /* ListUserServiceSpec.swift in Sources */,
 				D9F8540A24CC94A000722C0B /* Fixture.swift in Sources */,
+				D915C97024D1B42200FECE7D /* UserDetailsViewSpec.swift in Sources */,
 				D9F8540F24CC96C900722C0B /* TestSetup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

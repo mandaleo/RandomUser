@@ -13,7 +13,8 @@ final class DefaultListUsersNavigator: ListUsersNavigator {
   
   func show(user: User) {
     guard let from = from else { fatalError("Why from is nil????") }
-    from.navigationController?.pushViewController(userDetailsProvider.userDetailsViewController(for: user),
+    let viewController = userDetailsProvider.userDetailsViewController(for: user)
+    from.navigationController?.pushViewController(viewController,
                                                   animated: true)
   }
 }
