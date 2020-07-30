@@ -10,6 +10,7 @@
 		4B050D33B5789E7986BF8B71 /* Pods_RandomUser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3814ABA0D549920B9F69914 /* Pods_RandomUser.framework */; };
 		6752D811D1B7C518813B6C11 /* Pods_RandomUser_RandomUserUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E6E8905E45AB1ABCCB5305C /* Pods_RandomUser_RandomUserUITests.framework */; };
 		9960EFD7A172171D3DA24C20 /* Pods_RandomUserTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7601B7B71763A462F2F64950 /* Pods_RandomUserTests.framework */; };
+		D9053A4D24D30E10006B7C90 /* list.users.ok.json in Resources */ = {isa = PBXBuildFile; fileRef = D915C98E24D1DA4000FECE7D /* list.users.ok.json */; };
 		D915C93D24CF122600FECE7D /* DbStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C93C24CF122600FECE7D /* DbStorageService.swift */; };
 		D915C94124CF16AD00FECE7D /* RUser+ CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C94024CF16AD00FECE7D /* RUser+ CoreData.swift */; };
 		D915C94424CF178C00FECE7D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D915C94224CF178C00FECE7D /* Model.xcdatamodeld */; };
@@ -26,9 +27,10 @@
 		D915C97E24D1D0C900FECE7D /* UserDetailsPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C97D24D1D0C900FECE7D /* UserDetailsPresenterSpec.swift */; };
 		D915C98024D1D3E200FECE7D /* UIViewController+alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C97F24D1D3E200FECE7D /* UIViewController+alert.swift */; };
 		D915C98624D1D8C200FECE7D /* ListUsersSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C98524D1D8C200FECE7D /* ListUsersSpec.swift */; };
-		D915C98924D1D9AE00FECE7D /* TestSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C98824D1D9AE00FECE7D /* TestSetup.swift */; };
-		D915C98C24D1DA1200FECE7D /* Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C98B24D1DA1200FECE7D /* Fixture.swift */; };
-		D915C98F24D1DA4000FECE7D /* list.users.ok.json in Resources */ = {isa = PBXBuildFile; fileRef = D915C98E24D1DA4000FECE7D /* list.users.ok.json */; };
+		D915C99524D2FF5900FECE7D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C99424D2FF5900FECE7D /* main.swift */; };
+		D915C99724D3069900FECE7D /* MockAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C99624D3069900FECE7D /* MockAppDelegate.swift */; };
+		D915C99924D306D100FECE7D /* MockAppSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C99824D306D100FECE7D /* MockAppSceneDelegate.swift */; };
+		D915C99A24D30CDB00FECE7D /* Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C98B24D1DA1200FECE7D /* Fixture.swift */; };
 		D9F8535924CC20BB00722C0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8535824CC20BB00722C0B /* AppDelegate.swift */; };
 		D9F8536224CC20C100722C0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9F8536124CC20C100722C0B /* Assets.xcassets */; };
 		D9F8539124CC2A4B00722C0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9F8536324CC20C100722C0B /* LaunchScreen.storyboard */; };
@@ -146,9 +148,11 @@
 		D915C97D24D1D0C900FECE7D /* UserDetailsPresenterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsPresenterSpec.swift; sourceTree = "<group>"; };
 		D915C97F24D1D3E200FECE7D /* UIViewController+alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+alert.swift"; sourceTree = "<group>"; };
 		D915C98524D1D8C200FECE7D /* ListUsersSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersSpec.swift; sourceTree = "<group>"; };
-		D915C98824D1D9AE00FECE7D /* TestSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSetup.swift; sourceTree = "<group>"; };
 		D915C98B24D1DA1200FECE7D /* Fixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fixture.swift; sourceTree = "<group>"; };
 		D915C98E24D1DA4000FECE7D /* list.users.ok.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = list.users.ok.json; sourceTree = "<group>"; };
+		D915C99424D2FF5900FECE7D /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		D915C99624D3069900FECE7D /* MockAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAppDelegate.swift; sourceTree = "<group>"; };
+		D915C99824D306D100FECE7D /* MockAppSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAppSceneDelegate.swift; sourceTree = "<group>"; };
 		D9F8535524CC20BB00722C0B /* RandomUser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomUser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F8535824CC20BB00722C0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9F8536124CC20C100722C0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -277,6 +281,23 @@
 				7FD2FC40E8DF2DEE2CA91EAF /* Pods-RandomUserTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D9053A4A24D30D05006B7C90 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				D915C98D24D1DA2600FECE7D /* Fixture */,
+				D915C98B24D1DA1200FECE7D /* Fixture.swift */,
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
+		D9053A4B24D30D24006B7C90 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				D915C98E24D1DA4000FECE7D /* list.users.ok.json */,
+			);
+			path = Users;
 			sourceTree = "<group>";
 		};
 		D915C93B24CF120C00FECE7D /* CoreData */ = {
@@ -452,24 +473,14 @@
 		D915C98224D1D84800FECE7D /* ListUsers */ = {
 			isa = PBXGroup;
 			children = (
-				D915C98D24D1DA2600FECE7D /* Fixture */,
 				D915C98524D1D8C200FECE7D /* ListUsersSpec.swift */,
 			);
 			path = ListUsers;
 			sourceTree = "<group>";
 		};
-		D915C98724D1D99900FECE7D /* TestSetup */ = {
-			isa = PBXGroup;
-			children = (
-				D915C98824D1D9AE00FECE7D /* TestSetup.swift */,
-			);
-			path = TestSetup;
-			sourceTree = "<group>";
-		};
 		D915C98A24D1DA0700FECE7D /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
-				D915C98B24D1DA1200FECE7D /* Fixture.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -477,9 +488,20 @@
 		D915C98D24D1DA2600FECE7D /* Fixture */ = {
 			isa = PBXGroup;
 			children = (
-				D915C98E24D1DA4000FECE7D /* list.users.ok.json */,
+				D9053A4B24D30D24006B7C90 /* Users */,
 			);
 			path = Fixture;
+			sourceTree = "<group>";
+		};
+		D915C99324D2FE3300FECE7D /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				D9053A4A24D30D05006B7C90 /* Stubs */,
+				D915C99424D2FF5900FECE7D /* main.swift */,
+				D915C99624D3069900FECE7D /* MockAppDelegate.swift */,
+				D915C99824D306D100FECE7D /* MockAppSceneDelegate.swift */,
+			);
+			path = AppDelegate;
 			sourceTree = "<group>";
 		};
 		D9F8534C24CC20BB00722C0B = {
@@ -532,7 +554,6 @@
 			isa = PBXGroup;
 			children = (
 				D915C98A24D1DA0700FECE7D /* Infrastructure */,
-				D915C98724D1D99900FECE7D /* TestSetup */,
 				D915C98124D1D83800FECE7D /* Feature */,
 				D9F8537C24CC20C100722C0B /* Info.plist */,
 			);
@@ -584,6 +605,7 @@
 		D9F853A024CC4AB300722C0B /* Infrastucture */ = {
 			isa = PBXGroup;
 			children = (
+				D915C99324D2FE3300FECE7D /* AppDelegate */,
 				D9F8542024CDB2D100722C0B /* Assembly */,
 				D9F853EE24CC857300722C0B /* Extension */,
 				D9F853A124CC4AC200722C0B /* AutoMockable */,
@@ -1221,6 +1243,7 @@
 			files = (
 				D9F8539124CC2A4B00722C0B /* LaunchScreen.storyboard in Resources */,
 				D9F8539824CC37E600722C0B /* Environment.plist in Resources */,
+				D9053A4D24D30E10006B7C90 /* list.users.ok.json in Resources */,
 				D9F8536224CC20C100722C0B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1237,7 +1260,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D915C98F24D1DA4000FECE7D /* list.users.ok.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1445,6 +1467,8 @@
 				D9F8543524CDBCE200722C0B /* ListUsersPresenter.swift in Sources */,
 				D9F853E024CC7AF000722C0B /* UserApiResponse.swift in Sources */,
 				D9F853D024CC76ED00722C0B /* UserRepository.swift in Sources */,
+				D915C99924D306D100FECE7D /* MockAppSceneDelegate.swift in Sources */,
+				D915C99524D2FF5900FECE7D /* main.swift in Sources */,
 				D915C93D24CF122600FECE7D /* DbStorageService.swift in Sources */,
 				D9F8543F24CDBDF900722C0B /* DefaultListUsersNavigator.swift in Sources */,
 				D9F8535924CC20BB00722C0B /* AppDelegate.swift in Sources */,
@@ -1477,9 +1501,11 @@
 				D9F8545824CDEEEC00722C0B /* String+Image.swift in Sources */,
 				D9F8546924CDFD1900722C0B /* UserDetailsUI.swift in Sources */,
 				D9F8541324CDACF500722C0B /* ListUsersUseCase.swift in Sources */,
+				D915C99724D3069900FECE7D /* MockAppDelegate.swift in Sources */,
 				D9F8539E24CC3B3800722C0B /* Environment.swift in Sources */,
 				D9F8544624CDD17200722C0B /* ListUsersDataSource.swift in Sources */,
 				D915C98024D1D3E200FECE7D /* UIViewController+alert.swift in Sources */,
+				D915C99A24D30CDB00FECE7D /* Fixture.swift in Sources */,
 				D9F8547024CDFE7500722C0B /* Assembly+UserDetails.swift in Sources */,
 				D9F853DE24CC799800722C0B /* InfoApiResponse.swift in Sources */,
 				D9F853F224CC867C00722C0B /* String+Date.swift in Sources */,
@@ -1536,9 +1562,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D915C98924D1D9AE00FECE7D /* TestSetup.swift in Sources */,
 				D915C98624D1D8C200FECE7D /* ListUsersSpec.swift in Sources */,
-				D915C98C24D1DA1200FECE7D /* Fixture.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1665,6 +1689,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXCLUDED_SOURCE_FILE_NAMES = list.users.ok;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

@@ -2,7 +2,7 @@ import RxSwift
 
 private enum DefaultValues {
   static let seed = "abc"
-  static let numberOfItems = 10
+  static let numberOfItems = 20
 }
 
 protocol ListUserServiceDelegate: class, AutoMockable {

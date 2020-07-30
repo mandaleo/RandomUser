@@ -50,14 +50,21 @@ final class ListUsersDataSource: NSObject, UITableViewDataSource {
       fetchedResultsController.fetchRequest.predicate = isHiddenPredicate
       return
     }
-    let namePredicate = NSPredicate(format: "firstName CONTAINS[c] %@", text.lowercased())
-    let surnamePredicate = NSPredicate(format: "lastName CONTAINS[c] %@", text.lowercased())
-    let emailPredicate = NSPredicate(format: "email CONTAINS[c] %@", text.lowercased())
-    let filterPredicate = NSCompoundPredicate(type: .or,
-                                         subpredicates: [namePredicate, surnamePredicate, emailPredicate])
-    let predicates = NSCompoundPredicate(type: .and, subpredicates: [isHiddenPredicate, filterPredicate])
+    let predicates = NSCompoundPredicate(type: .and, subpredicates: [isHiddenPredicate,
+                                                                     filters(for: text)])
     fetchedResultsController.fetchRequest.predicate = predicates
    
+  }
+  
+  private func filters(for value: String) -> NSCompoundPredicate {
+    return NSCompoundPredicate(type: .or,
+                               subpredicates: [predicate(with: "firstName", value: value),
+                                               predicate(with: "lastName", value: value),
+                                               predicate(with: "email", value: value)])
+  }
+  
+  private func predicate(with key: String, value: String) -> NSPredicate {
+    return NSPredicate(format: "\(key) CONTAINS[c] %@", value.lowercased())
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
