@@ -27,7 +27,6 @@
 		D915C97E24D1D0C900FECE7D /* UserDetailsPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C97D24D1D0C900FECE7D /* UserDetailsPresenterSpec.swift */; };
 		D915C98024D1D3E200FECE7D /* UIViewController+alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C97F24D1D3E200FECE7D /* UIViewController+alert.swift */; };
 		D915C98624D1D8C200FECE7D /* ListUsersSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C98524D1D8C200FECE7D /* ListUsersSpec.swift */; };
-		D915C98924D1D9AE00FECE7D /* TestSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C98824D1D9AE00FECE7D /* TestSetup.swift */; };
 		D915C99524D2FF5900FECE7D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C99424D2FF5900FECE7D /* main.swift */; };
 		D915C99724D3069900FECE7D /* MockAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C99624D3069900FECE7D /* MockAppDelegate.swift */; };
 		D915C99924D306D100FECE7D /* MockAppSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915C99824D306D100FECE7D /* MockAppSceneDelegate.swift */; };
@@ -149,7 +148,6 @@
 		D915C97D24D1D0C900FECE7D /* UserDetailsPresenterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsPresenterSpec.swift; sourceTree = "<group>"; };
 		D915C97F24D1D3E200FECE7D /* UIViewController+alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+alert.swift"; sourceTree = "<group>"; };
 		D915C98524D1D8C200FECE7D /* ListUsersSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersSpec.swift; sourceTree = "<group>"; };
-		D915C98824D1D9AE00FECE7D /* TestSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSetup.swift; sourceTree = "<group>"; };
 		D915C98B24D1DA1200FECE7D /* Fixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fixture.swift; sourceTree = "<group>"; };
 		D915C98E24D1DA4000FECE7D /* list.users.ok.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = list.users.ok.json; sourceTree = "<group>"; };
 		D915C99424D2FF5900FECE7D /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -480,14 +478,6 @@
 			path = ListUsers;
 			sourceTree = "<group>";
 		};
-		D915C98724D1D99900FECE7D /* TestSetup */ = {
-			isa = PBXGroup;
-			children = (
-				D915C98824D1D9AE00FECE7D /* TestSetup.swift */,
-			);
-			path = TestSetup;
-			sourceTree = "<group>";
-		};
 		D915C98A24D1DA0700FECE7D /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
@@ -564,7 +554,6 @@
 			isa = PBXGroup;
 			children = (
 				D915C98A24D1DA0700FECE7D /* Infrastructure */,
-				D915C98724D1D99900FECE7D /* TestSetup */,
 				D915C98124D1D83800FECE7D /* Feature */,
 				D9F8537C24CC20C100722C0B /* Info.plist */,
 			);
@@ -1573,7 +1562,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D915C98924D1D9AE00FECE7D /* TestSetup.swift in Sources */,
 				D915C98624D1D8C200FECE7D /* ListUsersSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
