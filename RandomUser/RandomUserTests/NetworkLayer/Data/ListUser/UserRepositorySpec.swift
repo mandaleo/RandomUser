@@ -24,7 +24,7 @@ final class UserRepositorySpec: XCTestCase {
     let response = try? sut.list(request: ListUsersRequest.mock).toBlocking().first()
     XCTAssertNotNil(response?.users, "Nil????? Seriously ....")
     XCTAssertFalse(response!.users.isEmpty, "Man!!! What are you doing!!!")
-    XCTAssertTrue(response!.users.count == 40, "You need to review your maths... should be 40")
+    XCTAssertTrue(response!.users.count == 20, "You need to review your maths... should be 40")
     XCTAssertNotNil(response?.page, "Nil????? Seriously ....")
     XCTAssertEqual(response!.page, 1, "Check because should be 1")
   }

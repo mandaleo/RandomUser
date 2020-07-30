@@ -1,5 +1,4 @@
 import XCTest
-import OHHTTPStubs
 
 private enum ComponentIdentifier {
   static let searchBar = "randomUser.searchBar"
@@ -7,7 +6,7 @@ private enum ComponentIdentifier {
   static let donWhite = "Don White"
 }
 
-final class ListUsersSpec: XCTestCase{
+final class ListUsersSpec: XCTestCase {
   
   private var app: XCUIApplication!
   private let timeout = TimeInterval(3)
@@ -15,6 +14,7 @@ final class ListUsersSpec: XCTestCase{
   override func setUp() {
     super.setUp()
     app = XCUIApplication()
+    app.launchArguments = ["enable-ui-testing"]
     continueAfterFailure = false
     app.launch()
   }
@@ -25,13 +25,11 @@ final class ListUsersSpec: XCTestCase{
   }
   
   func test_filter() {
-    givenUsers()
     whenFilter(by: "Br")
     thenUserIsFiltered()
   }
   
   func test_show_user_details() {
-    givenUsers()
     whenFilter(by: "Br")
     whenNavigate()
     thenUserDetailsIsShowed()
@@ -100,17 +98,5 @@ extension ListUsersSpec {
     let result = XCTWaiter.wait(for: [expectation],
                                 timeout: timeout)
     return result == .completed
-  }
-}
-
-// MARK: Stubs
-extension ListUsersSpec {
-  private func givenUsers() {
-    stub(condition: pathMatches("/api")) { _ in
-      return HTTPStubsResponse(jsonObject: Fixture.load("list.users.ok"),
-                               statusCode: 200,
-                               headers: nil
-      )
-    }
   }
 }
