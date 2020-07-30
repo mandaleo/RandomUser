@@ -3,13 +3,8 @@ PODS:
   - Kingfisher (5.14.1):
     - Kingfisher/Core (= 5.14.1)
   - Kingfisher/Core (5.14.1)
-  - Moya (14.0.0):
-    - Moya/Core (= 14.0.0)
   - Moya/Core (14.0.0):
     - Alamofire (~> 5.0)
-  - Moya/ReactiveSwift (14.0.0):
-    - Moya/Core
-    - ReactiveSwift (~> 6.0)
   - Moya/RxSwift (14.0.0):
     - Moya/Core
     - RxSwift (~> 5.0)
@@ -26,7 +21,6 @@ PODS:
   - OHHTTPStubs/OHPathHelpers (9.0.0)
   - OHHTTPStubs/Swift (9.0.0):
     - OHHTTPStubs/Default
-  - ReactiveSwift (6.3.0)
   - RxBlocking (5.0.0):
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
@@ -39,12 +33,9 @@ PODS:
 
 DEPENDENCIES:
   - Kingfisher
-  - Moya
-  - Moya/ReactiveSwift
   - Moya/RxSwift
   - OHHTTPStubs/Swift
   - RxBlocking (= 5.0)
-  - RxSwift
   - RxTest (= 5.0)
   - SnapKit
   - SnapshotTesting (~> 1.7.2)
@@ -57,7 +48,6 @@ SPEC REPOS:
     - Kingfisher
     - Moya
     - OHHTTPStubs
-    - ReactiveSwift
     - RxBlocking
     - RxSwift
     - RxTest
@@ -71,7 +61,6 @@ SPEC CHECKSUMS:
   Kingfisher: 8050bc6f7f68cbf3908bd04df7ccbac188f6d6d6
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   OHHTTPStubs: cb29d2a9d09a828ecb93349a2b0c64f99e0db89f
-  ReactiveSwift: 7937f26ec18d555e2a99352bd0a8b2817d1f042d
   RxBlocking: c67185d26498ea3cbe3e121917c3c16739e43123
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   RxTest: 4349afe98f564e0a9bc19063368904622d17d49a
@@ -80,6 +69,6 @@ SPEC CHECKSUMS:
   Sourcery: e0e8658a1ce6d9f475156ad3ffce4c68f1261b3e
   UIScrollView-InfiniteScroll: 3ef456bcbe759c19f510a383cff96e6647c98c98
 
-PODFILE CHECKSUM: 740a9c1d244548fd2a7d131d6989fe0ff7aba2be
+PODFILE CHECKSUM: a261c0a0fe28c98a0531a928b811eaa61fc43585
 
 COCOAPODS: 1.8.4
