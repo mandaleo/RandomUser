@@ -8,10 +8,7 @@ target 'RandomUser' do
 
   pod 'Kingfisher'
   pod 'Sourcery'
-  pod 'RxSwift'
-  pod 'Moya'
   pod 'Moya/RxSwift'
-  pod 'Moya/ReactiveSwift'
   pod 'SnapKit'
   pod 'UIScrollView-InfiniteScroll'
   pod 'OHHTTPStubs/Swift'
