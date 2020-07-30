@@ -16,6 +16,7 @@ final class ListUsersSpec: XCTestCase{
     super.setUp()
     app = XCUIApplication()
     continueAfterFailure = false
+    app.launch()
   }
   
   override func tearDown() {
@@ -24,14 +25,12 @@ final class ListUsersSpec: XCTestCase{
   }
   
   func test_filter() {
-    app.launch()
     givenUsers()
     whenFilter(by: "Br")
     thenUserIsFiltered()
   }
   
   func test_show_user_details() {
-    app.launch()
     givenUsers()
     whenFilter(by: "Br")
     whenNavigate()
